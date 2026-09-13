@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   ArrowRight,
   BookOpen,
@@ -6,12 +6,26 @@ import {
   MessageSquare,
   Orbit,
   Satellite,
+  Globe2,
+  Layers,
+  History,
+  User,
+  LogIn,
+  LogOut,
+  Sparkles,
+  Database,
+  Split,
 } from 'lucide-react';
 import Sidebar from './components/Sidebar/Sidebar';
 import VisualWorkspace from './components/Workspace/VisualWorkspace';
 import ChatPanel from './components/Chat/ChatPanel';
+import StarField from './components/StarField';
+import SatelliteOrbit from './components/SatelliteOrbit';
+import SatelliteMapExplorer from './components/Map/SatelliteMapExplorer';
+import AuthModal from './components/Auth/AuthModal';
+import SessionHistory from './components/Sidebar/SessionHistory';
 
-function SiteHeader({ activePage, onNavigate }) {
+function SiteHeader({ activePage, onNavigate, currentUser, onOpenAuth, onLogout }) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'how-to-use', label: 'How to use' },
@@ -36,41 +50,83 @@ function SiteHeader({ activePage, onNavigate }) {
           </button>
         ))}
       </nav>
-      <button className="header-launch" onClick={() => onNavigate('analyze')} type="button">
-        <MessageSquare size={15} /> Open workspace
-      </button>
+
+      <div className="header-right-actions">
+        {currentUser ? (
+          <div className="header-user-badge">
+            <span className="user-icon"><User size={14} /></span>
+            <span className="user-name">{currentUser.username}</span>
+            <button className="logout-btn" onClick={onLogout} title="Sign Out" type="button">
+              <LogOut size={13} />
+            </button>
+          </div>
+        ) : (
+          <button className="header-login-btn" onClick={onOpenAuth} type="button">
+            <LogIn size={14} /> Sign In
+          </button>
+        )}
+
+        <button className="header-launch" onClick={() => onNavigate('analyze')} type="button">
+          <MessageSquare size={15} /> Command Center
+        </button>
+      </div>
     </header>
   );
 }
 
-function HomePage({ onNavigate }) {
+function HomePage({ onNavigate, onOpenAuth }) {
   return (
     <main className="marketing-page home-page">
       <section className="home-hero">
         <div className="hero-copy">
           <div className="eyebrow"><span className="eyebrow-pulse" /> MULTIMODAL EARTH INTELLIGENCE</div>
           <h1>Read the planet<br /><em>between the pixels.</em></h1>
-          <p className="hero-lede">SatQuery turns optical, SAR, and time-series imagery into grounded answers you can inspect, compare, and trust.</p>
+          <p className="hero-lede">
+            SatQuery turns optical, SAR, and time-series imagery into grounded answers you can inspect, compare, and trust. Now featuring live interactive satellite maps, region snapshotting, and persistent PostgreSQL investigation archives.
+          </p>
           <div className="hero-actions">
-            <button className="primary-action" onClick={() => onNavigate('analyze')} type="button">Start an analysis <ArrowRight size={17} /></button>
-            <button className="text-action" onClick={() => onNavigate('how-to-use')} type="button">See how it works</button>
+            <button className="primary-action" onClick={() => onNavigate('analyze')} type="button">
+              Open Command Center <ArrowRight size={17} />
+            </button>
+            <button className="text-action" onClick={onOpenAuth} type="button">
+              Sign In / Register
+            </button>
           </div>
-          <div className="hero-note"><CircleCheck size={15} /> Built for transparent, evidence-led exploration</div>
+          <div className="hero-note"><CircleCheck size={15} /> Built for transparent, evidence-led geospatial exploration</div>
         </div>
+
+        {/* Enhanced orbit visual with animated overlay */}
         <div className="orbit-visual" aria-label="Orbital data visualization">
-          <div className="orbit-grid" /><div className="orbit-ring orbit-ring-one" /><div className="orbit-ring orbit-ring-two" />
-          <div className="planet"><div className="planet-land land-one" /><div className="planet-land land-two" /><div className="planet-glint" /></div>
-          <div className="orbit-label label-top"><span>01</span> OPTICAL + SAR</div>
-          <div className="orbit-label label-bottom"><span>LIVE</span> EVIDENCE LAYER</div>
+          <StarField count={120} shootingFreq={5000} />
+          <div className="orbit-grid" />
+          <div className="orbit-ring orbit-ring-one" />
+          <div className="orbit-ring orbit-ring-two" />
+          <SatelliteOrbit size={420} />
+          <div className="orbit-label label-top"><span>01</span> OPTICAL + SAR + MAPS</div>
+          <div className="orbit-label label-bottom"><span>LIVE</span> POSTGRES PERSISTENCE</div>
         </div>
       </section>
+
       <section className="signal-strip">
-        <span>ONE WORKSPACE</span><b>01</b><span>THREE SPECIALIST MODELS</span><b>03</b><span>TRACEABLE OUTPUTS</span><b>∞</b>
+        <span>INTERACTIVE SATELLITE MAPS</span><b>01</b><span>FOUR SPECIALIST AGENT NODES</span><b>04</b><span>POSTGRESQL AUDIT TRAIL</span><b>∞</b>
       </section>
+
       <section className="home-modules">
-        <div><span className="module-index">01 / ASK</span><h2>Questions in plain language.</h2><p>Describe what you need to know. The router selects the right specialist for VQA, grounding, change detection, or cross-modal analysis.</p></div>
-        <div><span className="module-index">02 / INSPECT</span><h2>Evidence beside the answer.</h2><p>Move from synthesis to imagery, heatmaps, masks, and attribution layers without losing the original context.</p></div>
-        <div><span className="module-index">03 / COMPARE</span><h2>Make change visible.</h2><p>Load imagery one at a time, set the first scene deliberately, and compare time or sensor perspectives with confidence.</p></div>
+        <div>
+          <span className="module-index">01 / EXPLORE & SNAPSHOT</span>
+          <h2>Search any coordinates on Earth.</h2>
+          <p>Pan and zoom across global satellite imagery. Capture high-resolution AOI bounding boxes with one click to instantly seed AI analysis.</p>
+        </div>
+        <div>
+          <span className="module-index">02 / ASK IN PLAIN LANGUAGE</span>
+          <h2>Intelligent multi-model routing.</h2>
+          <p>The LangGraph agent routes your query to VQA, cross-modal optical-SAR fusion, bi-temporal change detection, or geospatial reasoning.</p>
+        </div>
+        <div>
+          <span className="module-index">03 / AUDITABLE PERSISTENCE</span>
+          <h2>Every session saved in PostgreSQL.</h2>
+          <p>Maintain complete historical archives of prompt exchanges, sensor telemetry, and derived evidence heatmaps for every analysis.</p>
+        </div>
       </section>
     </main>
   );
@@ -79,22 +135,45 @@ function HomePage({ onNavigate }) {
 function InfoPage({ type, onNavigate }) {
   const isGuide = type === 'how-to-use';
   const rows = isGuide ? [
-    ['01', 'Choose your imagery', 'Upload one image for scene questions, or two images for a temporal or optical-SAR comparison.'],
-    ['02', 'Set the order', 'The first slot is always the reference. Use the swap control when your before/after or sensor order needs changing.'],
-    ['03', 'Ask naturally', 'Write a focused question. SatQuery routes it to the specialist model best suited to the evidence.'],
-    ['04', 'Inspect the evidence', 'Open the returned mask, heatmap, or attribution layer to understand what supports the answer.'],
+    ['01', 'Explore the Satellite Map', 'Navigate to any region, port, or forest on Earth and capture a snapshot directly as Image 1 or Image 2.'],
+    ['02', 'Set the Order & Sensor Types', 'Use the reference slot for baseline imagery and the second slot for temporal comparison or SAR backscatter.'],
+    ['03', 'Query in Natural Language', 'Describe what you need to discover. SatQuery routes automatically with confidence calibration.'],
+    ['04', 'Inspect Grounded Evidence', 'Review ViT attention heatmaps, Siamese difference masks, and confidence telemetry saved to your database history.'],
   ] : [
-    ['01', 'Specialist by design', 'VQA, change detection, cross-modal reasoning, and grounding each have a distinct role.'],
-    ['02', 'Evidence is first-class', 'Answers are paired with visual artifacts and a visible execution trace.'],
-    ['03', 'Prototype, openly labeled', 'The current system is a focused research prototype, designed to make the path from model output to human judgment legible.'],
+    ['01', 'Specialist by Design', 'VQA, change detection, optical-SAR fusion, and grounding nodes each fulfill a mathematically specialized role.'],
+    ['02', 'Evidence Beside the Answer', 'Synthesized conclusions are strictly paired with spatial attention maps and reproducible visual layers.'],
+    ['03', 'Production Ready & Auditable', 'Supported by PostgreSQL persistence, session tracking, and seamless fallback demonstration modes.'],
   ];
 
   return (
     <main className="marketing-page info-page">
-      <div className="info-heading"><div className="eyebrow">{isGuide ? 'FIELD GUIDE / 04 STEPS' : 'THE SATQUERY MISSION'}</div><h1>{isGuide ? 'From image to insight.' : 'A clearer view of Earth.'}</h1><p>{isGuide ? 'A calm, deliberate workflow for turning your imagery into an answer with context.' : 'SatQuery is a research prototype for natural-language analysis of remote-sensing imagery. It brings specialist vision models into one auditable workspace.'}</p></div>
+      <div className="info-heading">
+        <div className="eyebrow">{isGuide ? 'FIELD GUIDE / 04 STEPS' : 'THE SATQUERY MISSION'}</div>
+        <h1>{isGuide ? 'From orbit to insight.' : 'A clearer view of Earth.'}</h1>
+        <p>{isGuide ? 'A deliberate workflow for capturing remote sensing imagery, routing through specialist vision models, and inspecting grounded findings.' : 'SatQuery combines multi-modal remote sensing models into one unified, auditable intelligence workspace.'}</p>
+      </div>
       <div className="info-layout">
-        <div className="info-list">{rows.map(([number, title, description]) => <div className="info-row" key={number}><span>{number}</span><div><h2>{title}</h2><p>{description}</p></div><ArrowRight size={17} /></div>)}</div>
-        <aside className="info-aside"><div className="aside-icon">{isGuide ? <BookOpen size={25} /> : <Orbit size={25} />}</div><span className="module-index">{isGuide ? 'QUICK START' : 'SYSTEM NOTE'}</span><h2>{isGuide ? 'Your first pass takes three moves.' : 'Made for inspection, not magic.'}</h2><p>{isGuide ? 'Upload. Order. Ask. The workspace handles the specialist routing and keeps the visual context close.' : 'Every answer is designed to stay close to its source imagery, with model choice and confidence available when you need them.'}</p><button className="secondary-action" onClick={() => onNavigate('analyze')} type="button">Open the workspace <ArrowRight size={15} /></button></aside>
+        <div className="info-list">
+          {rows.map(([number, title, description]) => (
+            <div className="info-row" key={number}>
+              <span>{number}</span>
+              <div>
+                <h2>{title}</h2>
+                <p>{description}</p>
+              </div>
+              <ArrowRight size={17} />
+            </div>
+          ))}
+        </div>
+        <aside className="info-aside">
+          <div className="aside-icon">{isGuide ? <BookOpen size={25} /> : <Orbit size={25} />}</div>
+          <span className="module-index">{isGuide ? 'QUICK START' : 'SYSTEM NOTE'}</span>
+          <h2>{isGuide ? 'Snapshot, ask, verify.' : 'Transparent Intelligence'}</h2>
+          <p>{isGuide ? 'Use the embedded satellite map to snapshot any location, ask questions naturally, and view full spatial attributions.' : 'Every answer remains tightly coupled to its source raster imagery and verified historical audit logs.'}</p>
+          <button className="secondary-action" onClick={() => onNavigate('analyze')} type="button">
+            Open Command Center <ArrowRight size={15} />
+          </button>
+        </aside>
       </div>
     </main>
   );
@@ -102,10 +181,27 @@ function InfoPage({ type, onNavigate }) {
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
+  const [viewMode, setViewMode] = useState('cockpit'); // 'cockpit' | 'map' | 'dual'
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [historyDrawerOpen, setHistoryDrawerOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+
+  // User & Auth State
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('satquery_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
+  const [authToken, setAuthToken] = useState(() => localStorage.getItem('satquery_token') || null);
+
+  // Presets & Health
   const [presets, setPresets] = useState([]);
   const [activePresetId, setActivePresetId] = useState(null);
   const [healthInfo, setHealthInfo] = useState(null);
+  const [sessions, setSessions] = useState([]);
 
   // Workspace & Imagery state
   const [image1, setImage1] = useState(null);
@@ -118,8 +214,8 @@ export default function App() {
   const [opacity, setOpacity] = useState(0.85);
 
   // Routing & Evidence state
-  const [routingDecision, setRoutingDecision] = useState(null);
   const [evidenceArtifacts, setEvidenceArtifacts] = useState(null);
+  const [routingDecision, setRoutingDecision] = useState(null);
   const [forcedModel, setForcedModel] = useState('auto');
 
   // Chat & Stream state
@@ -127,53 +223,74 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [inputPrompt, setInputPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [currentStage, setCurrentStage] = useState('');
-  const [stageMessage, setStageMessage] = useState('');
+  const [currentStage, setCurrentStage] = useState(null);
+  const [stageMessage, setStageMessage] = useState(null);
 
-  // ── 1. Fetch System Health & Presets on Load ──────────────────────────────
+  // Load Presets, Health, and User Sessions on mount
+  const loadSessions = useCallback(() => {
+    const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
+    fetch('/api/sessions', { headers })
+      .then((res) => (res.ok ? res.json() : []))
+      .then((data) => setSessions(data))
+      .catch((err) => console.warn('Could not load sessions:', err));
+  }, [authToken]);
+
   useEffect(() => {
     fetch('/api/health')
       .then((res) => res.json())
       .then((data) => setHealthInfo(data))
-      .catch((err) => console.warn('Could not fetch health:', err));
+      .catch((err) => console.warn('Health check unreachable:', err));
 
     fetch('/api/presets')
       .then((res) => res.json())
-      .then((data) => {
-        setPresets(data);
-      })
+      .then((data) => setPresets(data))
       .catch((err) => console.warn('Could not fetch presets:', err));
-  }, []);
 
-  // ── 2. Preset Selection ──────────────────────────────────────────────────
-  const handleSelectPreset = (preset) => {
-    setActivePresetId(preset.id);
-    setImage1(preset.image1);
-    setImage2(preset.image2 || null);
-    setImage1Name(preset.image1_label || 'Scene 1');
-    setImage2Name(preset.image2_label || (preset.image2 ? 'Scene 2' : null));
-    setEvidenceArtifacts(null);
-    setRoutingDecision(null);
+    loadSessions();
+  }, [loadSessions]);
 
-    // Initial layer selection
-    if (preset.id === 'bitemporal_change') {
-      setActiveLayer('split');
-    } else if (preset.id === 'crossmodal_coastal') {
-      setActiveLayer('optical');
-    } else {
-      setActiveLayer('original');
-    }
+  // Auth Handlers
+  const handleAuthSuccess = (user, token) => {
+    setCurrentUser(user);
+    setAuthToken(token);
+    loadSessions();
+  };
 
-    // Populate recommended question
-    if (preset.recommended_query) {
-      setInputPrompt(preset.recommended_query);
+  const handleLogout = () => {
+    localStorage.removeItem('satquery_token');
+    localStorage.removeItem('satquery_user');
+    setCurrentUser(null);
+    setAuthToken(null);
+    setSessions([]);
+  };
+
+  // Session Management
+  const handleSelectSession = async (sessId) => {
+    try {
+      const res = await fetch(`/api/sessions/${sessId}/messages`);
+      if (res.ok) {
+        const histMessages = await res.json();
+        setSessionId(sessId);
+        setMessages(histMessages);
+        setHistoryDrawerOpen(false);
+
+        // Find last artifacts if available
+        for (let i = histMessages.length - 1; i >= 0; i--) {
+          if (histMessages[i].evidenceArtifacts && Object.keys(histMessages[i].evidenceArtifacts).length > 0) {
+            setEvidenceArtifacts(histMessages[i].evidenceArtifacts);
+            setRoutingDecision(histMessages[i].routingDecision);
+            break;
+          }
+        }
+      }
+    } catch (err) {
+      console.warn('Failed to load session messages:', err);
     }
   };
 
-  // ── 3. Reset / New Analysis ──────────────────────────────────────────────
-  const handleNewAnalysis = () => {
-    const newSess = 'sess_' + Math.random().toString(36).substring(2, 9);
-    setSessionId(newSess);
+  const handleNewSession = async () => {
+    const newId = 'sess_' + Math.random().toString(36).substring(2, 9);
+    setSessionId(newId);
     setMessages([]);
     setImage1(null);
     setImage2(null);
@@ -182,86 +299,146 @@ export default function App() {
     setEvidenceArtifacts(null);
     setRoutingDecision(null);
     setActivePresetId(null);
-    setActiveLayer('original');
-    setInputPrompt('');
+    setHistoryDrawerOpen(false);
 
-    fetch('/api/session/new', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ session_id: newSess }),
-    }).catch(() => {});
+    try {
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
+      };
+      await fetch('/api/sessions', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ title: 'New Analysis Session' }),
+      });
+      loadSessions();
+    } catch (err) {
+      console.warn('Could not create DB session:', err);
+    }
   };
 
-  // ── 4. Image Upload (Local Files) ────────────────────────────────────────
-  const handleUploadImages = (files) => {
+  const handleDeleteSession = async (sessId) => {
+    try {
+      await fetch(`/api/sessions/${sessId}`, { method: 'DELETE' });
+      loadSessions();
+      if (sessId === sessionId) {
+        handleNewSession();
+      }
+    } catch (err) {
+      console.warn('Could not delete session:', err);
+    }
+  };
+
+  // Preset Selection
+  const handleSelectPreset = (preset) => {
+    setActivePresetId(preset.id);
+    setImage1(preset.image1 || null);
+    setImage2(preset.image2 || null);
+    setImage1Name(preset.image1_label || null);
+    setImage2Name(preset.image2_label || null);
+    setEvidenceArtifacts(null);
+    setRoutingDecision(null);
+
+    if (preset.id === 'bitemporal_change') {
+      setActiveLayer('split');
+    } else if (preset.id === 'crossmodal_coastal') {
+      setActiveLayer('fusion');
+    } else {
+      setActiveLayer('original');
+    }
+
+    if (preset.recommended_query) {
+      setInputPrompt(preset.recommended_query);
+    }
+  };
+
+  const handleNewAnalysis = () => {
+    setImage1(null);
+    setImage2(null);
+    setImage1Name(null);
+    setImage2Name(null);
+    setEvidenceArtifacts(null);
+    setRoutingDecision(null);
     setActivePresetId(null);
-    const readAsDataUrl = (file) =>
-      new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onload = (e) => resolve({ name: file.name, url: e.target.result });
-        reader.readAsDataURL(file);
-      });
-
-    Promise.all(files.slice(0, 2).map(readAsDataUrl)).then((results) => {
-      let nextImage1 = image1;
-      let nextImage2 = image2;
-      let nextImage1Name = image1Name;
-      let nextImage2Name = image2Name;
-
-      results.forEach((result) => {
-        if (!nextImage1) {
-          nextImage1 = result.url;
-          nextImage1Name = result.name;
-        } else if (!nextImage2) {
-          nextImage2 = result.url;
-          nextImage2Name = result.name;
-        }
-      });
-
-      setImage1(nextImage1);
-      setImage1Name(nextImage1Name);
-      setImage2(nextImage2);
-      setImage2Name(nextImage2Name);
-      setActiveLayer(nextImage2 ? 'split' : 'original');
-    });
+    setActiveLayer('original');
   };
 
-  const handleSwapImages = () => {
-    if (!image1 || !image2) return;
-    setImage1(image2);
-    setImage1Name(image2Name);
-    setImage2(image1);
-    setImage2Name(image1Name);
+  // Image Upload / Swap / Remove Handlers
+  const handleUploadImages = (slot, fileDataUri, fileName) => {
+    if (slot === 1) {
+      setImage1(fileDataUri);
+      setImage1Name(fileName || 'Observation Scene (1)');
+    } else if (slot === 2) {
+      setImage2(fileDataUri);
+      setImage2Name(fileName || 'Comparison Scene (2)');
+    }
+    setActivePresetId(null);
+    setEvidenceArtifacts(null);
   };
 
-  const handleRemoveImage = (imgNum) => {
-    if (imgNum === 1) {
+  const handleRemoveImage = (slot) => {
+    if (slot === 1) {
       setImage1(null);
       setImage1Name(null);
-    } else {
+    } else if (slot === 2) {
       setImage2(null);
       setImage2Name(null);
     }
-    setActiveLayer('original');
+    setEvidenceArtifacts(null);
   };
 
-  // ── 5. Send Query & Stream Execution ─────────────────────────────────────
+  const handleSwapImages = () => {
+    const tempImg = image1;
+    const tempName = image1Name;
+    setImage1(image2);
+    setImage1Name(image2Name);
+    setImage2(tempImg);
+    setImage2Name(tempName);
+  };
+
+  // Map Region Snapshotting
+  const handleCaptureRegion = ({ image, label, target, metadata }) => {
+    if (target === 'image1') {
+      setImage1(image);
+      setImage1Name(label);
+      if (!inputPrompt) {
+        setInputPrompt(`What geospatial features, infrastructure, or land use types are visible in this area (${metadata.name})?`);
+      }
+    } else if (target === 'image2') {
+      setImage2(image);
+      setImage2Name(label);
+    }
+    setActivePresetId(null);
+    setEvidenceArtifacts(null);
+    // Switch to Cockpit view if currently in pure map mode
+    if (viewMode === 'map') {
+      setViewMode('cockpit');
+    }
+  };
+
+  // Send Message with SSE Streaming & DB Persistence
   const handleSend = async () => {
     if (!inputPrompt.trim() || isLoading) return;
 
     const queryText = inputPrompt.trim();
     setInputPrompt('');
     setIsLoading(true);
+    setRoutingDecision(null);
+    setEvidenceArtifacts(null);
     setCurrentStage('understanding_query');
     setStageMessage('Parsing geospatial prompt and intent...');
 
-    // Add user message to chat immediately
     setMessages((prev) => [...prev, { role: 'user', content: queryText }]);
 
     try {
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
+      };
+
       const response = await fetch('/api/chat/stream', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           session_id: sessionId,
           query: queryText,
@@ -287,7 +464,7 @@ export default function App() {
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n\n');
-        buffer = lines.pop(); // Keep partial line
+        buffer = lines.pop();
 
         for (const line of lines) {
           if (line.startsWith('data: ')) {
@@ -301,19 +478,18 @@ export default function App() {
                 setIsLoading(false);
                 setMessages((prev) => [
                   ...prev,
-                  {
-                    role: 'assistant',
-                    content: parsed.message || 'Analysis could not be completed.',
-                  },
+                  { role: 'assistant', content: parsed.message || 'Analysis could not be completed.' },
                 ]);
                 return;
               }
 
               if (parsed.stage === 'complete') {
-                // Final response reached
                 setIsLoading(false);
-                // Populate images from backend if user queried without prior image upload
+
                 const artifacts = parsed.evidence_artifacts || {};
+                setEvidenceArtifacts(artifacts);
+                setRoutingDecision(parsed.routing_decision);
+
                 if (artifacts['Before (T1)'] && !image1) {
                   setImage1(artifacts['Before (T1)']);
                   setImage1Name('Pre-Acquisition (T1)');
@@ -335,7 +511,6 @@ export default function App() {
                   setImage2Name('SAR Sentinel-1');
                 }
 
-                // Auto-switch visual viewer to the relevant evidence layer
                 if (parsed.routing_decision === 'vqa' && artifacts['Attention Heatmap']) {
                   setActiveLayer('heatmap');
                 } else if (parsed.routing_decision === 'change_detect' && artifacts['Change Mask']) {
@@ -352,14 +527,16 @@ export default function App() {
                     routingDecision: parsed.routing_decision,
                     routingConfidence: parsed.routing_confidence,
                     routingReason: parsed.routing_reason,
-                    evidenceArtifacts: parsed.evidence_artifacts,
+                    evidenceArtifacts: artifacts,
                     latency: parsed.latency,
                     mock: parsed.mock,
                     explanation: parsed.explanation,
                   },
                 ]);
+
+                // Refresh sessions from database
+                loadSessions();
               } else {
-                // Progressive stage update
                 setCurrentStage(parsed.stage);
                 if (parsed.message) setStageMessage(parsed.message);
                 if (parsed.decision) setRoutingDecision(parsed.decision);
@@ -377,7 +554,7 @@ export default function App() {
         ...prev,
         {
           role: 'assistant',
-          content: `Unable to complete request: ${err.message}. Please verify the FastAPI backend server is running.`,
+          content: `Unable to complete request: ${err.message}. Please verify the FastAPI backend server is running on port 8000.`,
         },
       ]);
     }
@@ -385,71 +562,242 @@ export default function App() {
 
   const handleInspectEvidence = (layerName) => {
     setActiveLayer(layerName);
+    if (viewMode === 'map') {
+      setViewMode('cockpit');
+    }
   };
 
   if (activePage !== 'analyze') {
     return (
       <div className="site-shell">
-        <SiteHeader activePage={activePage} onNavigate={setActivePage} />
-        {activePage === 'home' ? <HomePage onNavigate={setActivePage} /> : <InfoPage type={activePage} onNavigate={setActivePage} />}
+        <SiteHeader
+          activePage={activePage}
+          onNavigate={setActivePage}
+          currentUser={currentUser}
+          onOpenAuth={() => setAuthModalOpen(true)}
+          onLogout={handleLogout}
+        />
+        {activePage === 'home' ? (
+          <HomePage
+            onNavigate={setActivePage}
+            onOpenAuth={() => setAuthModalOpen(true)}
+          />
+        ) : (
+          <InfoPage type={activePage} onNavigate={setActivePage} />
+        )}
+        <AuthModal
+          isOpen={authModalOpen}
+          onClose={() => setAuthModalOpen(false)}
+          onAuthSuccess={handleAuthSuccess}
+        />
       </div>
     );
   }
 
   return (
     <div className="workspace-route">
+      {/* ── Futuristic Command Cockpit Topbar ───────────────────────────── */}
       <div className="workspace-topbar">
-        <button className="workspace-back" onClick={() => setActivePage('home')} type="button"><Satellite size={16} /> SatQuery <span>/ Analysis workspace</span></button>
-        <div className="workspace-status"><span /> SYSTEM ONLINE <button onClick={() => setActivePage('how-to-use')} type="button">Guide</button></div>
+        <div className="topbar-left">
+          <button className="workspace-back" onClick={() => setActivePage('home')} type="button">
+            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Command Cockpit</span>
+          </button>
+
+          {/* View Mode Selector Tabs */}
+          <div className="view-mode-tabs">
+            <button
+              type="button"
+              className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+              onClick={() => setViewMode('map')}
+              title="Full-Screen Satellite Map & Region Snapshotting"
+            >
+              <Globe2 size={14} /> Map Explorer
+            </button>
+            <button
+              type="button"
+              className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
+              onClick={() => setViewMode('cockpit')}
+              title="Multi-Spectral Evidence Analysis & Conversation"
+            >
+              <Layers size={14} /> Analysis Cockpit
+            </button>
+            <button
+              type="button"
+              className={`view-tab ${viewMode === 'dual' ? 'active' : ''}`}
+              onClick={() => setViewMode('dual')}
+              title="Split View: Map Explorer + Analysis Cockpit"
+            >
+              <Split size={14} /> Dual Command
+            </button>
+          </div>
+        </div>
+
+        <div className="topbar-center-telemetry">
+          <span className="telemetry-dot live" />
+          <span className="telemetry-label">SYSTEM ONLINE</span>
+          <span className="telemetry-divider">|</span>
+          <span className="telemetry-label">
+            <Database size={12} /> DB: {healthInfo?.database?.toUpperCase() || 'SQLITE'}
+          </span>
+          <span className="telemetry-divider">|</span>
+          <span className="telemetry-label">
+            {healthInfo?.cuda_available ? 'CUDA GPU' : 'CPU MOCK DEMO'}
+          </span>
+        </div>
+
+        <div className="topbar-right">
+          <button
+            type="button"
+            className="history-drawer-btn"
+            onClick={() => setHistoryDrawerOpen((prev) => !prev)}
+            title="Open Investigation Archives"
+          >
+            <History size={14} />
+            <span>History</span>
+            {sessions.length > 0 && <span className="history-badge">{sessions.length}</span>}
+          </button>
+
+          {currentUser ? (
+            <div className="cockpit-user-chip">
+              <User size={13} />
+              <span className="chip-username">{currentUser.username}</span>
+              <button
+                type="button"
+                className="chip-logout"
+                onClick={handleLogout}
+                title="Sign Out"
+              >
+                <LogOut size={12} />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="cockpit-signin-btn"
+              onClick={() => setAuthModalOpen(true)}
+            >
+              <LogIn size={13} /> Sign In
+            </button>
+          )}
+
+          <button
+            className="guide-link-btn"
+            onClick={() => setActivePage('how-to-use')}
+            type="button"
+          >
+            Guide
+          </button>
+        </div>
       </div>
-      <div className="app-container">
-        {/* 1. Left Sidebar */}
-        <Sidebar
-          isOpen={sidebarOpen}
-          presets={presets}
-          activePresetId={activePresetId}
-          onSelectPreset={handleSelectPreset}
-          forcedModel={forcedModel}
-          onChangeModel={setForcedModel}
-          onNewAnalysis={handleNewAnalysis}
-          healthInfo={healthInfo}
+
+      {/* ── Main Cockpit Area ───────────────────────────────────────────── */}
+      <div className={`app-container view-${viewMode}`}>
+        {/* Session History Drawer */}
+        <SessionHistory
+          isOpen={historyDrawerOpen}
+          onClose={() => setHistoryDrawerOpen(false)}
+          sessions={sessions}
+          activeSessionId={sessionId}
+          onSelectSession={handleSelectSession}
+          onNewSession={handleNewSession}
+          onDeleteSession={handleDeleteSession}
         />
 
-      {/* 2. Center Visual Workspace */}
-      <VisualWorkspace
-        onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
-        image1={image1}
-        image2={image2}
-        image1Name={image1Name}
-        image2Name={image2Name}
-        routingDecision={routingDecision}
-        evidenceArtifacts={evidenceArtifacts}
-        activeLayer={activeLayer}
-        onSelectLayer={setActiveLayer}
-        opacity={opacity}
-        onChangeOpacity={setOpacity}
+        {/* 1. Left Sidebar (Shown in Cockpit and Dual modes) */}
+        {viewMode !== 'map' && (
+          <Sidebar
+            isOpen={sidebarOpen}
+            presets={presets}
+            activePresetId={activePresetId}
+            onSelectPreset={handleSelectPreset}
+            forcedModel={forcedModel}
+            onChangeModel={setForcedModel}
+            onNewAnalysis={handleNewAnalysis}
+            healthInfo={healthInfo}
+          />
+        )}
+
+        {/* 2. Central Component: Dynamic depending on viewMode */}
+        {viewMode === 'map' && (
+          <div className="center-map-fullscreen">
+            <SatelliteMapExplorer
+              onCaptureRegion={handleCaptureRegion}
+              onSwitchToAnalysis={() => setViewMode('cockpit')}
+            />
+          </div>
+        )}
+
+        {viewMode === 'cockpit' && (
+          <VisualWorkspace
+            onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
+            image1={image1}
+            image2={image2}
+            image1Name={image1Name}
+            image2Name={image2Name}
+            routingDecision={routingDecision}
+            evidenceArtifacts={evidenceArtifacts}
+            activeLayer={activeLayer}
+            onSelectLayer={setActiveLayer}
+            opacity={opacity}
+            onChangeOpacity={setOpacity}
+          />
+        )}
+
+        {viewMode === 'dual' && (
+          <div className="dual-center-container">
+            <div className="dual-map-half">
+              <SatelliteMapExplorer
+                onCaptureRegion={handleCaptureRegion}
+                onSwitchToAnalysis={() => {}}
+              />
+            </div>
+            <div className="dual-workspace-half">
+              <VisualWorkspace
+                onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
+                image1={image1}
+                image2={image2}
+                image1Name={image1Name}
+                image2Name={image2Name}
+                routingDecision={routingDecision}
+                evidenceArtifacts={evidenceArtifacts}
+                activeLayer={activeLayer}
+                onSelectLayer={setActiveLayer}
+                opacity={opacity}
+                onChangeOpacity={setOpacity}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* 3. Right Analysis & Conversation Panel (Shown in Cockpit and Dual modes) */}
+        {viewMode !== 'map' && (
+          <ChatPanel
+            messages={messages}
+            activeRoutingDecision={routingDecision}
+            isLoading={isLoading}
+            currentStage={currentStage}
+            stageMessage={stageMessage}
+            inputPrompt={inputPrompt}
+            onChangePrompt={setInputPrompt}
+            onSend={handleSend}
+            image1={image1}
+            image2={image2}
+            image1Name={image1Name}
+            image2Name={image2Name}
+            onRemoveImage={handleRemoveImage}
+            onUploadImages={handleUploadImages}
+            onSwapImages={handleSwapImages}
+            onInspectEvidence={handleInspectEvidence}
+          />
+        )}
+      </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        onAuthSuccess={handleAuthSuccess}
       />
-
-      {/* 3. Right Analysis & Conversation Panel */}
-        <ChatPanel
-          messages={messages}
-          activeRoutingDecision={routingDecision}
-          isLoading={isLoading}
-          currentStage={currentStage}
-          stageMessage={stageMessage}
-          inputPrompt={inputPrompt}
-          onChangePrompt={setInputPrompt}
-          onSend={handleSend}
-          image1={image1}
-          image2={image2}
-          image1Name={image1Name}
-          image2Name={image2Name}
-          onRemoveImage={handleRemoveImage}
-          onUploadImages={handleUploadImages}
-          onSwapImages={handleSwapImages}
-          onInspectEvidence={handleInspectEvidence}
-        />
-      </div>
     </div>
   );
 }
