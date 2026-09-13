@@ -1,0 +1,237 @@
+# SatQuery AI — Model 3: Multi-Temporal Change Detection VQA
+
+A single, self-contained Google Colab notebook that **creates bi-temporal image pairs, fine-tunes a dual-stream VLM for temporal change detection VQA, evaluates, and saves everything to Google Drive**.
+
+---
+
+## Goal
+
+Build a prototype multi-temporal change detection VQA model that:
+1. Accepts **two images of the same geographic area at different times** ($T_1$ and $T_2$) + a natural-language question.
+2. **Detects and describes changes** between the two timestamps in free-form natural language.
+3. Trains on **~100 synthetic bi-temporal pairs** (~500 change-detection QA pairs).
+4. Runs end-to-end on a **Google Colab T4 GPU** in a single session (~15–25 min training).
+
+---
+
+## How is this different from Model 2?
+
+| Aspect | Model 2 (Cross-Modal Fusion) | Model 3 (Multi-Temporal Change) |
+|--------|------------------------------|--------------------------------|
+| **Input** | Optical + SAR (same time, same area) | $T_1$ + $T_2$ (same area, different times) |
+| **Visual tokens** | 64 (32 optical + 32 SAR, concatenated) | **64** (32 from $T_1$ + 32 from $T_2$, concatenated) |
+| **QA pairs** | Cross-modal sensor reasoning | **Temporal change reasoning** ("What changed?", "Is there new construction?") |
+| **Key skill** | Sensor fusion (spectral + structural) | **Change detection** — identifying, describing, and quantifying temporal differences |
+| **Data** | Optical + synthetic SAR of same scene | Before/After pairs with synthesised changes |
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Dual-Stream Architecture (same as Model 2):** Reuses the identical `DualStreamBLIP2` wrapper — shared frozen ViT + Q-Former encodes $T_1$ and $T_2$ independently, concatenates their 32-token query outputs → 64 visual tokens → LoRA-adapted OPT-2.7B. No new layers needed.
+
+> [!IMPORTANT]
+> **Synthetic Bi-Temporal Pairs:** For the prototype, temporal changes are **synthesised** from real EuroSAT images by applying controlled transformations simulating realistic change scenarios:
+> - **Urbanisation:** Green areas → added building-like structures, grey patches
+> - **Deforestation:** Dense forest → cleared brown patches  
+> - **Flooding:** Normal terrain → water-like dark blue inundation
+> - **Seasonal crop change:** Green crops → brown harvested / bare soil
+> - **Fire / burn scar:** Vegetation → dark burnt patches
+> - **No change (control):** Both images similar (natural variation only)
+>
+> This ensures the model learns to detect genuine visual differences. For production, replace with real Sentinel-2 multi-temporal data.
+
+---
+
+## Open Questions
+
+> [!IMPORTANT]
+> 1. **Drive Folder Path:** Results will be saved to `My Drive/SatQuery_AI/Model3_ChangeDetect/`. Is that OK?
+> 2. **Change types:** Planning 6 change categories (urbanisation, deforestation, flooding, seasonal crop, fire, no-change). Want any additions?
+
+---
+
+## Proposed Changes
+
+### Notebook File
+
+#### [NEW] [`SatQ_ChangeDetect_Model3.py`](file:///d:/SatQ/SatQ_ChangeDetect_Model3.py)
+#### [NEW] [`SatQ_ChangeDetect_Model3.ipynb`](file:///d:/SatQ/SatQ_ChangeDetect_Model3.ipynb)
+
+---
+
+### Section 1 — Environment Setup
+- Same dependencies as Models 1 & 2.
+- Mount Google Drive.
+- Create output directory: `/content/drive/MyDrive/SatQuery_AI/Model3_ChangeDetect/`.
+- Set reproducibility seeds.
+
+---
+
+### Section 2 — Bi-Temporal Dataset Collection
+
+**~100 bi-temporal pairs** where each pair = ($T_1$ image, $T_2$ image) of the **same geographic area at different times**.
+
+**$T_1$ (real):** Download EuroSAT images — serves as the "before" observation.
+
+**$T_2$ (synthesised from $T_1$):** For each $T_1$, generate a realistic temporal change:
+
+| Change Type | Source Classes | Transformation | Visual Effect |
+|---|---|---|---|
+| **Urbanisation** | Forest, Pasture, AnnualCrop | Add rectangular grey/white patches, edge structures | Green → built-up |
+| **Deforestation** | Forest, HerbaceousVegetation | Replace green pixels with brown/tan soil | Dense green → bare earth |
+| **Flooding** | River, Pasture, AnnualCrop | Expand dark blue regions, flatten texture | Normal → inundated |
+| **Seasonal crop** | AnnualCrop, PermanentCrop | Shift green→brown, reduce NDVI proxy | Growing → harvested |
+| **Fire / burn scar** | Forest, HerbaceousVegetation | Add dark charred patches, orange edges | Vegetation → burnt |
+| **No change** | Any class | Minor brightness/contrast jitter only | Control pair |
+
+~17 pairs per change type, total ~100 pairs.
+
+---
+
+### Section 3 — Change Detection QA Pair Generation (~500 pairs)
+
+Each bi-temporal pair gets **5 change-detection QA pairs**:
+
+| Question Type | Example Question | Example Answer |
+|---|---|---|
+| **Change detection** | *"What changes occurred between the two observation times?"* | *"Comparing T1 and T2, significant urbanisation has occurred. The previously green agricultural fields now show rectangular grey structures consistent with new building construction."* |
+| **Change classification** | *"What type of land-cover change happened here?"* | *"This area experienced deforestation. The dense tree canopy visible in T1 has been replaced by exposed brown soil in T2, indicating forest clearing activity."* |
+| **Change extent** | *"How extensive is the change between T1 and T2?"* | *"The flooding covers approximately 40-60% of the scene. In T1, the area shows normal pasture. In T2, dark blue water patches have inundated most of the low-lying terrain."* |
+| **Temporal reasoning** | *"Is the T2 observation more recent than T1? What evidence suggests this?"* | *"Yes, T2 appears more recent. The progression from intact forest (T1) to cleared land with exposed soil (T2) is consistent with recent deforestation activity rather than reforestation."* |
+| **Impact assessment** | *"What are the potential implications of the observed changes?"* | *"The urban expansion from T1 to T2 implies loss of agricultural land, increased impervious surface area, and potential changes to local hydrology and heat island effects."* |
+
+For **no-change control pairs**, answers confirm temporal stability.
+
+---
+
+### Section 4 — Data Preprocessing & DataLoaders
+
+Custom `BiTemporalDataset` class returning **two image tensors** per sample:
+- `t1_pixel_values`: $T_1$ image processed through BLIP-2's image processor.
+- `t2_pixel_values`: $T_2$ image processed through same image processor.
+- `input_ids`, `attention_mask`, `labels`: Tokenised change-detection prompt and answer.
+
+Prompt format: `"Question: {q} Answer: {a}"` (consistent with Models 1 & 2).
+
+---
+
+### Section 5 — Dual-Stream Model Architecture
+
+```
+  ┌──────────┐        ┌──────────┐
+  │  T1 img  │        │  T2 img  │
+  │ (before) │        │ (after)  │
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  ┌────▼─────┐        ┌────▼─────┐
+  │  Shared  │        │  Shared  │
+  │   ViT    │ (frozen)│   ViT    │  (same weights)
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  ┌────▼─────┐        ┌────▼─────┐
+  │  Shared  │        │  Shared  │
+  │ Q-Former │ (frozen)│ Q-Former │  (same weights)
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  [32 tokens]          [32 tokens]
+       │                    │
+       └────────┬───────────┘
+                │
+           ┌────▼────┐
+           │ CONCAT  │  →  [64 visual tokens]
+           └────┬────┘
+                │
+           ┌────▼────┐
+           │ Language │
+           │Projection│
+           └────┬────┘
+                │
+           ┌────▼────┐
+           │  OPT    │ ← LoRA adapters (trainable)
+           │  2.7B   │
+           └────┬────┘
+                │
+           [Change Description Answer]
+```
+
+Implementation: Same `DualStreamBLIP2` wrapper class from Model 2, renamed parameters from `optical_pixel_values`/`sar_pixel_values` → `t1_pixel_values`/`t2_pixel_values` for semantic clarity.
+
+Trainable parameters: LoRA adapters on OPT (`q_proj`, `v_proj`) — same ~8M params.
+
+---
+
+### Section 6 — Training Loop
+- **Epochs:** 8 (early stopping, patience 2).
+- **Batch size:** 2 (grad accumulation 4 → effective 8).
+- **Mixed precision:** FP16 with `torch.cuda.amp.autocast()`.
+- **Optimizer:** AdamW, lr=2e-4, cosine schedule with 10% warmup.
+- Estimated time: **~15–25 minutes** on T4.
+
+---
+
+### Section 7 — Evaluation & Metrics
+- Generate answers on validation set using beam search (with autocast fix from Model 2).
+- Compute **BLEU-1, BLEU-4, ROUGE-L**.
+- Per-change-type breakdown of metrics.
+- Save `metrics.json` and `predictions.csv` to Drive.
+
+---
+
+### Section 8 — Visualizations (All Saved to Drive)
+
+| Plot | Description |
+|---|---|
+| `loss_lr_curves.png` | Training/val loss + LR schedule |
+| `metrics_summary.png` | BLEU/ROUGE bar charts (overall + per change type) |
+| `predictions_grid.png` | 3×2 grid: $T_1$ + $T_2$ pair → Question → GT → Prediction |
+| `score_distribution.png` | ROUGE-L histogram + best/worst examples |
+| `change_type_metrics.png` | **NEW:** Per-change-type BLEU/ROUGE comparison |
+
+---
+
+### Section 9 — Model Export & Report
+Save to `Google Drive/SatQuery_AI/Model3_ChangeDetect/`:
+```
+Model3_ChangeDetect/
+├── checkpoints/      (LoRA adapter weights & processor)
+├── results/          (All plots, predictions.csv, metrics.json)
+├── dataset/          (train/val JSON with bi-temporal pairs)
+└── report/           (training_report.md)
+```
+
+---
+
+### Section 10 — Interactive Change Detection Demo
+`satquery_change_detect(t1_path, t2_path, question)` function for live testing.
+
+---
+
+## Verification Plan
+
+### Automated Tests (in-notebook)
+- Assert training loss decreases over epochs.
+- Assert BLEU-1 > 0.10 and ROUGE-L > 0.15 on validation set.
+- Verify model generates answers referencing **temporal changes** between T1 and T2.
+- Verify no-change control pairs produce "no significant change" type responses.
+
+### Manual Verification
+- Run inference on 4 held-out bi-temporal pairs covering different change types.
+- Visually inspect that answers correctly describe the synthesised changes.
+
+---
+
+## Summary
+
+| Aspect | Choice |
+|---|---|
+| **Base Model** | BLIP-2 OPT-2.7B (4-bit quantised) |
+| **Architecture** | Dual-stream shared ViT + Q-Former → 64-token concat → LoRA OPT |
+| **Fine-tuning** | QLoRA (rank 16, ~8M trainable params) |
+| **Dataset** | ~100 bi-temporal pairs, ~500 change-detection QA pairs |
+| **T1 Source** | EuroSAT (HuggingFace) — "before" image |
+| **T2 Source** | Synthesised from T1 (urbanisation, deforestation, flooding, seasonal, fire, no-change) |
+| **QA Format** | Generative natural-language change descriptions |
+| **Training Time** | ~15–25 min on Colab T4 |
+| **Outputs** | LoRA weights, metrics, 5+ plots, predictions, report — all to Drive |

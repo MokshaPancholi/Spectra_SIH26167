@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "model1_checkpoint": "/content/drive/MyDrive/SatQuery_AI/Model1_VQA/model",
+  "model2_checkpoint": "/content/drive/MyDrive/SatQuery_AI/Model2_CrossModal/checkpoints",
+  "model3_checkpoint": "/content/drive/MyDrive/SatQuery_AI/Model3_ChangeDetect/checkpoints",
+  "model1_dataset": "/content/drive/MyDrive/SatQuery_AI/Model1_VQA/dataset",
+  "model2_dataset": "/content/drive/MyDrive/SatQuery_AI/Model2_CrossModal/dataset",
+  "model3_dataset": "/content/drive/MyDrive/SatQuery_AI/Model3_ChangeDetect/dataset",
+  "drive_output": "/content/drive/MyDrive/SatQuery_AI/Model4_Grounding",
+  "model_name": "Salesforce/blip2-opt-2.7b",
+  "image_size": 224,
+  "max_length": 256
+}

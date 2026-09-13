@@ -1,0 +1,23 @@
+{
+  "model_type": "change_detect",
+  "answer": "Question type of change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This process is characteristic of urbanisation processes. This",
+  "description": "Detected 1 distinct change region in the southern-eastern sector, covering 24.9% of the scene. Attention shift between T1 and T2: 0.171 (significant). T1 attention focused on north-east quadrant; T2 attention focused on north-east quadrant.",
+  "confidence": 24.91828762755102,
+  "regions": [
+    {
+      "y1": 0.25,
+      "x1": 0.25,
+      "y2": 0.75,
+      "x2": 0.75,
+      "area_pct": 24.48
+    }
+  ],
+  "metadata": {
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0043.png",
+    "change_percentage": 24.92,
+    "num_change_regions": 1,
+    "attention_shift": 0.171
+  }
+}

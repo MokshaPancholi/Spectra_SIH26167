@@ -1,0 +1,23 @@
+{
+  "model_type": "change_detect",
+  "answer": "Question is yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1. The natural land \u2192 urban built-up area pattern consistent with temporal sequence indicates that T2 was acquired after T1. The natural land \u2192 urban built-up area pattern consistent with temporal sequence indicates that T2 was acquired after T1. The natural land \u2192 urban built-up area pattern consistent with temporal sequence indicates that T2 was acquired after T1. This progressive development with new",
+  "description": "Detected 1 distinct change region in the southern-eastern sector, covering 24.9% of the scene. Attention shift between T1 and T2: 0.163 (significant). T1 attention focused on south-east quadrant; T2 attention focused on north-west quadrant.",
+  "confidence": 24.91828762755102,
+  "regions": [
+    {
+      "y1": 0.25,
+      "x1": 0.25,
+      "y2": 0.75,
+      "x2": 0.75,
+      "area_pct": 24.48
+    }
+  ],
+  "metadata": {
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0102.png",
+    "change_percentage": 24.92,
+    "num_change_regions": 1,
+    "attention_shift": 0.1631
+  }
+}

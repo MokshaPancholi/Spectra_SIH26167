@@ -1,0 +1,42 @@
+{
+  "BLEU-1": 0.499,
+  "BLEU-4": 0.4623,
+  "ROUGE-L": 0.6043,
+  "best_epoch": 8,
+  "best_val_loss": 0.0213,
+  "training_time_min": 109.5,
+  "num_pairs": 204,
+  "num_qa": 1020,
+  "per_change_type": {
+    "urbanisation": {
+      "BLEU-1": 0.5666,
+      "ROUGE-L": 0.6465,
+      "count": 39
+    },
+    "deforestation": {
+      "BLEU-1": 0.4602,
+      "ROUGE-L": 0.5687,
+      "count": 34
+    },
+    "flooding": {
+      "BLEU-1": 0.4838,
+      "ROUGE-L": 0.5875,
+      "count": 37
+    },
+    "seasonal_crop": {
+      "BLEU-1": 0.5054,
+      "ROUGE-L": 0.6335,
+      "count": 24
+    },
+    "fire_burn": {
+      "BLEU-1": 0.4954,
+      "ROUGE-L": 0.5921,
+      "count": 38
+    },
+    "no_change": {
+      "BLEU-1": 0.4874,
+      "ROUGE-L": 0.6105,
+      "count": 32
+    }
+  }
+}

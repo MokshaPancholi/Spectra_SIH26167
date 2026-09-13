@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "drive_output": "/content/drive/MyDrive/SatQuery_AI/Model3_ChangeDetect",
+  "data_dir": "/content/rs_bitemporal_data",
+  "num_pairs": 204,
+  "image_size": 224,
+  "model_name": "Salesforce/blip2-opt-2.7b",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "learning_rate": 0.0002,
+  "num_epochs": 8,
+  "batch_size": 2,
+  "grad_accum_steps": 4,
+  "max_length": 256,
+  "warmup_ratio": 0.1,
+  "val_split": 0.2,
+  "early_stop_patience": 2
+}

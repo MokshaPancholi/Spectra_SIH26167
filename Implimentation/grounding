@@ -1,0 +1,220 @@
+# SatQuery AI — Model 4: Evidence Grounding Layer
+
+A single, self-contained Google Colab notebook that **loads all 3 trained model checkpoints from Google Drive**, generates answers **with visual evidence overlays** (attention heatmaps, change masks, bounding boxes, modality contribution), and provides a unified `generate_evidence()` interface. **No new training is required.**
+
+## User Review Required
+
+> [!IMPORTANT]
+> This model performs **no training** — it is purely an inference-time evidence-generation layer built on top of your 3 existing trained checkpoints. Total Colab runtime should be ~3–5 minutes (model loading only).
+
+## Proposed Changes
+
+### [NEW] [SatQ_Grounding_Model4.py](file:///d:/SatQ/SatQ_Grounding_Model4.py) → `.ipynb`
+
+---
+
+### Section 1: Environment Setup & Drive Mount
+
+- Same dependency install as Models 1–3
+- Additional: `opencv-python-headless` for contour detection and morphological operations on change masks
+- Mount Google Drive and configure paths to all 3 model checkpoint directories:
+  ```
+  Model1 → /content/drive/MyDrive/SatQuery_AI/Model1_VQA/checkpoints/
+  Model2 → /content/drive/MyDrive/SatQuery_AI/Model2_CrossModal/checkpoints/
+  Model3 → /content/drive/MyDrive/SatQuery_AI/Model3_ChangeDetect/checkpoints/
+  ```
+- Output → `/content/drive/MyDrive/SatQuery_AI/Model4_Grounding/`
+
+---
+
+### Section 2: Load All 3 Trained Models from Drive
+
+Load each model's LoRA checkpoint onto a shared BLIP-2 base:
+
+1. **Model 1 (Single-Image VQA):** Load `Blip2ForConditionalGeneration` → apply PeftModel with Model1 LoRA weights
+2. **Model 2 (Cross-Modal):** Load base → apply Model2 LoRA weights → wrap in `DualStreamBLIP2`
+3. **Model 3 (Change Detection):** Load base → apply Model3 LoRA weights → wrap in `DualStreamBLIP2`
+
+> [!NOTE]
+> We load them **sequentially** (not simultaneously) to stay within Colab T4's 15 GB VRAM. A `load_model(model_type)` helper handles on-demand loading with proper cleanup of the previously loaded model via `gc.collect()` + `torch.cuda.empty_cache()`.
+
+---
+
+### Section 3: ViT Attention Hook Engine
+
+The core grounding mechanism. Implements a reusable `VitAttentionCapture` class:
+
+```
+┌─────────────────────────────────────────────────┐
+│  BLIP-2 EVA-ViT Encoder (Frozen)                │
+│                                                   │
+│  Image (224×224) → 16×16 patch grid (256 tokens) │
+│                                                   │
+│  Register forward hook on final encoder layer:    │
+│    → Capture Q × K^T attention weights            │
+│    → Average across heads → (256,) spatial map    │
+│    → Reshape to (16, 16) → bilinear upsample      │
+│    → Apply colourmap ('turbo') → alpha-blend       │
+│    → Overlay on original satellite image            │
+└─────────────────────────────────────────────────┘
+```
+
+**Key implementation details:**
+- Hook target: `model.vision_model.encoder.layers[-1].self_attn` — captures the attention weights from the **final ViT encoder layer** where spatial features are most semantically meaningful
+- Attention aggregation: Mean across all attention heads, then take the CLS token's attention to all 256 spatial patches → reshape to 16×16
+- Upsampling: `F.interpolate(mode='bilinear')` to 224×224
+- Normalisation: Min-max normalise to [0, 1]
+- Visualisation: `matplotlib.cm.turbo` colourmap → RGBA → alpha-blend at 0.5 opacity over the original satellite image
+
+---
+
+### Section 4: Evidence Generator — Model 1 (Single-Image VQA)
+
+**`vqa_evidence(image_path, question)`** → returns:
+
+| Output | Description |
+|--------|-------------|
+| `answer` | Generated text answer from Model 1 |
+| `heatmap_overlay` | PIL Image: attention heatmap blended on the satellite image |
+| `top_regions` | List of `(row, col, attention_score)` for the top-5 most-attended 16×16 patches |
+| `confidence` | Mean attention concentration (higher = more focused / confident) |
+| `description` | Natural-language spatial grounding string, e.g. *"Model focused on the north-east quadrant (attention: 0.78), consistent with the detected river channel"* |
+
+**Process:**
+1. Load Model 1 from Drive
+2. Register ViT attention hook
+3. Run inference → capture attention map + generated answer
+4. Post-process: generate overlay, identify top attended regions, compute spatial description
+5. Save overlay plot to Drive
+
+---
+
+### Section 5: Evidence Generator — Model 2 (Cross-Modal Fusion)
+
+**`fusion_evidence(optical_path, sar_path, question)`** → returns:
+
+| Output | Description |
+|--------|-------------|
+| `answer` | Generated text from Model 2 |
+| `optical_heatmap` | Attention overlay on the optical image |
+| `sar_heatmap` | Attention overlay on the SAR image |
+| `modality_contribution` | `{"optical": 0.63, "sar": 0.37}` — ratio of L2 norms of the 32 optical vs 32 SAR Q-Former query tokens |
+| `dominant_sensor` | `"optical"` or `"sar"` — whichever contributed more |
+| `description` | *"The model relied primarily on optical data (63%) for spectral features, supplemented by SAR (37%) for structural/texture confirmation. Attention concentrated on the central-south region of both images."* |
+
+**Process:**
+1. Load Model 2 from Drive
+2. Register ViT attention hooks on **both** passes through the shared ViT (one for optical, one for SAR)
+3. Run inference → capture both attention maps + Q-Former query outputs
+4. Compute modality contribution: `‖opt_query‖₂ / (‖opt_query‖₂ + ‖sar_query‖₂)`
+5. Generate dual overlay side-by-side plot + pie chart of modality contribution
+6. Save to Drive
+
+---
+
+### Section 6: Evidence Generator — Model 3 (Change Detection)
+
+**`change_evidence(t1_path, t2_path, question)`** → returns:
+
+| Output | Description |
+|--------|-------------|
+| `answer` | Generated text from Model 3 |
+| `change_mask` | Binary PIL Image: white = changed, black = unchanged |
+| `change_overlay` | PIL Image: red contours + bounding boxes overlaid on T2 |
+| `change_percentage` | Float: percentage of image area that changed |
+| `bounding_boxes` | List of `[y1, x1, y2, x2]` normalised coordinates of change regions |
+| `attention_heatmaps` | Tuple of (T1 heatmap, T2 heatmap) attention overlays |
+| `description` | *"Detected urbanisation change covering 23% of the scene. 2 distinct change regions identified in the north-west and central sectors. The T2 attention map shows significantly higher activation in the newly urbanised areas."* |
+
+**Process:**
+1. Load Model 3 from Drive
+2. **Radiometric change mask:**
+   - Load T1 and T2 as normalised numpy arrays
+   - Compute pixel-wise absolute difference: `|T2 - T1|`
+   - Convert to grayscale difference → apply Gaussian blur (σ=2) to suppress noise
+   - Otsu's adaptive threshold → binary change mask
+   - Morphological cleanup: `cv2.morphologyEx(CLOSE, kernel=5×5)` to fill small holes
+3. **Contour + bounding box extraction:**
+   - `cv2.findContours()` on the binary mask
+   - Filter by minimum area (> 1% of image) to suppress noise
+   - `cv2.boundingRect()` for each significant contour
+4. **ViT attention hooks:** Capture T1 and T2 attention maps through the same mechanism as Section 3
+5. **Change percentage:** `changed_pixels / total_pixels × 100`
+6. Generate overlay: T2 image with red contour outlines + green bounding boxes + attention heatmaps
+7. Save all artifacts to Drive
+
+---
+
+### Section 7: Unified Evidence Interface
+
+**`generate_evidence(model_type, ...)`** — single unified entry point:
+
+```python
+def generate_evidence(model_type, question, **kwargs):
+    """
+    Unified evidence grounding interface for all SatQuery AI models.
+    
+    Args:
+        model_type: "vqa" | "crossmodal" | "change_detect"
+        question: Natural language question
+        **kwargs: Model-specific inputs
+            - vqa: image_path
+            - crossmodal: optical_path, sar_path
+            - change_detect: t1_path, t2_path
+    
+    Returns:
+        EvidenceResult: dataclass with answer, visual_artifacts, 
+                        regions, description, confidence
+    """
+```
+
+Returns a standardised `EvidenceResult` dataclass that the future Agent (Model 5) can consume uniformly regardless of which expert model was invoked.
+
+---
+
+### Section 8: Visualisation — Evidence Gallery
+
+Generates a comprehensive multi-panel evidence gallery:
+
+1. **VQA Evidence Panel** (2 examples): Image + heatmap overlay + answer + spatial description
+2. **Cross-Modal Evidence Panel** (2 examples): Optical heatmap + SAR heatmap + pie chart + answer
+3. **Change Detection Evidence Panel** (2 examples): T1 + T2 + change mask + bounding box overlay + attention comparison
+
+All saved to `Model4_Grounding/results/evidence_gallery.png`
+
+---
+
+### Section 9: Export & Report
+
+- Save `evidence_config.json` with all paths and model metadata
+- Save `grounding_report.md` training-free report documenting:
+  - Evidence generation methodology
+  - Example outputs for each model type
+  - Grounding quality assessment (attention focus, change detection accuracy)
+- Save all individual evidence artifacts to `Model4_Grounding/results/`
+
+---
+
+### Section 10: Interactive Grounding Demo
+
+Interactive demo cells where you can:
+1. Upload any satellite image → get VQA answer + attention heatmap
+2. Upload optical + SAR pair → get fusion answer + dual heatmaps + modality contribution
+3. Upload T1 + T2 pair → get change detection answer + change mask + bounding boxes
+
+Uses the test images from Models 1–3 dataset directories on Drive as defaults.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Verify all 3 model checkpoints load successfully from Drive
+- Verify attention hook captures valid (non-zero, non-uniform) spatial maps
+- Verify change mask produces sensible binary output (not all-black or all-white)
+- Verify `generate_evidence()` returns complete `EvidenceResult` for all 3 model types
+
+### Manual Verification
+- Visual inspection of heatmap overlays (attention should concentrate on semantically relevant regions)
+- Change mask should align with synthetic T2 modifications
+- Modality contribution ratios should be plausible (not 99/1)

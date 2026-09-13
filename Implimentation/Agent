@@ -1,0 +1,109 @@
+# SatQuery AI — LangGraph Agentic Orchestration Layer
+
+## Context & Alignment with Tech Stack
+
+Per the project technology stack:
+* **Orchestration Framework**: **LangGraph** (`StateGraph`, conditional edges, stateful multi-agent flow)
+* **Deep Learning & Vision-Language**: **PyTorch**, **Transformers**, **PEFT** (BLIP-2 QLoRA models 1, 2, 3)
+* **Geospatial Processing**: **Rasterio**, **PIL**, **OpenCV**
+* **Future Layers**: **FastAPI** (REST backend), **PostgreSQL** (metadata & session store), **ReactJS + Leaflet** (geospatial web UI)
+
+This task implements the **LangGraph-native Agentic Orchestration Layer**, completely decoupled from any UI, ready to be served by FastAPI or run standalone.
+
+---
+
+## 1. LangGraph State Machine Architecture
+
+```mermaid
+graph TD
+    Start([__start__]) --> RouterNode[Router Node<br/>Intent & Modality Classifier]
+    
+    RouterNode -->|route == 'vqa'| VQANode[VQA Node<br/>Model 1 + Attention Grounding]
+    RouterNode -->|route == 'crossmodal'| CrossModalNode[Cross-Modal Node<br/>Model 2 + Dual-Stream Grounding]
+    RouterNode -->|route == 'change_detect'| ChangeNode[Change Detection Node<br/>Model 3 + Radiometric Mask & BBoxes]
+    RouterNode -->|route == 'geospatial_qa'| KnowledgeNode[Geospatial Knowledge Node<br/>Domain Theory & Satellite Specs]
+
+    VQANode --> EvidenceNode[Evidence Grounding Node<br/>Spatial Attribution & Artifacts]
+    CrossModalNode --> EvidenceNode
+    ChangeNode --> EvidenceNode
+    KnowledgeNode --> SynthesizerNode
+
+    EvidenceNode --> SynthesizerNode[Synthesizer Node<br/>Final Response Formulation]
+    SynthesizerNode --> EndNode([__end__])
+```
+
+---
+
+## 2. Component Design
+
+### A. Graph State (`SatQueryState`)
+A type-annotated TypedDict tracking the entire lifecycle of a query:
+```python
+class SatQueryState(TypedDict):
+    query: str
+    image1: Optional[Any]                     # PIL Image or filepath or Rasterio dataset
+    image2: Optional[Any]                     # PIL Image or filepath
+    raster_metadata: Optional[Dict[str, Any]] # Geospatial metadata via Rasterio (CRS, bounds, transform)
+    image_count: int
+    routing_decision: str                     # "vqa" | "crossmodal" | "change_detect" | "geospatial_qa"
+    routing_confidence: float
+    routing_reason: str
+    raw_answer: str
+    evidence_artifacts: Dict[str, Any]        # Overlays, heatmaps, bounding boxes, sensor ratios
+    explanation: str
+    final_response: str
+    messages: List[Dict[str, str]]            # Multi-turn history
+```
+
+### B. Graph Nodes
+1. **`router_node(state)`**:
+   - Inspects `query` semantics + visual inputs + image count.
+   - Outputs `routing_decision`, `routing_confidence`, and `routing_reason`.
+2. **`vqa_node(state)`**:
+   - Executes Model 1 (Single-Image RS VQA) via dynamically loaded LoRA BLIP-2.
+3. **`crossmodal_node(state)`**:
+   - Executes Model 2 (Dual-Stream Optical + SAR) via `DualStreamBLIP2`.
+4. **`change_detect_node(state)`**:
+   - Executes Model 3 (Bi-Temporal Change Detection) via `DualStreamBLIP2`.
+5. **`geospatial_knowledge_node(state)`**:
+   - Direct Earth Observation domain reasoning (Sentinel-2, SAR physics, NDVI) when no imagery is provided.
+6. **`evidence_grounding_node(state)`**:
+   - Invokes the Model 4 Grounding Engine:
+     - ViT attention extraction for spatial attribution
+     - Q-Former query token $L_2$ norm ratio for sensor contribution
+     - Radiometric differencing + Otsu thresholding for change bounding boxes
+7. **`synthesizer_node(state)`**:
+   - Formulates the final structured response with answer, confidence, spatial attribution, and evidence overlays.
+
+### C. Geospatial Enhancement with `Rasterio`
+- Helper module `geospatial_utils.py` that uses `rasterio` to inspect GeoTIFF satellite imagery (CRS, bounds, pixel dimensions, spectral bands), injecting spatial ground truth into the agent state.
+
+### D. Separation of Concerns
+- **Core Orchestrator**: `satquery_agent.py` — Pure LangGraph compiled workflow (`app = workflow.compile()`).
+- **Callable Interface**:
+  ```python
+  from satquery_agent import satquery_app
+
+  output = satquery_app.invoke({
+      "query": "What changed between these two images?",
+      "image1": "path/to/t1.tif",
+      "image2": "path/to/t2.tif"
+  })
+  print(output["final_response"])
+  # output["evidence_artifacts"] contains PIL overlay images
+  ```
+- **Colab Executable**: `SatQ_LangGraph_Agent.ipynb` (runs the LangGraph flow in Colab with step-by-step node execution traces).
+- **FastAPI / UI Readiness**: Clean JSON-serializable outputs ready for FastAPI endpoint mounting and ReactJS/Leaflet rendering.
+
+---
+
+## 3. Verification Plan
+
+1. **Automated Graph Unit Tests**:
+   - Verify LangGraph compilation: `workflow.compile()`.
+   - Test all 4 graph execution branches (`geospatial_qa`, `vqa`, `crossmodal`, `change_detect`).
+   - Validate that `evidence_artifacts` are properly generated and attached to the state.
+2. **Rasterio metadata extraction test**:
+   - Verify reading raster headers and geospatial transforms.
+3. **State persistence test**:
+   - Ensure the LangGraph state flows seamlessly across nodes without memory leaks or missing keys.

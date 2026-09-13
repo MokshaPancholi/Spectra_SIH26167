@@ -1,0 +1,1602 @@
+[
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0002.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0020.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "prediction": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lane with surrounding paved surfaces. Reflectance pattern indicates road infrastructure with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates road infrastructure with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_01.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0031.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_04.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding perennial crops.",
+    "prediction": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_01.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0026.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_09.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_05.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals residential areas with housing developments, roads, and neighbourhood patterns through radar backscatter patterns. The radar signature indicates houses with texture typical of urban areas.",
+    "prediction": "This SAR image reveals residential areas with housing developments, roads, and neighbourhood patterns through radar backscatter patterns. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. Reflectance patterns indicate houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0005.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover. Key features: tree canopy, dense vegetation, forest cover.",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0052.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas.",
+    "prediction": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0004.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0047.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is",
+    "modality": "sar",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/sar/sar_0082.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas.",
+    "prediction": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_06.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas. The scene is dominated by grassland with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Rating: Moderate. This scene is dominated by grassland with open green areas. Key features include natural vegetation, natural grassland. Rating: Moderate. This scene is dominated by natural vegetation with natural grassland. Key features include natural vegetation, natural grassland. Rating: Moderate. This scene is dominated by natural vegetation with natural grassland. Key features include natural vegetation, natural grassland. Rating:",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_01.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is industrial buildings, characteristic of industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "The dominant feature is industrial buildings, characteristic of industrial zones with large buildings, warehouses, and manufacturing facilities. Key features include industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large structures. Key features: industrial buildings, large",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0019.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas.",
+    "prediction": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0070.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This satellite image shows major road infrastructure with highway corridors. Key features include highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_03.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0019.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays agricultural fields with seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_09.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features: houses, residential buildings, urban roads. Key features: houses, residential buildings. Key features: houses, residential buildings. Key features: residential houses. Key features: urban roads. Key features: residential houses. Key features: urban roads. Key features: residential houses. Key features: urban roads. Key features: residential houses. Key features: urban roads. Key features: residential houses. Key features: urban roads",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_00.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grazing land, characteristic of pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "The dominant feature is crop rows, characteristic of agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key features include crop rows, planting patterns, agricultural fields. Key",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_01.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains large water bodies including seas, lakes, coastal areas, and reservoirs, with open water being prominent.",
+    "prediction": "Yes, the image clearly shows water features. It contains large water body with surrounding open water. Answer",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0030.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Key feature: Natural vegetation. Key feature: Grassland. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation. Key feature: Natural vegetation",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_07.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key feature: house. Key",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_08.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays industrial zones with large buildings. This falls under the urban land-cover category.",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0084.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "Yes, the image clearly shows water features. Key features include open water",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0024.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas.",
+    "prediction": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key feature: open water. Key feature: water body. Key feature: water body. Key feature: open water. Key feature: lake surface. Key feature: water body. Key feature: open water. Key feature: lake surface. Key feature: water body. Key feature: open water. Key feature: lake surface. Key feature: water body. Key feature: lake surface. Key feature: water body. Key feature",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_05.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_03.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays industrial zones with large buildings. This falls under the urban land-cover category.",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0042.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals pastoral grasslands used for livestock grazing with open meadows through radar backscatter patterns. The radar signature indicates grazing land with texture typical of agricultural areas.",
+    "prediction": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0064.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays grasslands and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0052.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features: highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_01.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays dense forest cover with continuous tree canopy and woodland areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays dense forest cover with continuous tree canopy. This falls under the vegetation land-cover category.",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_07.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals agricultural fields with annual crops showing seasonal planting patterns through radar backscatter patterns. The radar signature indicates crop rows with texture typical of agricultural areas.",
+    "prediction": "This SAR image reveals pastoral grasslands used for livestock grazing with open meadows through radar backscatter patterns. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates pastoral land with texture typical of agricultural areas. The radar signature indicates grazing land with texture typical of agricultural areas. The radar signature indicates pastoral land with texture typical of agricultural areas. The radar",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0037.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0081.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0069.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_09.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "No significant water body is visible. The scene is dominated by",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_03.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals large water bodies including seas, lakes, coastal areas, and reservoirs through radar backscatter patterns. The radar signature indicates open water with texture typical of water areas.",
+    "prediction": "This SAR image reveals dense forest cover with continuous tree canopy and woodland areas through radar backscatter patterns. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. Reflectance patterns indicate tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0029.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0072.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by agricultural fields with annual crops showing seasonal planting patterns.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_04.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays dense forest cover with continuous tree canopy and woodland areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/sar/sar_0082.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "prediction": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lane with surrounding paved surfaces. Reflectance pattern indicates road infrastructure with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates road infrastructure with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces. Reflectance pattern indicates highway lanes with surrounding paved surfaces.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_03.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation, forest cover. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy.",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_06.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0046.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_03.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0015.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with residential areas with housing developments, roads, and neighbourhood patterns. Reflectance patterns indicate houses with surrounding neighbourhood layout.",
+    "prediction": "The optical image shows spectral signatures consistent with residential areas. Reflect",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_07.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays residential areas with houses, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_03.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays residential areas with houses, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_00.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover.",
+    "prediction": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key results: This satellite image shows dense forest cover with continuous tree canopy. Key features include tree canopy, dense vegetation. Key results: This satellite image shows dense forest cover with continuous tree canopy. Key features include tree canopy, dense vegetation. Key results: This satellite image shows dense forest cover with continuous tree canopy. Key features include tree canopy, dense vegetation. Key results: This satellite image shows dense forest cover with continuous tree canopy. Key features include tree canopy",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_06.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals grasslands and herbaceous vegetation with open green areas through radar backscatter patterns. The radar signature indicates grassland with texture typical of vegetation areas.",
+    "prediction": "This SAR image reveals dense forest cover with continuous tree canopy and woodland areas through radar backscatter patterns. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. Reflectance patterns indicate tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature indicates tree canopy with texture typical of vegetation areas. The radar signature",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0006.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_05.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features include highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_00.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals river channels and riparian zones with flowing water and bank vegetation through radar backscatter patterns. The radar signature indicates water channel with texture typical of water areas.",
+    "prediction": "This SAR image reveals river channels and riparian zones with flowing water and bank vegetation through radar backscatter patterns. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. Reflectance patterns indicate water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0055.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays industrial zones with large buildings, warehouses, and manufacturing facilities. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays industrial zones with large buildings, warehouses, and manufacturing facilities. This falls under the urban land-cover category. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance pattern indicates industrial buildings with surrounding factory complexes. Key features include industrial buildings, warehouses, large structures. Reflectance pattern indicates industrial buildings with surrounding factory complexes. Key features include industrial buildings, warehouses, large structures. Reflectance pattern indicates industrial buildings with surrounding factory complexes. Key features include industrial buildings, warehouses, large structures. Reflectance pattern indicates industrial buildings with surrounding factory complexes. Key features include industrial buildings, warehouses, large structures. Reflectance pattern",
+    "modality": "optical",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/optical/Industrial_00.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0021.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_02.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays grasslands and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays residential areas with housing developments. This falls under the urban land-cover category.",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0016.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with grasslands and herbaceous vegetation with open green areas. Reflectance patterns indicate grassland with surrounding open meadows.",
+    "prediction": "The optical image shows spectral signatures consistent with grasslands and herbaceous vegetation with open green areas. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflectance patterns indicate grassland with surrounding open meadows. Reflect",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_07.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays agricultural fields with seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0043.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays residential areas. Reflectance patterns indicate houses with",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_09.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0081.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features include highway lanes, road infrastructure. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway lane. Key feature is road infrastructure. Key feature is highway",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_05.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This satellite image shows major road infrastructure with highway corridors. Key features include highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_08.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0041.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent. This falls under the water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_07.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_04.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0087.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation.",
+    "prediction": "This SAR image shows river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0055.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays major road infrastructure with highway corridors and transportation networks. This falls under the infrastructure land-cover category.",
+    "prediction": "The image primarily displays residential areas with housing developments. This falls under the urban land-cover category.",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0091.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0054.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0000.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0045.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with river channels and riparian zones with flowing water and bank vegetation. Reflectance patterns indicate water channel with surrounding flowing water.",
+    "prediction": "The optical image shows spectral signatures consistent with river channels and riparian zones with flowing water and bank vegetation. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate river channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding flowing water. Reflectance patterns indicate water channel with surrounding",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_09.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation.",
+    "prediction": "This satellite image shows river channels and riparian vegetation. Key features include water channel, river banks, natural vegetation. Key features: water channel, river banks, natural vegetation. Key features: water channel, river banks, natural vegetation. Key features: water channel, river banks, natural vegetation. Key features: water channel, river banks, natural vegetation. Key features: water channel, river banks, natural vegetation.",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_00.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields.",
+    "prediction": "This SAR image shows industrial zones with large buildings, warehouses, and manufacturing facilities. Key features include industrial buildings, warehouses, large structures. Key features include industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0042.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "No significant water body is visible. Key features include houses, residential buildings, urban roads. Rating: Moderate. This scene is dominated by residential areas with housing developments. Key features include houses, residential",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0031.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "No significant water body is visible. The scene is dominated by major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Rating: Moderate.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_05.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with industrial zones with large buildings, warehouses, and manufacturing facilities. Reflectance patterns indicate industrial buildings with surrounding factory complexes.",
+    "prediction": "The optical image shows spectral signatures consistent with industrial zones with large buildings, warehouses, and manufacturing facilities. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory",
+    "modality": "optical",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/optical/Industrial_02.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover.",
+    "prediction": "This satellite image shows grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Reflectance patterns indicate grassland with surrounding open meadows. Key features: grassland, natural vegetation, herbaceous cover. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows.",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_08.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_09.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with pastoral grasslands used for livestock grazing with open meadows. Reflectance patterns indicate grazing land with surrounding livestock fields.",
+    "prediction": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_08.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals industrial zones with large buildings, warehouses, and manufacturing facilities through radar backscatter patterns. The radar signature indicates industrial buildings with texture typical of urban areas. The radar signature indicates industrial buildings with texture typical of urban areas. Reflectance patterns indicate industrial buildings with texture typical of urban areas. The radar signature indicates industrial buildings with texture typical of urban areas. Reflectance patterns indicate industrial buildings with texture typical of urban areas. The radar signature indicates industrial buildings with texture typical of urban areas. The radar signature indicates industrial buildings with texture typical of urban areas. The radar signature indicates industrial buildings with texture typical of urban areas. The radar",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0062.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Key features include natural vegetation, grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is grassland. Key feature",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_06.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas.",
+    "prediction": "This satellite image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, natural surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: open water, lake surface. Key features: water body, natural surface. Key features: water body, natural surface. Key features: open water, lake surface. Key features: water body, natural surface. Key features",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_04.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent. This falls under the water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_04.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0034.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent. This falls under the water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_05.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads.",
+    "prediction": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features: houses, residential buildings. Key features: residential houses. Key: satellite image. Reflectance patterns indicate houses with surrounding neighbourhood layout. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: houses, residential buildings. Key features: satellite image. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: residential houses, residential buildings. Key features: satellite image. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: residential houses, residential buildings. Key",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_07.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_01.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals agricultural fields with annual crops showing seasonal planting patterns through radar backscatter patterns. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. Reflectance patterns indicate crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates crop rows with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0090.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body.",
+    "prediction": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_02.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This SAR image shows industrial zones with large buildings, warehouses, and manufacturing facilities. Key features include industrial buildings, warehouses, large structures. Key features include industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features: industrial buildings, warehouses, large structures. Key features",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0062.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays grasslands and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0054.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0018.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation.",
+    "prediction": "Yes, this SAR image shows water channel and river banks. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel,",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0069.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0055.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature:",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_06.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities. Key features include industrial buildings, warehouses, large structures. Key elements include industrial buildings, warehouses, large structures. Key results: No significant water body visible. Key features: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses, large structures. Key results: Industrial buildings, warehouses",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0073.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body.",
+    "prediction": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_04.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays river channels and riparian zones with flowing water and bank vegetation. This falls under the water land-cover category.",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_02.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by agricultural fields with annual crops showing seasonal planting patterns.",
+    "prediction": "No significant water body is visible. The scene is dominated by agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields. Reflectance patterns indicate crop rows with surrounding seasonal vegetation. Key features: crop rows, planting patterns, agricultural fields. Reflectance pattern indicates vegetation with surrounding seasonal crops. Key features: crop rows, planting patterns, agricultural fields. Reflectance pattern indicates vegetation with seasonal crops. Key features: crop rows, planting patterns, agricultural fields. Reflectance pattern indicates vegetation with seasonal crops. Key features: crop rows, planting patterns, agricultural fields. Reflectance pattern indicates vegetation with seasonal",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_03.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0061.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal features. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature:",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_09.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This satellite image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features include highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features:",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_07.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0033.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals river channels and riparian zones with flowing water and bank vegetation through radar backscatter patterns. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0028.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0004.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0087.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with pastoral grasslands used for livestock grazing with open meadows. Reflectance patterns indicate grazing land with surrounding livestock fields.",
+    "prediction": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard trees with",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_04.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_03.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_00.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0057.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "No significant water body is visible. The",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0048.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "Yes. This falls under the agricultural sector with orchard trees prominent. Key features include orchard trees, permanent plantations, vineyard rows. Key responses include orchard trees, permanent plantations, vineyard rows. Key features include orchard trees, permanent plantations, vineyard rows. Key",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0068.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation.",
+    "prediction": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0069.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_04.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0066.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with dense forest cover with continuous tree canopy and woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas.",
+    "prediction": "The optical image shows spectral signatures consistent with dense forest cover with continuous tree canopy and woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_06.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays industrial zones with large buildings, warehouses, and manufacturing facilities. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays industrial zones with large buildings. This falls under the urban land-cover category.",
+    "modality": "optical",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/optical/Industrial_01.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is industrial buildings, characteristic of industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0048.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0069.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows. The scene is dominated by grazing land with open meadows. Key features include grazing land, open meadows, pastoral areas. Reflectance patterns indicate grazing land with surrounding livestock fields. Reflectance patterns indicate open meadows with surrounding livestock fields. Key features: grazing land, open meadows, pastoral areas. Reflectance patterns indicate grazing land with surrounding livestock fields. Key features: grazing land, open meadows, pastoral areas. Reflectance patterns indicate grazing land with surrounding livestock fields. Key features: grazing land, open me",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_08.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with pastoral grasslands used for livestock grazing with open meadows. Reflectance patterns indicate grazing land with surrounding livestock fields.",
+    "prediction": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with surrounding perennial crops. Reflectance patterns indicate orchard trees with",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_06.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body.",
+    "prediction": "The optical image shows spectral signatures consistent with large water bodies including seas, lakes, coastal areas, and reservoirs. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate open water with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with surrounding water body. Reflectance patterns indicate lake surface with",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_01.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0046.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays agricultural fields with seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0009.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by agricultural fields with annual crops showing seasonal planting patterns.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0032.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays residential areas with housing developments, roads, and neighbourhood patterns. This falls under the urban land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0024.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover.",
+    "prediction": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features",
+    "modality": "sar",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/sar/sar_0059.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "Yes, the image clearly shows water features. It contains large water body with surrounding open water. Answer",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0046.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban roads. Key features include houses, residential buildings, urban",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_01.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0010.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grazing land, characteristic of pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "The dominant feature is tree canopy, characteristic of dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is tree canopy. Key feature is",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0046.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas.",
+    "prediction": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0080.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_06.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent. This falls under the water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water water",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_06.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays dense forest cover with continuous tree canopy and woodland areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/sar/sar_0060.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "No significant water body is visible. The scene is dominated by dense forest cover with continuous tree canopy and woodland areas. The scene is dominated by tree canopy with continuous vegetation cover. Key features include tree canopy, dense vegetation, forest cover. Reflectance patterns indicate tree canopy with surrounding woodland areas. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation, forest cover. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation, forest cover. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation, forest cover. Reflect",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_03.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with residential areas with housing developments, roads, and neighbourhood patterns. Reflectance patterns indicate houses with surrounding neighbourhood layout.",
+    "prediction": "The optical image shows spectral signatures consistent with residential areas. Reflect",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_08.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains large water bodies including seas, lakes, coastal areas, and reservoirs, with open water being prominent.",
+    "prediction": "Yes, the image clearly shows water features. Key features include open water",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0076.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays major road infrastructure with highway corridors and transportation networks. This falls under the infrastructure land-cover category.",
+    "prediction": "The image primarily displays highway infrastructure with highway lanes and road infrastructure. This falls under the infrastructure land-cover category.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_09.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "Yes, the image clearly shows water features. Key features include open water",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0006.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "Yes, the image clearly shows water features. It contains large water body with surrounding open water. Answer",
+    "modality": "sar",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/sar/sar_0077.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays pastoral grasslands used for livestock grazing with open meadows. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/optical/Pasture_05.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is industrial buildings, characteristic of industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features include highway lanes, road infrastructure. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway lane. Key feature is highway",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0038.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grazing land, characteristic of pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0039.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "The dominant feature is grassland, characteristic of grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Key features include natural vegetation, grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is natural vegetation. Key feature is grassland. Key feature is natural vegetation. Key feature is grassland. Key feature",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_02.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "prediction": "The image primarily displays large water bodies including seas, lakes, coastal areas, and reservoirs. This falls under the water land-cover category.",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0053.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by dense forest cover with continuous tree canopy and woodland areas.",
+    "prediction": "No significant water body is visible. The scene is",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_00.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays dense forest cover with continuous tree canopy and woodland areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays dense forest cover with continuous tree canopy. This falls under the vegetation land-cover category.",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_03.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals river channels and riparian zones with flowing water and bank vegetation through radar backscatter patterns. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. Reflectance patterns indicate water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The radar signature indicates water channel with texture typical of water areas. The",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0047.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_08.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0095.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is crop rows, characteristic of agricultural fields with annual crops showing seasonal planting patterns.",
+    "prediction": "Orchard trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features include orchard trees, permanent plantations, vineyard rows. Key features include orchard trees, permanent plantations, vineyard rows. Key features include orchard trees, permanent plantations, vineyard rows. Key features include orchard trees, permanent plantations, vineyard",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_04.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0086.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "Yes, the image clearly shows water features. It contains river channels and riparian zones with flowing water and bank vegetation, with water channel being prominent.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0088.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is houses, characteristic of residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0078.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "prediction": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate road infrastructure with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_05.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0071.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is industrial buildings, characteristic of industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0023.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0064.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs.",
+    "prediction": "The dominant feature is open water, characteristic of large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature: lake surface. Key feature: open water. Key feature:",
+    "modality": "optical",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/optical/SeaLake_02.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays major road infrastructure with highway corridors and transportation networks. This falls under the infrastructure land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0031.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0002.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by pastoral grasslands used for livestock grazing with open meadows.",
+    "prediction": "No significant water body is visible. Scene is dominated by permanent crop plantations such as orchards",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0095.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_05.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors.",
+    "prediction": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0063.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by grasslands and herbaceous vegetation with open green areas.",
+    "prediction": "No significant water body is visible. Key features include natural vegetation, natural grassland. Rating: Moderate. This scene is dominated by",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_06.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "prediction": "The optical image shows spectral signatures consistent with major road infrastructure with highway corridors and transportation networks. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate road infrastructure with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate road infrastructure with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces. Reflectance patterns indicate highway lanes with surrounding paved surfaces.",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_07.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by industrial zones with large buildings, warehouses, and manufacturing facilities.",
+    "prediction": "Yes, the image",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0023.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields.",
+    "prediction": "This SAR image shows agricultural fields with annual crops showing seasonal planting patterns. Key features include crop rows, planting patterns, agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features: agricultural fields. Key features: crop rows, planting patterns. Key features:",
+    "modality": "sar",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0040.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads.",
+    "prediction": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features: houses, residential buildings. Key features: residential houses. Key: satellite image. Reflectance patterns indicate houses with surrounding neighbourhood layout. Key features: residential houses, urban roads. Reflectance patterns indicate houses with surrounding neighbourhood layout. Key features: residential houses, urban roads. Reflectance patterns indicate houses with surrounding neighbourhood layout. Key features: residential houses, urban roads. Reflectance patterns indicate houses with surrounding neighbourhood layout. Key features: residential houses, urban roads. Reflectance patterns indicate houses with",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_04.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_08.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards, or fruit trees.",
+    "prediction": "No significant water body is visible. The scene is dominated by permanent crop plantations such as orchards, vineyards",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_08.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays grasslands and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays permanent crop plantations such as orchards, vineyards, or fruit trees. This falls under the agricultural land-cover category.",
+    "modality": "sar",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/sar/sar_0018.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays agricultural fields with annual crops showing seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "prediction": "The image primarily displays agricultural fields with seasonal planting patterns. This falls under the agricultural land-cover category.",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_08.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays grasslands and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays grassland and herbaceous vegetation with open green areas. This falls under the vegetation land-cover category.",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_02.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0083.png"
+  },
+  {
+    "question": "What type of land cover is shown in this image?",
+    "ground_truth": "The image primarily displays dense forest cover with continuous tree canopy and woodland areas. This falls under the vegetation land-cover category.",
+    "prediction": "The image primarily displays dense forest cover with continuous tree canopy. This falls under the vegetation land-cover category. Reflectance patterns indicate tree canopy with surrounding woodland areas. This falls under the vegetation land-cover category.",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_02.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover.",
+    "prediction": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Key features include tree canopy, dense vegetation. Key features include tree canopy, dense vegetation. Key feature: tree canopy. Key response: forest cover. Key feature: tree canopy. Key response: forest cover. Key feature: tree canopy. Key response: tree canopy. Key feature: tree canopy. Key response: forest cover. Key feature: tree canopy. Key response: forest cover. Key feature: tree canopy. Key response: forest cover. Key feature: tree canopy. Key response: forest cover",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_07.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover.",
+    "prediction": "This satellite image shows dense forest cover with continuous tree canopy and woodland areas. Key features include tree canopy, dense vegetation, forest cover. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: forest cover, tree canopy. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: forest cover, tree canopy. Reflectance patterns indicate tree canopy with surrounding woodland areas. Key features: tree canopy, dense vegetation. Reflect",
+    "modality": "optical",
+    "cls": "Forest",
+    "image_path": "/content/rs_vqa_data/optical/Forest_04.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads.",
+    "prediction": "This satellite image shows residential areas with housing developments, roads, and neighbourhood patterns. Key features include houses, residential buildings, urban roads. Key features: houses, residential buildings. Key features: residential houses. Key: satellite image. Reflectance patterns indicate houses with surrounding neighbourhood layout. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: houses, residential buildings. Key features: satellite image. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: satellite image. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features: satellite image. Reflectance patterns indicate residential houses with surrounding neighbourhood layout. Key features",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_06.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with agricultural fields with annual crops showing seasonal planting patterns. Reflectance patterns indicate crop rows with surrounding seasonal vegetation.",
+    "prediction": "The optical image shows spectral signatures consistent with permanent crop plantations such as orchards, vineyards, or fruit trees. Reflectance patterns indicate orchard trees with surrounding permanent crops. Reflectance patterns indicate orchard",
+    "modality": "optical",
+    "cls": "AnnualCrop",
+    "image_path": "/content/rs_vqa_data/optical/AnnualCrop_07.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation.",
+    "prediction": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features: water channel, river banks, riparian vegetation. Key features",
+    "modality": "sar",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/sar/sar_0088.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals residential areas with housing developments, roads, and neighbourhood patterns through radar backscatter patterns. The radar signature indicates houses with texture typical of urban areas.",
+    "prediction": "This SAR image reveals permanent crop plantations such as orchards, vineyards, or fruit trees through radar backscatter patterns. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates orchard trees with texture typical of agricultural areas. The radar signature indicates",
+    "modality": "sar",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/sar/sar_0045.png"
+  },
+  {
+    "question": "What information can you extract from this SAR image?",
+    "ground_truth": "This SAR image reveals major road infrastructure with highway corridors and transportation networks through radar backscatter patterns. The radar signature indicates highway lanes with texture typical of infrastructure areas.",
+    "prediction": "This SAR image reveals residential areas with housing developments, roads, and neighbourhood patterns through radar backscatter patterns. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. Reflectance patterns indicate houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban areas. The radar signature indicates houses with texture typical of urban",
+    "modality": "sar",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/sar/sar_0091.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks.",
+    "prediction": "The dominant feature is highway lanes, characteristic of major road infrastructure with highway corridors and transportation networks. Key features include highway lanes, road infrastructure, transportation corridors. Key features: highway lanes, road infrastructure. Key features: highway lanes, road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key features: road infrastructure. Key features: highway lanes. Key",
+    "modality": "optical",
+    "cls": "Highway",
+    "image_path": "/content/rs_vqa_data/optical/Highway_09.png"
+  },
+  {
+    "question": "Describe the spectral characteristics in this optical image.",
+    "ground_truth": "The optical image shows spectral signatures consistent with industrial zones with large buildings, warehouses, and manufacturing facilities. Reflectance patterns indicate industrial buildings with surrounding factory complexes.",
+    "prediction": "The optical image shows spectral signatures consistent with industrial zones with large buildings, warehouses, and manufacturing facilities. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory complexes. Reflectance patterns indicate industrial buildings with surrounding factory",
+    "modality": "optical",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/optical/Industrial_04.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover.",
+    "prediction": "This satellite image shows grasslands and herbaceous vegetation with open green areas. Key features include grassland, natural vegetation, herbaceous cover. Reflectance patterns indicate grassland with surrounding open meadows. Key features: grassland, natural vegetation, herbaceous cover. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows. Key features: natural vegetation, grassland. Reflectance patterns indicate grassland with surrounding open meadows.",
+    "modality": "optical",
+    "cls": "HerbaceousVegetation",
+    "image_path": "/content/rs_vqa_data/optical/HerbaceousVegetation_06.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/sar/sar_0079.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows industrial zones with large buildings, warehouses, and manufacturing facilities. Key features include industrial buildings, warehouses, large structures.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Industrial",
+    "image_path": "/content/rs_vqa_data/sar/sar_0048.png"
+  },
+  {
+    "question": "Is there any water body visible in this image?",
+    "ground_truth": "No significant water body is visible. The scene is dominated by residential areas with housing developments, roads, and neighbourhood patterns.",
+    "prediction": "No significant residential buildings are visible. The scene",
+    "modality": "optical",
+    "cls": "Residential",
+    "image_path": "/content/rs_vqa_data/optical/Residential_07.png"
+  },
+  {
+    "question": "What is the dominant feature in this scene?",
+    "ground_truth": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation.",
+    "prediction": "The dominant feature is water channel, characteristic of river channels and riparian zones with flowing water and bank vegetation. Key features include water channel, river banks, riparian vegetation. Key features include water channel, river banks, riparian vegetation. Key feature is water channel. Key feature is water channel. Key feature is river bank. Key feature is water channel. Key feature is river channel. Key feature is water channel. Key feature is river bank. Key feature is water channel. Key feature is river channel. Key feature is water channel. Key feature is river bank. Key feature is water channel. Key feature is river channel. Key feature",
+    "modality": "optical",
+    "cls": "River",
+    "image_path": "/content/rs_vqa_data/optical/River_09.png"
+  },
+  {
+    "question": "Describe the main features visible in this satellite image.",
+    "ground_truth": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows.",
+    "prediction": "This satellite image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "optical",
+    "cls": "PermanentCrop",
+    "image_path": "/content/rs_vqa_data/optical/PermanentCrop_00.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas.",
+    "prediction": "This SAR image shows large water bodies including seas, lakes, coastal areas, and reservoirs. Key features include open water, lake surface, coastal areas. Key features include open water, lake surface, coastal areas. Key features: open water, lake surface, coastal areas. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features: water body, lake surface. Key features",
+    "modality": "sar",
+    "cls": "SeaLake",
+    "image_path": "/content/rs_vqa_data/sar/sar_0087.png"
+  },
+  {
+    "question": "Describe the main features visible in this SAR image.",
+    "ground_truth": "This SAR image shows pastoral grasslands used for livestock grazing with open meadows. Key features include grazing land, open meadows, pastoral areas.",
+    "prediction": "This SAR image shows permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations,",
+    "modality": "sar",
+    "cls": "Pasture",
+    "image_path": "/content/rs_vqa_data/sar/sar_0074.png"
+  }
+]

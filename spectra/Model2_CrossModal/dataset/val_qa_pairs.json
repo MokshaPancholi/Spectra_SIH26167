@@ -1,0 +1,1602 @@
+[
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0102.png",
+    "cls": "AnnualCrop",
+    "pair_id": 102,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate diffuse scattering from crop canopy with variable texture. This backscatter pattern is characteristic of agricultural fields with annual crops showing seasonal planting patterns, enabling the identification of crop rows without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0120.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 120,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0031.png",
+    "cls": "Highway",
+    "pair_id": 31,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides linear grey features with high reflectance from paved surfaces, which could be ambiguous. Adding SAR with strong double-bounce returns from road barriers and surrounding structures provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as major road infrastructure with highway corridors and transportation networks."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0131.png",
+    "cls": "River",
+    "pair_id": 131,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue-green linear features with vegetated bank boundaries, which could be ambiguous. Adding SAR with very low specular reflection from smooth water surface with bright bank returns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as river channels and riparian zones with flowing water and bank vegetation."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0070.png",
+    "cls": "PermanentCrop",
+    "pair_id": 70,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows ordered green patches with visible spacing between individual tree crowns, while the SAR confirms with moderate volume scattering with periodic texture from tree spacing patterns. This multi-modal evidence identifies the area as permanent crop plantations such as orchards, vineyards, or fruit trees, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0034.png",
+    "cls": "PermanentCrop",
+    "pair_id": 34,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0126.png",
+    "cls": "SeaLake",
+    "pair_id": 126,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing extremely low specular returns from calm water producing dark uniform patches. Even without optical data, the SAR clearly identifies open water through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0097.png",
+    "cls": "SeaLake",
+    "pair_id": 97,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing extremely low specular returns from calm water producing dark uniform patches. Even without optical data, the SAR clearly identifies open water through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0083.png",
+    "cls": "Residential",
+    "pair_id": 83,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows mixed spectral features from rooftops, roads, and garden vegetation, indicating residential areas with housing developments, roads, and neighbourhood patterns. The SAR image complements this with strong double-bounce returns from buildings with heterogeneous backscatter pattern. Together, both sensors confirm this is a urban area with houses as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0105.png",
+    "cls": "River",
+    "pair_id": 105,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue-green linear features with vegetated bank boundaries, which could be ambiguous. Adding SAR with very low specular reflection from smooth water surface with bright bank returns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as river channels and riparian zones with flowing water and bank vegetation."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0152.png",
+    "cls": "PermanentCrop",
+    "pair_id": 152,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate volume scattering with periodic texture from tree spacing patterns. This backscatter pattern is characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees, enabling the identification of orchard trees without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0104.png",
+    "cls": "SeaLake",
+    "pair_id": 104,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue reflectance from deep water with possible sunglint, indicating large water bodies including seas, lakes, coastal areas, and reservoirs. The SAR image complements this with extremely low specular returns from calm water producing dark uniform patches. Together, both sensors confirm this is a water area with open water as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0147.png",
+    "cls": "Pasture",
+    "pair_id": 147,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low diffuse scattering from short grass with minimal structural features. This backscatter pattern is characteristic of pastoral grasslands used for livestock grazing with open meadows, enabling the identification of grazing land without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0182.png",
+    "cls": "Industrial",
+    "pair_id": 182,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0053.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 53,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0002.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 2,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows bright green reflectance with uniform spectral characteristics, while the SAR confirms with low-to-moderate volume scattering with smooth texture from short vegetation. This multi-modal evidence identifies the area as grasslands and herbaceous vegetation with open green areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0119.png",
+    "cls": "PermanentCrop",
+    "pair_id": 119,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate volume scattering with periodic texture from tree spacing patterns. This backscatter pattern is characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees, enabling the identification of orchard trees without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0170.png",
+    "cls": "Industrial",
+    "pair_id": 170,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides large rectangular bright features with shadow patterns from tall structures, which could be ambiguous. Adding SAR with very strong double-bounce and corner reflector returns from building walls and roofs provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as industrial zones with large buildings, warehouses, and manufacturing facilities."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0062.png",
+    "cls": "Forest",
+    "pair_id": 62,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark green reflectance indicating dense chlorophyll-rich canopy, indicating dense forest cover with continuous tree canopy and woodland areas. The SAR image complements this with uniform volume scattering from multiple canopy layers with moderate backscatter. Together, both sensors confirm this is a vegetation area with tree canopy as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0119.png",
+    "cls": "PermanentCrop",
+    "pair_id": 119,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows ordered green patches with visible spacing between individual tree crowns, while the SAR confirms with moderate volume scattering with periodic texture from tree spacing patterns. This multi-modal evidence identifies the area as permanent crop plantations such as orchards, vineyards, or fruit trees, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0043.png",
+    "cls": "AnnualCrop",
+    "pair_id": 43,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through green spectral signatures with visible row patterns and seasonal variation, the SAR image adds structural information through moderate diffuse scattering from crop canopy with variable texture. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0005.png",
+    "cls": "Residential",
+    "pair_id": 5,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0046.png",
+    "cls": "Pasture",
+    "pair_id": 46,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low diffuse scattering from short grass with minimal structural features. This backscatter pattern is characteristic of pastoral grasslands used for livestock grazing with open meadows, enabling the identification of grazing land without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0130.png",
+    "cls": "Highway",
+    "pair_id": 130,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows linear grey features with high reflectance from paved surfaces, while the SAR confirms with strong double-bounce returns from road barriers and surrounding structures. This multi-modal evidence identifies the area as major road infrastructure with highway corridors and transportation networks, classified under the infrastructure category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0052.png",
+    "cls": "Residential",
+    "pair_id": 52,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0078.png",
+    "cls": "PermanentCrop",
+    "pair_id": 78,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate volume scattering with periodic texture from tree spacing patterns. This backscatter pattern is characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees, enabling the identification of orchard trees without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0184.png",
+    "cls": "Industrial",
+    "pair_id": 184,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0124.png",
+    "cls": "Forest",
+    "pair_id": 124,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0030.png",
+    "cls": "SeaLake",
+    "pair_id": 30,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue reflectance from deep water with possible sunglint, indicating large water bodies including seas, lakes, coastal areas, and reservoirs. The SAR image complements this with extremely low specular returns from calm water producing dark uniform patches. Together, both sensors confirm this is a water area with open water as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0026.png",
+    "cls": "SeaLake",
+    "pair_id": 26,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue reflectance from deep water with possible sunglint, the SAR image adds structural information through extremely low specular returns from calm water producing dark uniform patches. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0142.png",
+    "cls": "Pasture",
+    "pair_id": 142,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through light green reflectance with smooth spectral uniformity, the SAR image adds structural information through low diffuse scattering from short grass with minimal structural features. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0164.png",
+    "cls": "Residential",
+    "pair_id": 164,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides mixed spectral features from rooftops, roads, and garden vegetation, which could be ambiguous. Adding SAR with strong double-bounce returns from buildings with heterogeneous backscatter pattern provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as residential areas with housing developments, roads, and neighbourhood patterns."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0152.png",
+    "cls": "PermanentCrop",
+    "pair_id": 152,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through ordered green patches with visible spacing between individual tree crowns, the SAR image adds structural information through moderate volume scattering with periodic texture from tree spacing patterns. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0031.png",
+    "cls": "Highway",
+    "pair_id": 31,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from road barriers and surrounding structures. The strong double-bounce returns from building walls are unmistakable radar signatures of infrastructure areas, allowing reliable detection of highway lanes even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0060.png",
+    "cls": "Forest",
+    "pair_id": 60,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0137.png",
+    "cls": "Residential",
+    "pair_id": 137,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides mixed spectral features from rooftops, roads, and garden vegetation, which could be ambiguous. Adding SAR with strong double-bounce returns from buildings with heterogeneous backscatter pattern provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as residential areas with housing developments, roads, and neighbourhood patterns."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0181.png",
+    "cls": "Highway",
+    "pair_id": 181,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows linear grey features with high reflectance from paved surfaces, while the SAR confirms with strong double-bounce returns from road barriers and surrounding structures. This multi-modal evidence identifies the area as major road infrastructure with highway corridors and transportation networks, classified under the infrastructure category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0169.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 169,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0097.png",
+    "cls": "SeaLake",
+    "pair_id": 97,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue reflectance from deep water with possible sunglint, the SAR image adds structural information through extremely low specular returns from calm water producing dark uniform patches. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0062.png",
+    "cls": "Forest",
+    "pair_id": 62,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0129.png",
+    "cls": "PermanentCrop",
+    "pair_id": 129,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0172.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 172,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0032.png",
+    "cls": "AnnualCrop",
+    "pair_id": 32,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows green spectral signatures with visible row patterns and seasonal variation, while the SAR confirms with moderate diffuse scattering from crop canopy with variable texture. This multi-modal evidence identifies the area as agricultural fields with annual crops showing seasonal planting patterns, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0182.png",
+    "cls": "Industrial",
+    "pair_id": 182,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0062.png",
+    "cls": "Forest",
+    "pair_id": 62,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark green reflectance indicating dense chlorophyll-rich canopy, which could be ambiguous. Adding SAR with uniform volume scattering from multiple canopy layers with moderate backscatter provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as dense forest cover with continuous tree canopy and woodland areas."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0059.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 59,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low-to-moderate volume scattering with smooth texture from short vegetation. This backscatter pattern is characteristic of grasslands and herbaceous vegetation with open green areas, enabling the identification of grassland without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0146.png",
+    "cls": "Industrial",
+    "pair_id": 146,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows large rectangular bright features with shadow patterns from tall structures, indicating industrial zones with large buildings, warehouses, and manufacturing facilities. The SAR image complements this with very strong double-bounce and corner reflector returns from building walls and roofs. Together, both sensors confirm this is a urban area with industrial buildings as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0074.png",
+    "cls": "Industrial",
+    "pair_id": 74,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0115.png",
+    "cls": "AnnualCrop",
+    "pair_id": 115,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows green spectral signatures with visible row patterns and seasonal variation, while the SAR confirms with moderate diffuse scattering from crop canopy with variable texture. This multi-modal evidence identifies the area as agricultural fields with annual crops showing seasonal planting patterns, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0075.png",
+    "cls": "River",
+    "pair_id": 75,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue-green linear features with vegetated bank boundaries, which could be ambiguous. Adding SAR with very low specular reflection from smooth water surface with bright bank returns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as river channels and riparian zones with flowing water and bank vegetation."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0045.png",
+    "cls": "Residential",
+    "pair_id": 45,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through mixed spectral features from rooftops, roads, and garden vegetation, the SAR image adds structural information through strong double-bounce returns from buildings with heterogeneous backscatter pattern. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0005.png",
+    "cls": "Residential",
+    "pair_id": 5,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through mixed spectral features from rooftops, roads, and garden vegetation, the SAR image adds structural information through strong double-bounce returns from buildings with heterogeneous backscatter pattern. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0059.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 59,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_06.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0106.png",
+    "cls": "Pasture",
+    "pair_id": 106,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides light green reflectance with smooth spectral uniformity, which could be ambiguous. Adding SAR with low diffuse scattering from short grass with minimal structural features provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as pastoral grasslands used for livestock grazing with open meadows."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0030.png",
+    "cls": "SeaLake",
+    "pair_id": 30,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue reflectance from deep water with possible sunglint, the SAR image adds structural information through extremely low specular returns from calm water producing dark uniform patches. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0028.png",
+    "cls": "Highway",
+    "pair_id": 28,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from road barriers and surrounding structures. The strong double-bounce returns from building walls are unmistakable radar signatures of infrastructure areas, allowing reliable detection of highway lanes even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0155.png",
+    "cls": "Residential",
+    "pair_id": 155,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides mixed spectral features from rooftops, roads, and garden vegetation, which could be ambiguous. Adding SAR with strong double-bounce returns from buildings with heterogeneous backscatter pattern provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as residential areas with housing developments, roads, and neighbourhood patterns."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0007.png",
+    "cls": "Industrial",
+    "pair_id": 7,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0121.png",
+    "cls": "Pasture",
+    "pair_id": 121,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low diffuse scattering from short grass with minimal structural features. This backscatter pattern is characteristic of pastoral grasslands used for livestock grazing with open meadows, enabling the identification of grazing land without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0056.png",
+    "cls": "AnnualCrop",
+    "pair_id": 56,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through green spectral signatures with visible row patterns and seasonal variation, the SAR image adds structural information through moderate diffuse scattering from crop canopy with variable texture. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0116.png",
+    "cls": "River",
+    "pair_id": 116,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue-green linear features with vegetated bank boundaries, the SAR image adds structural information through very low specular reflection from smooth water surface with bright bank returns. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0052.png",
+    "cls": "Residential",
+    "pair_id": 52,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides mixed spectral features from rooftops, roads, and garden vegetation, which could be ambiguous. Adding SAR with strong double-bounce returns from buildings with heterogeneous backscatter pattern provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as residential areas with housing developments, roads, and neighbourhood patterns."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0143.png",
+    "cls": "SeaLake",
+    "pair_id": 143,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue reflectance from deep water with possible sunglint, the SAR image adds structural information through extremely low specular returns from calm water producing dark uniform patches. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0092.png",
+    "cls": "Pasture",
+    "pair_id": 92,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through light green reflectance with smooth spectral uniformity, the SAR image adds structural information through low diffuse scattering from short grass with minimal structural features. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0181.png",
+    "cls": "Highway",
+    "pair_id": 181,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows linear grey features with high reflectance from paved surfaces, indicating major road infrastructure with highway corridors and transportation networks. The SAR image complements this with strong double-bounce returns from road barriers and surrounding structures. Together, both sensors confirm this is a infrastructure area with highway lanes as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0067.png",
+    "cls": "Highway",
+    "pair_id": 67,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from road barriers and surrounding structures. The strong double-bounce returns from building walls are unmistakable radar signatures of infrastructure areas, allowing reliable detection of highway lanes even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0091.png",
+    "cls": "Forest",
+    "pair_id": 91,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark green reflectance indicating dense chlorophyll-rich canopy, indicating dense forest cover with continuous tree canopy and woodland areas. The SAR image complements this with uniform volume scattering from multiple canopy layers with moderate backscatter. Together, both sensors confirm this is a vegetation area with tree canopy as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0141.png",
+    "cls": "Residential",
+    "pair_id": 141,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows mixed spectral features from rooftops, roads, and garden vegetation, indicating residential areas with housing developments, roads, and neighbourhood patterns. The SAR image complements this with strong double-bounce returns from buildings with heterogeneous backscatter pattern. Together, both sensors confirm this is a urban area with houses as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0060.png",
+    "cls": "Forest",
+    "pair_id": 60,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0070.png",
+    "cls": "PermanentCrop",
+    "pair_id": 70,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0187.png",
+    "cls": "Highway",
+    "pair_id": 187,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from road barriers and surrounding structures. The strong double-bounce returns from building walls are unmistakable radar signatures of infrastructure areas, allowing reliable detection of highway lanes even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0155.png",
+    "cls": "Residential",
+    "pair_id": 155,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows mixed spectral features from rooftops, roads, and garden vegetation, indicating residential areas with housing developments, roads, and neighbourhood patterns. The SAR image complements this with strong double-bounce returns from buildings with heterogeneous backscatter pattern. Together, both sensors confirm this is a urban area with houses as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0191.png",
+    "cls": "Highway",
+    "pair_id": 191,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through linear grey features with high reflectance from paved surfaces, the SAR image adds structural information through strong double-bounce returns from road barriers and surrounding structures. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0154.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 154,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0100.png",
+    "cls": "Forest",
+    "pair_id": 100,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals uniform volume scattering from multiple canopy layers with moderate backscatter. This backscatter pattern is characteristic of dense forest cover with continuous tree canopy and woodland areas, enabling the identification of tree canopy without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0145.png",
+    "cls": "Highway",
+    "pair_id": 145,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through linear grey features with high reflectance from paved surfaces, the SAR image adds structural information through strong double-bounce returns from road barriers and surrounding structures. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0093.png",
+    "cls": "River",
+    "pair_id": 93,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue-green linear features with vegetated bank boundaries, which could be ambiguous. Adding SAR with very low specular reflection from smooth water surface with bright bank returns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as river channels and riparian zones with flowing water and bank vegetation."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0015.png",
+    "cls": "River",
+    "pair_id": 15,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue-green linear features with vegetated bank boundaries, indicating river channels and riparian zones with flowing water and bank vegetation. The SAR image complements this with very low specular reflection from smooth water surface with bright bank returns. Together, both sensors confirm this is a water area with water channel as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0142.png",
+    "cls": "Pasture",
+    "pair_id": 142,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows light green reflectance with smooth spectral uniformity, indicating pastoral grasslands used for livestock grazing with open meadows. The SAR image complements this with low diffuse scattering from short grass with minimal structural features. Together, both sensors confirm this is a agricultural area with grazing land as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0131.png",
+    "cls": "River",
+    "pair_id": 131,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue-green linear features with vegetated bank boundaries, while the SAR confirms with very low specular reflection from smooth water surface with bright bank returns. This multi-modal evidence identifies the area as river channels and riparian zones with flowing water and bank vegetation, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0067.png",
+    "cls": "Highway",
+    "pair_id": 67,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows linear grey features with high reflectance from paved surfaces, while the SAR confirms with strong double-bounce returns from road barriers and surrounding structures. This multi-modal evidence identifies the area as major road infrastructure with highway corridors and transportation networks, classified under the infrastructure category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0019.png",
+    "cls": "Industrial",
+    "pair_id": 19,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides large rectangular bright features with shadow patterns from tall structures, which could be ambiguous. Adding SAR with very strong double-bounce and corner reflector returns from building walls and roofs provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as industrial zones with large buildings, warehouses, and manufacturing facilities."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_06.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0054.png",
+    "cls": "SeaLake",
+    "pair_id": 54,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue reflectance from deep water with possible sunglint, indicating large water bodies including seas, lakes, coastal areas, and reservoirs. The SAR image complements this with extremely low specular returns from calm water producing dark uniform patches. Together, both sensors confirm this is a water area with open water as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0043.png",
+    "cls": "AnnualCrop",
+    "pair_id": 43,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows green spectral signatures with visible row patterns and seasonal variation, indicating agricultural fields with annual crops showing seasonal planting patterns. The SAR image complements this with moderate diffuse scattering from crop canopy with variable texture. Together, both sensors confirm this is a agricultural area with crop rows as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0098.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 98,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides bright green reflectance with uniform spectral characteristics, which could be ambiguous. Adding SAR with low-to-moderate volume scattering with smooth texture from short vegetation provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as grasslands and herbaceous vegetation with open green areas."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0162.png",
+    "cls": "PermanentCrop",
+    "pair_id": 162,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0049.png",
+    "cls": "Industrial",
+    "pair_id": 49,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0029.png",
+    "cls": "SeaLake",
+    "pair_id": 29,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue reflectance from deep water with possible sunglint, indicating large water bodies including seas, lakes, coastal areas, and reservoirs. The SAR image complements this with extremely low specular returns from calm water producing dark uniform patches. Together, both sensors confirm this is a water area with open water as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0069.png",
+    "cls": "AnnualCrop",
+    "pair_id": 69,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows green spectral signatures with visible row patterns and seasonal variation, while the SAR confirms with moderate diffuse scattering from crop canopy with variable texture. This multi-modal evidence identifies the area as agricultural fields with annual crops showing seasonal planting patterns, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0134.png",
+    "cls": "SeaLake",
+    "pair_id": 134,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue reflectance from deep water with possible sunglint, while the SAR confirms with extremely low specular returns from calm water producing dark uniform patches. This multi-modal evidence identifies the area as large water bodies including seas, lakes, coastal areas, and reservoirs, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0084.png",
+    "cls": "Industrial",
+    "pair_id": 84,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0075.png",
+    "cls": "River",
+    "pair_id": 75,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue-green linear features with vegetated bank boundaries, indicating river channels and riparian zones with flowing water and bank vegetation. The SAR image complements this with very low specular reflection from smooth water surface with bright bank returns. Together, both sensors confirm this is a water area with water channel as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0034.png",
+    "cls": "PermanentCrop",
+    "pair_id": 34,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate volume scattering with periodic texture from tree spacing patterns. This backscatter pattern is characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees, enabling the identification of orchard trees without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0190.png",
+    "cls": "Industrial",
+    "pair_id": 190,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides large rectangular bright features with shadow patterns from tall structures, which could be ambiguous. Adding SAR with very strong double-bounce and corner reflector returns from building walls and roofs provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as industrial zones with large buildings, warehouses, and manufacturing facilities."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0022.png",
+    "cls": "SeaLake",
+    "pair_id": 22,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue reflectance from deep water with possible sunglint, which could be ambiguous. Adding SAR with extremely low specular returns from calm water producing dark uniform patches provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as large water bodies including seas, lakes, coastal areas, and reservoirs."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0162.png",
+    "cls": "PermanentCrop",
+    "pair_id": 162,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0154.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 154,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0118.png",
+    "cls": "Industrial",
+    "pair_id": 118,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0169.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 169,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0155.png",
+    "cls": "Residential",
+    "pair_id": 155,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through mixed spectral features from rooftops, roads, and garden vegetation, the SAR image adds structural information through strong double-bounce returns from buildings with heterogeneous backscatter pattern. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0053.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 53,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low-to-moderate volume scattering with smooth texture from short vegetation. This backscatter pattern is characteristic of grasslands and herbaceous vegetation with open green areas, enabling the identification of grassland without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0173.png",
+    "cls": "Pasture",
+    "pair_id": 173,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows light green reflectance with smooth spectral uniformity, while the SAR confirms with low diffuse scattering from short grass with minimal structural features. This multi-modal evidence identifies the area as pastoral grasslands used for livestock grazing with open meadows, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0029.png",
+    "cls": "SeaLake",
+    "pair_id": 29,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue reflectance from deep water with possible sunglint, which could be ambiguous. Adding SAR with extremely low specular returns from calm water producing dark uniform patches provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as large water bodies including seas, lakes, coastal areas, and reservoirs."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0021.png",
+    "cls": "River",
+    "pair_id": 21,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue-green linear features with vegetated bank boundaries, the SAR image adds structural information through very low specular reflection from smooth water surface with bright bank returns. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0025.png",
+    "cls": "AnnualCrop",
+    "pair_id": 25,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows green spectral signatures with visible row patterns and seasonal variation, while the SAR confirms with moderate diffuse scattering from crop canopy with variable texture. This multi-modal evidence identifies the area as agricultural fields with annual crops showing seasonal planting patterns, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0161.png",
+    "cls": "Residential",
+    "pair_id": 161,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through mixed spectral features from rooftops, roads, and garden vegetation, the SAR image adds structural information through strong double-bounce returns from buildings with heterogeneous backscatter pattern. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0087.png",
+    "cls": "Residential",
+    "pair_id": 87,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0090.png",
+    "cls": "Pasture",
+    "pair_id": 90,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows light green reflectance with smooth spectral uniformity, indicating pastoral grasslands used for livestock grazing with open meadows. The SAR image complements this with low diffuse scattering from short grass with minimal structural features. Together, both sensors confirm this is a agricultural area with grazing land as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0133.png",
+    "cls": "SeaLake",
+    "pair_id": 133,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark blue reflectance from deep water with possible sunglint, indicating large water bodies including seas, lakes, coastal areas, and reservoirs. The SAR image complements this with extremely low specular returns from calm water producing dark uniform patches. Together, both sensors confirm this is a water area with open water as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0128.png",
+    "cls": "PermanentCrop",
+    "pair_id": 128,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0104.png",
+    "cls": "SeaLake",
+    "pair_id": 104,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing extremely low specular returns from calm water producing dark uniform patches. Even without optical data, the SAR clearly identifies open water through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0187.png",
+    "cls": "Highway",
+    "pair_id": 187,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through linear grey features with high reflectance from paved surfaces, the SAR image adds structural information through strong double-bounce returns from road barriers and surrounding structures. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0081.png",
+    "cls": "Industrial",
+    "pair_id": 81,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides large rectangular bright features with shadow patterns from tall structures, which could be ambiguous. Adding SAR with very strong double-bounce and corner reflector returns from building walls and roofs provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as industrial zones with large buildings, warehouses, and manufacturing facilities."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0074.png",
+    "cls": "Industrial",
+    "pair_id": 74,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0008.png",
+    "cls": "AnnualCrop",
+    "pair_id": 8,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows green spectral signatures with visible row patterns and seasonal variation, indicating agricultural fields with annual crops showing seasonal planting patterns. The SAR image complements this with moderate diffuse scattering from crop canopy with variable texture. Together, both sensors confirm this is a agricultural area with crop rows as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0157.png",
+    "cls": "Highway",
+    "pair_id": 157,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows linear grey features with high reflectance from paved surfaces, while the SAR confirms with strong double-bounce returns from road barriers and surrounding structures. This multi-modal evidence identifies the area as major road infrastructure with highway corridors and transportation networks, classified under the infrastructure category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0148.png",
+    "cls": "PermanentCrop",
+    "pair_id": 148,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows ordered green patches with visible spacing between individual tree crowns, while the SAR confirms with moderate volume scattering with periodic texture from tree spacing patterns. This multi-modal evidence identifies the area as permanent crop plantations such as orchards, vineyards, or fruit trees, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0168.png",
+    "cls": "River",
+    "pair_id": 168,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue-green linear features with vegetated bank boundaries, while the SAR confirms with very low specular reflection from smooth water surface with bright bank returns. This multi-modal evidence identifies the area as river channels and riparian zones with flowing water and bank vegetation, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0169.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 169,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low-to-moderate volume scattering with smooth texture from short vegetation. This backscatter pattern is characteristic of grasslands and herbaceous vegetation with open green areas, enabling the identification of grassland without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0081.png",
+    "cls": "Industrial",
+    "pair_id": 81,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0166.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 166,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0059.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 59,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides bright green reflectance with uniform spectral characteristics, which could be ambiguous. Adding SAR with low-to-moderate volume scattering with smooth texture from short vegetation provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as grasslands and herbaceous vegetation with open green areas."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0012.png",
+    "cls": "Industrial",
+    "pair_id": 12,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0148.png",
+    "cls": "PermanentCrop",
+    "pair_id": 148,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate volume scattering with periodic texture from tree spacing patterns. This backscatter pattern is characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees, enabling the identification of orchard trees without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0169.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 169,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows bright green reflectance with uniform spectral characteristics, while the SAR confirms with low-to-moderate volume scattering with smooth texture from short vegetation. This multi-modal evidence identifies the area as grasslands and herbaceous vegetation with open green areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0098.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 98,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows bright green reflectance with uniform spectral characteristics, while the SAR confirms with low-to-moderate volume scattering with smooth texture from short vegetation. This multi-modal evidence identifies the area as grasslands and herbaceous vegetation with open green areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0089.png",
+    "cls": "PermanentCrop",
+    "pair_id": 89,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0004.png",
+    "cls": "SeaLake",
+    "pair_id": 4,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue reflectance from deep water with possible sunglint, which could be ambiguous. Adding SAR with extremely low specular returns from calm water producing dark uniform patches provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as large water bodies including seas, lakes, coastal areas, and reservoirs."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0146.png",
+    "cls": "Industrial",
+    "pair_id": 146,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0109.png",
+    "cls": "Forest",
+    "pair_id": 109,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0132.png",
+    "cls": "Forest",
+    "pair_id": 132,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0124.png",
+    "cls": "Forest",
+    "pair_id": 124,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0159.png",
+    "cls": "Highway",
+    "pair_id": 159,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows linear grey features with high reflectance from paved surfaces, indicating major road infrastructure with highway corridors and transportation networks. The SAR image complements this with strong double-bounce returns from road barriers and surrounding structures. Together, both sensors confirm this is a infrastructure area with highway lanes as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0146.png",
+    "cls": "Industrial",
+    "pair_id": 146,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_01.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0024.png",
+    "cls": "Residential",
+    "pair_id": 24,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0110.png",
+    "cls": "Highway",
+    "pair_id": 110,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows linear grey features with high reflectance from paved surfaces, indicating major road infrastructure with highway corridors and transportation networks. The SAR image complements this with strong double-bounce returns from road barriers and surrounding structures. Together, both sensors confirm this is a infrastructure area with highway lanes as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0146.png",
+    "cls": "Industrial",
+    "pair_id": 146,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_15.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0180.png",
+    "cls": "River",
+    "pair_id": 180,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides dark blue-green linear features with vegetated bank boundaries, which could be ambiguous. Adding SAR with very low specular reflection from smooth water surface with bright bank returns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as river channels and riparian zones with flowing water and bank vegetation."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0053.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 53,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0085.png",
+    "cls": "SeaLake",
+    "pair_id": 85,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue reflectance from deep water with possible sunglint, while the SAR confirms with extremely low specular returns from calm water producing dark uniform patches. This multi-modal evidence identifies the area as large water bodies including seas, lakes, coastal areas, and reservoirs, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0160.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 160,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0014.png",
+    "cls": "Forest",
+    "pair_id": 14,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0078.png",
+    "cls": "PermanentCrop",
+    "pair_id": 78,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides ordered green patches with visible spacing between individual tree crowns, which could be ambiguous. Adding SAR with moderate volume scattering with periodic texture from tree spacing patterns provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as permanent crop plantations such as orchards, vineyards, or fruit trees."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0176.png",
+    "cls": "Residential",
+    "pair_id": 176,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows mixed spectral features from rooftops, roads, and garden vegetation, while the SAR confirms with strong double-bounce returns from buildings with heterogeneous backscatter pattern. This multi-modal evidence identifies the area as residential areas with housing developments, roads, and neighbourhood patterns, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0096.png",
+    "cls": "River",
+    "pair_id": 96,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue-green linear features with vegetated bank boundaries, the SAR image adds structural information through very low specular reflection from smooth water surface with bright bank returns. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_06.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0106.png",
+    "cls": "Pasture",
+    "pair_id": 106,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows light green reflectance with smooth spectral uniformity, while the SAR confirms with low diffuse scattering from short grass with minimal structural features. This multi-modal evidence identifies the area as pastoral grasslands used for livestock grazing with open meadows, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0177.png",
+    "cls": "Pasture",
+    "pair_id": 177,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows light green reflectance with smooth spectral uniformity, while the SAR confirms with low diffuse scattering from short grass with minimal structural features. This multi-modal evidence identifies the area as pastoral grasslands used for livestock grazing with open meadows, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0083.png",
+    "cls": "Residential",
+    "pair_id": 83,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through mixed spectral features from rooftops, roads, and garden vegetation, the SAR image adds structural information through strong double-bounce returns from buildings with heterogeneous backscatter pattern. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0138.png",
+    "cls": "Residential",
+    "pair_id": 138,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0139.png",
+    "cls": "Forest",
+    "pair_id": 139,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals uniform volume scattering from multiple canopy layers with moderate backscatter. This backscatter pattern is characteristic of dense forest cover with continuous tree canopy and woodland areas, enabling the identification of tree canopy without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0006.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 6,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals low-to-moderate volume scattering with smooth texture from short vegetation. This backscatter pattern is characteristic of grasslands and herbaceous vegetation with open green areas, enabling the identification of grassland without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0153.png",
+    "cls": "Forest",
+    "pair_id": 153,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0001.png",
+    "cls": "Forest",
+    "pair_id": 1,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark green reflectance indicating dense chlorophyll-rich canopy, while the SAR confirms with uniform volume scattering from multiple canopy layers with moderate backscatter. This multi-modal evidence identifies the area as dense forest cover with continuous tree canopy and woodland areas, classified under the vegetation category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_03.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0014.png",
+    "cls": "Forest",
+    "pair_id": 14,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_09.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0147.png",
+    "cls": "Pasture",
+    "pair_id": 147,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides light green reflectance with smooth spectral uniformity, which could be ambiguous. Adding SAR with low diffuse scattering from short grass with minimal structural features provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as pastoral grasslands used for livestock grazing with open meadows."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0094.png",
+    "cls": "Industrial",
+    "pair_id": 94,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0195.png",
+    "cls": "Pasture",
+    "pair_id": 195,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows light green reflectance with smooth spectral uniformity, indicating pastoral grasslands used for livestock grazing with open meadows. The SAR image complements this with low diffuse scattering from short grass with minimal structural features. Together, both sensors confirm this is a agricultural area with grazing land as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0032.png",
+    "cls": "AnnualCrop",
+    "pair_id": 32,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates clouds and reveals moderate diffuse scattering from crop canopy with variable texture. This backscatter pattern is characteristic of agricultural fields with annual crops showing seasonal planting patterns, enabling the identification of crop rows without requiring cloud-free optical conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_14.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0186.png",
+    "cls": "Pasture",
+    "pair_id": 186,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows light green reflectance with smooth spectral uniformity, indicating pastoral grasslands used for livestock grazing with open meadows. The SAR image complements this with low diffuse scattering from short grass with minimal structural features. Together, both sensors confirm this is a agricultural area with grazing land as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0188.png",
+    "cls": "River",
+    "pair_id": 188,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue-green linear features with vegetated bank boundaries, while the SAR confirms with very low specular reflection from smooth water surface with bright bank returns. This multi-modal evidence identifies the area as river channels and riparian zones with flowing water and bank vegetation, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0178.png",
+    "cls": "Residential",
+    "pair_id": 178,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals strong double-bounce returns from buildings with heterogeneous backscatter pattern. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of houses even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0067.png",
+    "cls": "Highway",
+    "pair_id": 67,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides linear grey features with high reflectance from paved surfaces, which could be ambiguous. Adding SAR with strong double-bounce returns from road barriers and surrounding structures provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as major road infrastructure with highway corridors and transportation networks."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0171.png",
+    "cls": "Pasture",
+    "pair_id": 171,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows light green reflectance with smooth spectral uniformity, while the SAR confirms with low diffuse scattering from short grass with minimal structural features. This multi-modal evidence identifies the area as pastoral grasslands used for livestock grazing with open meadows, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0123.png",
+    "cls": "Industrial",
+    "pair_id": 123,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR operates through clouds and reveals very strong double-bounce and corner reflector returns from building walls and roofs. The strong double-bounce returns from building walls are unmistakable radar signatures of urban areas, allowing reliable detection of industrial buildings even in persistent cloud cover."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0164.png",
+    "cls": "Residential",
+    "pair_id": 164,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows mixed spectral features from rooftops, roads, and garden vegetation, while the SAR confirms with strong double-bounce returns from buildings with heterogeneous backscatter pattern. This multi-modal evidence identifies the area as residential areas with housing developments, roads, and neighbourhood patterns, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/SeaLake_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0022.png",
+    "cls": "SeaLake",
+    "pair_id": 22,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing extremely low specular returns from calm water producing dark uniform patches. Even without optical data, the SAR clearly identifies open water through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_10.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0131.png",
+    "cls": "River",
+    "pair_id": 131,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark blue-green linear features with vegetated bank boundaries, the SAR image adds structural information through very low specular reflection from smooth water surface with bright bank returns. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0102.png",
+    "cls": "AnnualCrop",
+    "pair_id": 102,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows green spectral signatures with visible row patterns and seasonal variation, while the SAR confirms with moderate diffuse scattering from crop canopy with variable texture. This multi-modal evidence identifies the area as agricultural fields with annual crops showing seasonal planting patterns, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0195.png",
+    "cls": "Pasture",
+    "pair_id": 195,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows light green reflectance with smooth spectral uniformity, while the SAR confirms with low diffuse scattering from short grass with minimal structural features. This multi-modal evidence identifies the area as pastoral grasslands used for livestock grazing with open meadows, classified under the agricultural category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0036.png",
+    "cls": "AnnualCrop",
+    "pair_id": 36,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through green spectral signatures with visible row patterns and seasonal variation, the SAR image adds structural information through moderate diffuse scattering from crop canopy with variable texture. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Residential_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0163.png",
+    "cls": "Residential",
+    "pair_id": 163,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows mixed spectral features from rooftops, roads, and garden vegetation, indicating residential areas with housing developments, roads, and neighbourhood patterns. The SAR image complements this with strong double-bounce returns from buildings with heterogeneous backscatter pattern. Together, both sensors confirm this is a urban area with houses as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0049.png",
+    "cls": "Industrial",
+    "pair_id": 49,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Pasture_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0090.png",
+    "cls": "Pasture",
+    "pair_id": 90,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides light green reflectance with smooth spectral uniformity, which could be ambiguous. Adding SAR with low diffuse scattering from short grass with minimal structural features provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as pastoral grasslands used for livestock grazing with open meadows."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0123.png",
+    "cls": "Industrial",
+    "pair_id": 123,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0140.png",
+    "cls": "PermanentCrop",
+    "pair_id": 140,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_06.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0050.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 50,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows bright green reflectance with uniform spectral characteristics, indicating grasslands and herbaceous vegetation with open green areas. The SAR image complements this with low-to-moderate volume scattering with smooth texture from short vegetation. Together, both sensors confirm this is a vegetation area with grassland as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0094.png",
+    "cls": "Industrial",
+    "pair_id": 94,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows large rectangular bright features with shadow patterns from tall structures, indicating industrial zones with large buildings, warehouses, and manufacturing facilities. The SAR image complements this with very strong double-bounce and corner reflector returns from building walls and roofs. Together, both sensors confirm this is a urban area with industrial buildings as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0094.png",
+    "cls": "Industrial",
+    "pair_id": 94,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows large rectangular bright features with shadow patterns from tall structures, while the SAR confirms with very strong double-bounce and corner reflector returns from building walls and roofs. This multi-modal evidence identifies the area as industrial zones with large buildings, warehouses, and manufacturing facilities, classified under the urban category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0118.png",
+    "cls": "Industrial",
+    "pair_id": 118,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through large rectangular bright features with shadow patterns from tall structures, the SAR image adds structural information through very strong double-bounce and corner reflector returns from building walls and roofs. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_08.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0042.png",
+    "cls": "AnnualCrop",
+    "pair_id": 42,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through green spectral signatures with visible row patterns and seasonal variation, the SAR image adds structural information through moderate diffuse scattering from crop canopy with variable texture. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0006.png",
+    "cls": "HerbaceousVegetation",
+    "pair_id": 6,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through bright green reflectance with uniform spectral characteristics, the SAR image adds structural information through low-to-moderate volume scattering with smooth texture from short vegetation. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0183.png",
+    "cls": "PermanentCrop",
+    "pair_id": 183,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_02.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0013.png",
+    "cls": "Forest",
+    "pair_id": 13,
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "answer": "While the optical image shows surface appearance through dark green reflectance indicating dense chlorophyll-rich canopy, the SAR image adds structural information through uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0060.png",
+    "cls": "Forest",
+    "pair_id": 60,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark green reflectance indicating dense chlorophyll-rich canopy, indicating dense forest cover with continuous tree canopy and woodland areas. The SAR image complements this with uniform volume scattering from multiple canopy layers with moderate backscatter. Together, both sensors confirm this is a vegetation area with tree canopy as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Forest_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0027.png",
+    "cls": "Forest",
+    "pair_id": 27,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows dark green reflectance indicating dense chlorophyll-rich canopy, indicating dense forest cover with continuous tree canopy and woodland areas. The SAR image complements this with uniform volume scattering from multiple canopy layers with moderate backscatter. Together, both sensors confirm this is a vegetation area with tree canopy as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_12.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0066.png",
+    "cls": "AnnualCrop",
+    "pair_id": 66,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows green spectral signatures with visible row patterns and seasonal variation, indicating agricultural fields with annual crops showing seasonal planting patterns. The SAR image complements this with moderate diffuse scattering from crop canopy with variable texture. Together, both sensors confirm this is a agricultural area with crop rows as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0040.png",
+    "cls": "AnnualCrop",
+    "pair_id": 40,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides green spectral signatures with visible row patterns and seasonal variation, which could be ambiguous. Adding SAR with moderate diffuse scattering from crop canopy with variable texture provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as agricultural fields with annual crops showing seasonal planting patterns."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_16.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0188.png",
+    "cls": "River",
+    "pair_id": 188,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing very low specular reflection from smooth water surface with bright bank returns. Even without optical data, the SAR clearly identifies water channel through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_11.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0145.png",
+    "cls": "Highway",
+    "pair_id": 145,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides linear grey features with high reflectance from paved surfaces, which could be ambiguous. Adding SAR with strong double-bounce returns from road barriers and surrounding structures provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as major road infrastructure with highway corridors and transportation networks."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_19.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0191.png",
+    "cls": "Highway",
+    "pair_id": 191,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides linear grey features with high reflectance from paved surfaces, which could be ambiguous. Adding SAR with strong double-bounce returns from road barriers and surrounding structures provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as major road infrastructure with highway corridors and transportation networks."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0096.png",
+    "cls": "River",
+    "pair_id": 96,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing very low specular reflection from smooth water surface with bright bank returns. Even without optical data, the SAR clearly identifies water channel through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0035.png",
+    "cls": "Industrial",
+    "pair_id": 35,
+    "question": "How confident is the land cover classification using both sensors versus one?",
+    "answer": "Using both sensors significantly increases confidence. The optical alone provides large rectangular bright features with shadow patterns from tall structures, which could be ambiguous. Adding SAR with very strong double-bounce and corner reflector returns from building walls and roofs provides independent structural confirmation. The multi-modal agreement strongly supports classifying this as industrial zones with large buildings, warehouses, and manufacturing facilities."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Industrial_07.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0049.png",
+    "cls": "Industrial",
+    "pair_id": 49,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows large rectangular bright features with shadow patterns from tall structures, indicating industrial zones with large buildings, warehouses, and manufacturing facilities. The SAR image complements this with very strong double-bounce and corner reflector returns from building walls and roofs. Together, both sensors confirm this is a urban area with industrial buildings as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0179.png",
+    "cls": "PermanentCrop",
+    "pair_id": 179,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0148.png",
+    "cls": "PermanentCrop",
+    "pair_id": 148,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_04.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0075.png",
+    "cls": "River",
+    "pair_id": 75,
+    "question": "Based on both optical and SAR data together, what is the land cover type?",
+    "answer": "Combining both sensors provides confident identification: the optical shows dark blue-green linear features with vegetated bank boundaries, while the SAR confirms with very low specular reflection from smooth water surface with bright bank returns. This multi-modal evidence identifies the area as river channels and riparian zones with flowing water and bank vegetation, classified under the water category."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/River_05.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0093.png",
+    "cls": "River",
+    "pair_id": 93,
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "answer": "SAR penetrates cloud cover, revealing very low specular reflection from smooth water surface with bright bank returns. Even without optical data, the SAR clearly identifies water channel through its characteristic specular reflection pattern, allowing confident detection of water bodies regardless of weather conditions."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_00.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0033.png",
+    "cls": "PermanentCrop",
+    "pair_id": 33,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/Highway_18.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0187.png",
+    "cls": "Highway",
+    "pair_id": 187,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows linear grey features with high reflectance from paved surfaces, indicating major road infrastructure with highway corridors and transportation networks. The SAR image complements this with strong double-bounce returns from road barriers and surrounding structures. Together, both sensors confirm this is a infrastructure area with highway lanes as the dominant feature."
+  },
+  {
+    "optical_path": "/content/rs_crossmodal_data/optical/PermanentCrop_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0174.png",
+    "cls": "PermanentCrop",
+    "pair_id": 174,
+    "question": "Compare what the optical and SAR images reveal about this area.",
+    "answer": "The optical image shows ordered green patches with visible spacing between individual tree crowns, indicating permanent crop plantations such as orchards, vineyards, or fruit trees. The SAR image complements this with moderate volume scattering with periodic texture from tree spacing patterns. Together, both sensors confirm this is a agricultural area with orchard trees as the dominant feature."
+  }
+]

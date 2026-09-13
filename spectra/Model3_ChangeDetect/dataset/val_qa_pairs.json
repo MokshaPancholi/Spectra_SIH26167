@@ -1,0 +1,1838 @@
+[
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0202.png",
+    "cls": "Pasture",
+    "change_type": "no_change",
+    "pair_id": 202,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show pastoral grazing land and meadows with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0043.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 43,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0041.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 41,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0102.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 102,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows green growing crops \u2192 brown harvested fields, which follows a logical temporal sequence. The natural seasonal progression consistent with agricultural harvest cycle confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0158.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 158,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0098.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 98,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original river channels and riparian zones in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0021.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 21,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0000.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 0,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0069.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 69,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of large water bodies and coastal areas. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_10.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0076.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 76,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as flooding. The T1 observation shows normal dry terrain with vegetation, fields, or mixed land cover, while T2 reveals dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. This pattern of dry land \u2192 water inundation is characteristic of flooding processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0199.png",
+    "cls": "PermanentCrop",
+    "change_type": "no_change",
+    "pair_id": 199,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is negligible \u2014 no meaningful land cover change detected. In T1, the original permanent crop plantations and orchards landscape is visible. In T2, the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The consistent appearance across both timestamps indicating temporal stability indicates no significant change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0163.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 163,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original permanent crop plantations and orchards in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0070.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 70,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as flooding. The T1 observation shows normal dry terrain with vegetation, fields, or mixed land cover, while T2 reveals dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. This pattern of dry land \u2192 water inundation is characteristic of flooding processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0145.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 145,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0073.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 73,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original agricultural fields with annual crops in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0129.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 129,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0001.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 1,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original agricultural fields with annual crops in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0157.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 157,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original dense forest with tree canopy cover in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Highway_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0200.png",
+    "cls": "Highway",
+    "change_type": "no_change",
+    "pair_id": 200,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0085.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 85,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original agricultural fields with annual crops landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0036.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 36,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original dense forest with tree canopy cover in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0147.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 147,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0041.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 41,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is substantial \u2014 large patches of canopy removed exposing underlying earth. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, brown bare soil patches where trees have been removed, with irregular clearing boundaries. The abrupt transition from intact canopy to exposed soil consistent with recent clearing indicates deforestation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0056.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 56,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original grasslands and herbaceous vegetation in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0101.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 101,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original pastoral grazing land and meadows landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0123.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 123,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows green growing crops \u2192 brown harvested fields, which follows a logical temporal sequence. The natural seasonal progression consistent with agricultural harvest cycle confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0105.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 105,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of agricultural fields with annual crops. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0049.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 49,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced clearing of dense forest or vegetation canopy to expose bare soil. In T1, the scene shows dense green tree canopy with continuous forest cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows brown bare soil patches where trees have been removed, with irregular clearing boundaries. The transition from dense forest \u2192 cleared bare land is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0028.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 28,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0008.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 8,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0184.png",
+    "cls": "PermanentCrop",
+    "change_type": "no_change",
+    "pair_id": 184,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced temporal stability with only minor natural variation between observation times. In T1, the scene shows the scene shows its characteristic land cover features, characteristic of permanent crop plantations and orchards. In T2, the scene now shows the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The transition from stable land cover \u2192 same land cover is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0068.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 68,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original agricultural fields with annual crops landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_15.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0099.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 99,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_10.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0019.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 19,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0085.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 85,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0051.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 51,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0033.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 33,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0174.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "no_change",
+    "pair_id": 174,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced temporal stability with only minor natural variation between observation times. In T1, the scene shows the scene shows its characteristic land cover features, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The transition from stable land cover \u2192 same land cover is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0001.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 1,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original agricultural fields with annual crops landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0037.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 37,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0193.png",
+    "cls": "Forest",
+    "change_type": "no_change",
+    "pair_id": 193,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0116.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 116,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of pastoral grazing land and meadows. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0153.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 153,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original dense forest with tree canopy cover in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0064.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 64,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is substantial \u2014 large patches of canopy removed exposing underlying earth. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, brown bare soil patches where trees have been removed, with irregular clearing boundaries. The abrupt transition from intact canopy to exposed soil consistent with recent clearing indicates deforestation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0191.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 191,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0086.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 86,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original river channels and riparian zones landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0144.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 144,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original grasslands and herbaceous vegetation in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0152.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 152,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0186.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 186,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show industrial zones with large buildings with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0167.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 167,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0027.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 27,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0092.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 92,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_02.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0066.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 66,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_16.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0178.png",
+    "cls": "Forest",
+    "change_type": "no_change",
+    "pair_id": 178,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The no significant change observed between T1 and T2 has significant implications: no significant environmental or land-use change; area remains stable. The original dense forest with tree canopy cover in T1 has been affected by temporal stability with only minor natural variation between observation times, as evidenced by the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0160.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 160,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_16.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0081.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 81,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original river channels and riparian zones landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0134.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 134,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The seasonal crop change observed between T1 and T2 has significant implications: normal agricultural practice; indicates successful harvest completion, soil now exposed to potential erosion. The original permanent crop plantations and orchards in T1 has been affected by transition from active growing season to post-harvest or fallow state, as evidenced by brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0094.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 94,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original river channels and riparian zones in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0101.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 101,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original pastoral grazing land and meadows in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0166.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 166,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original permanent crop plantations and orchards landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0038.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 38,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0079.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 79,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0051.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 51,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0164.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 164,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0174.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "no_change",
+    "pair_id": 174,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show grasslands and herbaceous vegetation with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0172.png",
+    "cls": "Forest",
+    "change_type": "no_change",
+    "pair_id": 172,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0191.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 191,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show industrial zones with large buildings with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0010.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 10,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0013.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 13,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0070.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 70,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0198.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 198,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show industrial zones with large buildings with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0197.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 197,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The no significant change observed between T1 and T2 has significant implications: no significant environmental or land-use change; area remains stable. The original industrial zones with large buildings in T1 has been affected by temporal stability with only minor natural variation between observation times, as evidenced by the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0032.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 32,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0074.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 74,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original agricultural fields with annual crops landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0006.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 6,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original dense forest with tree canopy cover in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0134.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 134,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0190.png",
+    "cls": "River",
+    "change_type": "no_change",
+    "pair_id": 190,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0042.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 42,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original dense forest with tree canopy cover in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0145.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 145,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0061.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 61,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original dense forest with tree canopy cover in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0184.png",
+    "cls": "PermanentCrop",
+    "change_type": "no_change",
+    "pair_id": 184,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show permanent crop plantations and orchards with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0149.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 149,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0113.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 113,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of agricultural fields with annual crops. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0137.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 137,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0136.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 136,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original grasslands and herbaceous vegetation in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0131.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 131,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The seasonal crop change observed between T1 and T2 has significant implications: normal agricultural practice; indicates successful harvest completion, soil now exposed to potential erosion. The original agricultural fields with annual crops in T1 has been affected by transition from active growing season to post-harvest or fallow state, as evidenced by brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0025.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 25,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0083.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 83,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original large water bodies and coastal areas in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0089.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 89,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of large water bodies and coastal areas. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0098.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 98,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0147.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 147,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0048.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 48,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original dense forest with tree canopy cover in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0118.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 118,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows green growing crops \u2192 brown harvested fields, which follows a logical temporal sequence. The natural seasonal progression consistent with agricultural harvest cycle confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_10.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0065.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 65,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is substantial \u2014 large patches of canopy removed exposing underlying earth. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, brown bare soil patches where trees have been removed, with irregular clearing boundaries. The abrupt transition from intact canopy to exposed soil consistent with recent clearing indicates deforestation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0140.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 140,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original dense forest with tree canopy cover in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0068.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 68,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0157.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 157,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0057.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 57,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original grasslands and herbaceous vegetation in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0015.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 15,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0148.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 148,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0185.png",
+    "cls": "SeaLake",
+    "change_type": "no_change",
+    "pair_id": 185,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The no significant change observed between T1 and T2 has significant implications: no significant environmental or land-use change; area remains stable. The original large water bodies and coastal areas in T1 has been affected by temporal stability with only minor natural variation between observation times, as evidenced by the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0025.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 25,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original grasslands and herbaceous vegetation in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0091.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 91,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original agricultural fields with annual crops in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Industrial_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0197.png",
+    "cls": "Industrial",
+    "change_type": "no_change",
+    "pair_id": 197,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0030.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 30,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0024.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 24,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0179.png",
+    "cls": "River",
+    "change_type": "no_change",
+    "pair_id": 179,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0120.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 120,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0012.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 12,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0016.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 16,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0007.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 7,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original agricultural fields with annual crops landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0031.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 31,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0144.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 144,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0030.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 30,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0094.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 94,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original river channels and riparian zones landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0049.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 49,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0043.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 43,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced clearing of dense forest or vegetation canopy to expose bare soil. In T1, the scene shows dense green tree canopy with continuous forest cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows brown bare soil patches where trees have been removed, with irregular clearing boundaries. The transition from dense forest \u2192 cleared bare land is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_02.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0066.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 66,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original grasslands and herbaceous vegetation in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0202.png",
+    "cls": "Pasture",
+    "change_type": "no_change",
+    "pair_id": 202,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced temporal stability with only minor natural variation between observation times. In T1, the scene shows the scene shows its characteristic land cover features, characteristic of pastoral grazing land and meadows. In T2, the scene now shows the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The transition from stable land cover \u2192 same land cover is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0063.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 63,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_16.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0173.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "no_change",
+    "pair_id": 173,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is negligible \u2014 no meaningful land cover change detected. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The consistent appearance across both timestamps indicating temporal stability indicates no significant change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0162.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 162,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0048.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 48,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced clearing of dense forest or vegetation canopy to expose bare soil. In T1, the scene shows dense green tree canopy with continuous forest cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows brown bare soil patches where trees have been removed, with irregular clearing boundaries. The transition from dense forest \u2192 cleared bare land is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0165.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 165,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0085.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 85,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_15.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0082.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 82,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0166.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 166,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original permanent crop plantations and orchards in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0144.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 144,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_15.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0133.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 133,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The seasonal crop change observed between T1 and T2 has significant implications: normal agricultural practice; indicates successful harvest completion, soil now exposed to potential erosion. The original agricultural fields with annual crops in T1 has been affected by transition from active growing season to post-harvest or fallow state, as evidenced by brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0060.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 60,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced clearing of dense forest or vegetation canopy to expose bare soil. In T1, the scene shows dense green tree canopy with continuous forest cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows brown bare soil patches where trees have been removed, with irregular clearing boundaries. The transition from dense forest \u2192 cleared bare land is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0062.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 62,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0104.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 104,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0073.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 73,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original agricultural fields with annual crops landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0092.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 92,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0165.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 165,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original permanent crop plantations and orchards in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0096.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 96,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The flooding observed between T1 and T2 has significant implications: displacement of communities, crop destruction, infrastructure damage, potential waterborne disease risk. The original river channels and riparian zones in T1 has been affected by inundation of previously dry terrain by water from rainfall, river overflow, or storm surge, as evidenced by dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0142.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 142,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0033.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 33,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0136.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 136,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0069.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 69,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as flooding. The T1 observation shows normal dry terrain with vegetation, fields, or mixed land cover, while T2 reveals dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. This pattern of dry land \u2192 water inundation is characteristic of flooding processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0194.png",
+    "cls": "River",
+    "change_type": "no_change",
+    "pair_id": 194,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0080.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 80,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original pastoral grazing land and meadows landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0006.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 6,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0058.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 58,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced clearing of dense forest or vegetation canopy to expose bare soil. In T1, the scene shows dense green tree canopy with continuous forest cover, characteristic of dense forest with tree canopy cover. In T2, the scene now shows brown bare soil patches where trees have been removed, with irregular clearing boundaries. The transition from dense forest \u2192 cleared bare land is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0141.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 141,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of permanent crop plantations and orchards. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0045.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 45,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original grasslands and herbaceous vegetation in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0124.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 124,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0101.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 101,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_10.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0019.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 19,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0105.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 105,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is scene-wide \u2014 the entire agricultural area has transitioned from growing to harvested. In T1, the original agricultural fields with annual crops landscape is visible. In T2, brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The natural seasonal progression consistent with agricultural harvest cycle indicates seasonal crop change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0202.png",
+    "cls": "Pasture",
+    "change_type": "no_change",
+    "pair_id": 202,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is negligible \u2014 no meaningful land cover change detected. In T1, the original pastoral grazing land and meadows landscape is visible. In T2, the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The consistent appearance across both timestamps indicating temporal stability indicates no significant change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0158.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 158,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The fire or burn scar observed between T1 and T2 has significant implications: ecosystem destruction, wildlife habitat loss, air quality degradation, increased runoff and erosion risk. The original dense forest with tree canopy cover in T1 has been affected by destruction of vegetation by wildfire leaving charred remnants and burn scars, as evidenced by dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0131.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 131,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows green growing crops \u2192 brown harvested fields, which follows a logical temporal sequence. The natural seasonal progression consistent with agricultural harvest cycle confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0032.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 32,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_07.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0053.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 53,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0174.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "no_change",
+    "pair_id": 174,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is negligible \u2014 no meaningful land cover change detected. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The consistent appearance across both timestamps indicating temporal stability indicates no significant change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0124.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 124,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of permanent crop plantations and orchards. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/River_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0094.png",
+    "cls": "River",
+    "change_type": "flooding",
+    "pair_id": 94,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dry land \u2192 water inundation, which follows a logical temporal sequence. The sudden appearance of standing water absent in the earlier observation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0013.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 13,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_12.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0028.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 28,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0058.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 58,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0125.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 125,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is scene-wide \u2014 the entire agricultural area has transitioned from growing to harvested. In T1, the original pastoral grazing land and meadows landscape is visible. In T2, brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The natural seasonal progression consistent with agricultural harvest cycle indicates seasonal crop change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_09.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0170.png",
+    "cls": "Forest",
+    "change_type": "no_change",
+    "pair_id": 170,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_02.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0014.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 14,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows natural land \u2192 urban built-up area, which follows a logical temporal sequence. The progressive development with new construction replacing vegetation confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0107.png",
+    "cls": "AnnualCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 107,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows green growing crops \u2192 brown harvested fields, which follows a logical temporal sequence. The natural seasonal progression consistent with agricultural harvest cycle confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Residential_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0171.png",
+    "cls": "Residential",
+    "change_type": "no_change",
+    "pair_id": 171,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as no significant change. The T1 observation shows the scene shows its characteristic land cover features, while T2 reveals the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. This pattern of stable land cover \u2192 same land cover is characteristic of no significant change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_16.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0126.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 126,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of permanent crop plantations and orchards. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0059.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 59,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0121.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 121,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is scene-wide \u2014 the entire agricultural area has transitioned from growing to harvested. In T1, the original permanent crop plantations and orchards landscape is visible. In T2, brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The natural seasonal progression consistent with agricultural harvest cycle indicates seasonal crop change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0054.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 54,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_05.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0022.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 22,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/SeaLake_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0100.png",
+    "cls": "SeaLake",
+    "change_type": "flooding",
+    "pair_id": 100,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is widespread \u2014 water covers a significant portion of the previously dry area. In T1, the original large water bodies and coastal areas landscape is visible. In T2, dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The sudden appearance of standing water absent in the earlier observation indicates flooding."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_02.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0168.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 168,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0080.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 80,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0183.png",
+    "cls": "AnnualCrop",
+    "change_type": "no_change",
+    "pair_id": 183,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show agricultural fields with annual crops with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_18.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0034.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 34,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The deforestation observed between T1 and T2 has significant implications: habitat loss, reduced carbon sequestration, increased soil erosion risk, potential watershed degradation. The original grasslands and herbaceous vegetation in T1 has been affected by clearing of dense forest or vegetation canopy to expose bare soil, as evidenced by brown bare soil patches where trees have been removed, with irregular clearing boundaries visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0161.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 161,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows healthy vegetation \u2192 charred burn scar, which follows a logical temporal sequence. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0039.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 39,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as deforestation. The T1 observation shows dense green tree canopy with continuous forest cover, while T2 reveals brown bare soil patches where trees have been removed, with irregular clearing boundaries. This pattern of dense forest \u2192 cleared bare land is characteristic of deforestation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Highway_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0188.png",
+    "cls": "Highway",
+    "change_type": "no_change",
+    "pair_id": 188,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The no significant change observed between T1 and T2 has significant implications: no significant environmental or land-use change; area remains stable. The original highway and road infrastructure in T1 has been affected by temporal stability with only minor natural variation between observation times, as evidenced by the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_02.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0168.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 168,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_06.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0000.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "urbanisation",
+    "pair_id": 0,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0125.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 125,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The seasonal crop change observed between T1 and T2 has significant implications: normal agricultural practice; indicates successful harvest completion, soil now exposed to potential erosion. The original pastoral grazing land and meadows in T1 has been affected by transition from active growing season to post-harvest or fallow state, as evidenced by brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0008.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 8,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced conversion of natural or agricultural land to built-up urban area. In T1, the scene shows green vegetation, open fields, or natural land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The transition from natural land \u2192 urban built-up area is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_00.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0016.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 16,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original agricultural fields with annual crops in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0119.png",
+    "cls": "Pasture",
+    "change_type": "seasonal_crop",
+    "pair_id": 119,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as seasonal crop change. The T1 observation shows green agricultural fields with visible crop growth and active vegetation, while T2 reveals brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. This pattern of green growing crops \u2192 brown harvested fields is characteristic of seasonal crop change processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0007.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 7,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original agricultural fields with annual crops in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_11.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0020.png",
+    "cls": "Forest",
+    "change_type": "urbanisation",
+    "pair_id": 20,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate to significant \u2014 new structures cover portions of the previously open landscape. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. The progressive development with new construction replacing vegetation indicates urbanisation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_16.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0067.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "deforestation",
+    "pair_id": 67,
+    "question": "Is T2 more recent than T1? What evidence suggests this?",
+    "answer": "Yes, T2 appears to be the more recent observation. The progression shows dense forest \u2192 cleared bare land, which follows a logical temporal sequence. The abrupt transition from intact canopy to exposed soil consistent with recent clearing confirms that T2 was acquired after T1."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/deforestation_0063.png",
+    "cls": "Forest",
+    "change_type": "deforestation",
+    "pair_id": 63,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is substantial \u2014 large patches of canopy removed exposing underlying earth. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, brown bare soil patches where trees have been removed, with irregular clearing boundaries. The abrupt transition from intact canopy to exposed soil consistent with recent clearing indicates deforestation."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0182.png",
+    "cls": "AnnualCrop",
+    "change_type": "no_change",
+    "pair_id": 182,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The no significant change observed between T1 and T2 has significant implications: no significant environmental or land-use change; area remains stable. The original agricultural fields with annual crops in T1 has been affected by temporal stability with only minor natural variation between observation times, as evidenced by the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_01.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0033.png",
+    "cls": "Pasture",
+    "change_type": "urbanisation",
+    "pair_id": 33,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original pastoral grazing land and meadows in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0008.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 8,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as urbanisation. The T1 observation shows green vegetation, open fields, or natural land cover, while T2 reveals grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation. This pattern of natural land \u2192 urban built-up area is characteristic of urbanisation processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/urbanisation_0017.png",
+    "cls": "AnnualCrop",
+    "change_type": "urbanisation",
+    "pair_id": 17,
+    "question": "What are the potential implications of the observed changes?",
+    "answer": "The urbanisation observed between T1 and T2 has significant implications: loss of agricultural or natural land, increased impervious surfaces, altered local hydrology, potential urban heat island effects. The original agricultural fields with annual crops in T1 has been affected by conversion of natural or agricultural land to built-up urban area, as evidenced by grey rectangular structures resembling buildings, paved road-like features, and reduced vegetation visible in T2."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_15.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/seasonal_crop_0117.png",
+    "cls": "PermanentCrop",
+    "change_type": "seasonal_crop",
+    "pair_id": 117,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of permanent crop plantations and orchards. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_20.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0136.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 136,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original grasslands and herbaceous vegetation landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/AnnualCrop_08.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0073.png",
+    "cls": "AnnualCrop",
+    "change_type": "flooding",
+    "pair_id": 73,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of agricultural fields with annual crops. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/PermanentCrop_10.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0143.png",
+    "cls": "PermanentCrop",
+    "change_type": "fire_burn",
+    "pair_id": 143,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_17.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0169.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 169,
+    "question": "What type of land-cover change has occurred between T1 and T2?",
+    "answer": "The observed change is classified as fire or burn scar. The T1 observation shows healthy green vegetation cover with intact canopy or ground cover, while T2 reveals dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. This pattern of healthy vegetation \u2192 charred burn scar is characteristic of fire or burn scar processes."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Highway_19.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0188.png",
+    "cls": "Highway",
+    "change_type": "no_change",
+    "pair_id": 188,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced temporal stability with only minor natural variation between observation times. In T1, the scene shows the scene shows its characteristic land cover features, characteristic of highway and road infrastructure. In T2, the scene now shows the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The transition from stable land cover \u2192 same land cover is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_04.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0140.png",
+    "cls": "Forest",
+    "change_type": "fire_burn",
+    "pair_id": 140,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is moderate \u2014 distinct burn scar areas with clear boundaries between burnt and unburnt zones. In T1, the original dense forest with tree canopy cover landscape is visible. In T2, dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The abrupt, non-seasonal vegetation loss with characteristic burn scar patterns indicates fire or burn scar."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/HerbaceousVegetation_03.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/fire_burn_0139.png",
+    "cls": "HerbaceousVegetation",
+    "change_type": "fire_burn",
+    "pair_id": 139,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced destruction of vegetation by wildfire leaving charred remnants and burn scars. In T1, the scene shows healthy green vegetation cover with intact canopy or ground cover, characteristic of grasslands and herbaceous vegetation. In T2, the scene now shows dark charred patches with orange-brown fire edge boundaries, severely damaged vegetation. The transition from healthy vegetation \u2192 charred burn scar is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_14.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/flooding_0075.png",
+    "cls": "Pasture",
+    "change_type": "flooding",
+    "pair_id": 75,
+    "question": "What changes occurred in this area between the two observation times?",
+    "answer": "Comparing the two timestamps, this area has experienced inundation of previously dry terrain by water from rainfall, river overflow, or storm surge. In T1, the scene shows normal dry terrain with vegetation, fields, or mixed land cover, characteristic of pastoral grazing land and meadows. In T2, the scene now shows dark blue-brown water patches covering low-lying areas, submerged vegetation, turbid water surface. The transition from dry land \u2192 water inundation is clearly visible."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Forest_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0172.png",
+    "cls": "Forest",
+    "change_type": "no_change",
+    "pair_id": 172,
+    "question": "Is there evidence that one image was taken more recently than the other?",
+    "answer": "There is no strong temporal indicator. Both T1 and T2 show dense forest with tree canopy cover with the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The minor variations in brightness and contrast are consistent with different atmospheric conditions or sensor calibration rather than actual land-cover change."
+  },
+  {
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Residential_13.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0201.png",
+    "cls": "Residential",
+    "change_type": "no_change",
+    "pair_id": 201,
+    "question": "How extensive is the change between T1 and T2?",
+    "answer": "The change extent is negligible \u2014 no meaningful land cover change detected. In T1, the original residential housing and neighbourhoods landscape is visible. In T2, the scene remains essentially unchanged with only minor brightness or contrast differences from natural variation. The consistent appearance across both timestamps indicating temporal stability indicates no significant change."
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "BLEU-1": 0.3166,
+  "BLEU-4": 0.2615,
+  "ROUGE-L": 0.4225,
+  "num_samples": 200,
+  "best_epoch": 8,
+  "best_val_loss": 0.0502,
+  "training_time_min": 64.2,
+  "BLEU-1_optical": 0.365,
+  "BLEU-4_optical": 0.331,
+  "ROUGE-L_optical": 0.4967,
+  "BLEU-1_sar": 0.2693,
+  "BLEU-4_sar": 0.1934,
+  "ROUGE-L_sar": 0.3498
+}

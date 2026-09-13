@@ -1,0 +1,98 @@
+{
+  "model_type": "crossmodal",
+  "answer": "Question SAR penetrates clouds and reveals uniform volume scattering from multiple canopy layers with moderate backscatter. This backscatter pattern is characteristic of dense forest cover with continuous tree canopy and woodland areas, enabling the identification of tree canopy without requiring cloud-free optical conditions. Even without optical data, the SAR clearly identifies tree canopy with uniform volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight provides critical structural information about tree canopy that optical sensors cannot capture. Even without optical data, the SAR clearly identifies tree canopy with volume scattering from multiple canopy layers with moderate backscatter. This radar-derived insight provides critical structural",
+  "description": "The model relied primarily on sar data (optical: 49.5%, SAR: 50.5%). Optical attention is distributed (concentration: 1.26), SAR attention is distributed (concentration: 1.44). Primary optical focus: north-west quadrant. Primary SAR focus: north-east quadrant.",
+  "confidence": 1.350533664226532,
+  "regions": [
+    {
+      "row": 7,
+      "col": 4,
+      "score": 0.8469617962837219,
+      "quadrant": "north-west",
+      "pct_x": 25.0,
+      "pct_y": 43.8
+    },
+    {
+      "row": 6,
+      "col": 9,
+      "score": 0.8257569074630737,
+      "quadrant": "north-east",
+      "pct_x": 56.2,
+      "pct_y": 37.5
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "score": 0.8009134531021118,
+      "quadrant": "north-west",
+      "pct_x": 12.5,
+      "pct_y": 18.8
+    },
+    {
+      "row": 8,
+      "col": 12,
+      "score": 0.7970149517059326,
+      "quadrant": "south-east",
+      "pct_x": 75.0,
+      "pct_y": 50.0
+    },
+    {
+      "row": 6,
+      "col": 5,
+      "score": 0.796306312084198,
+      "quadrant": "north-west",
+      "pct_x": 31.2,
+      "pct_y": 37.5
+    },
+    {
+      "row": 7,
+      "col": 12,
+      "score": 0.891059160232544,
+      "quadrant": "north-east",
+      "pct_x": 75.0,
+      "pct_y": 43.8
+    },
+    {
+      "row": 15,
+      "col": 11,
+      "score": 0.836406409740448,
+      "quadrant": "south-east",
+      "pct_x": 68.8,
+      "pct_y": 93.8
+    },
+    {
+      "row": 7,
+      "col": 8,
+      "score": 0.8349045515060425,
+      "quadrant": "north-east",
+      "pct_x": 50.0,
+      "pct_y": 43.8
+    },
+    {
+      "row": 7,
+      "col": 13,
+      "score": 0.7988699078559875,
+      "quadrant": "north-east",
+      "pct_x": 81.2,
+      "pct_y": 43.8
+    },
+    {
+      "row": 14,
+      "col": 8,
+      "score": 0.7938844561576843,
+      "quadrant": "south-east",
+      "pct_x": 50.0,
+      "pct_y": 87.5
+    }
+  ],
+  "metadata": {
+    "question": "If clouds obscured the optical image, what could the SAR still determine?",
+    "optical_path": "/content/rs_crossmodal_data/optical/AnnualCrop_17.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0102.png",
+    "modality_contribution": {
+      "optical": 0.495,
+      "sar": 0.505
+    },
+    "dominant_sensor": "sar"
+  }
+}

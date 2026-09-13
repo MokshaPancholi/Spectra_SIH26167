@@ -1,0 +1,230 @@
+# SatQuery AI — Model 2: Cross-Modal Optical + SAR Fusion VQA
+
+A single, self-contained Google Colab notebook that **creates paired Optical–SAR data, fine-tunes a dual-stream VLM with cross-modal feature fusion, evaluates, and saves everything to Google Drive**.
+
+---
+
+## Goal
+
+Build a prototype cross-modal fusion VQA model that:
+1. Accepts **two co-registered images** (Optical + SAR) of the **same geographic area** + a natural-language question.
+2. **Fuses information from both sensors** at the feature level to produce a single, generative natural-language answer.
+3. Trains on **~100 paired image sets** (each pair = 1 Optical + 1 SAR of the same scene).
+4. Runs end-to-end on a **Google Colab T4 GPU** in a single session (~15–25 min training).
+
+---
+
+## How is this different from Model 1?
+
+| Aspect | Model 1 (Single-Image VQA) | Model 2 (Cross-Modal Fusion) |
+|--------|---------------------------|------------------------------|
+| **Input** | 1 image (Optical OR SAR) | 2 images (Optical AND SAR, same area) |
+| **Architecture** | Standard BLIP-2 (single image → LM) | **Dual-stream BLIP-2** (2 images → shared ViT/Q-Former → concatenate → LM) |
+| **Visual tokens** | 32 query tokens from Q-Former | **64 query tokens** (32 optical + 32 SAR, concatenated) |
+| **QA pairs** | Single-modality questions | **Cross-modal reasoning** ("What does the SAR tell you that the optical doesn't?") |
+| **Key skill** | Scene description from one sensor | **Sensor fusion** — combining spectral & structural information |
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Dual-Stream Architecture:** The core innovation is processing both images through BLIP-2's **shared frozen ViT + Q-Former** independently, then **concatenating the 32-token query outputs** from each stream into 64 visual tokens before projecting into the language model. This requires a lightweight custom `DualStreamBLIP2` wrapper class (~50 lines) that overrides the forward pass. The ViT and Q-Former weights remain **frozen and shared** — only the LoRA-adapted OPT language model sees the concatenated features.
+
+> [!IMPORTANT]
+> **Paired Dataset:** For the prototype, each "pair" comes from the same EuroSAT class. The optical image is a real Sentinel-2 patch from EuroSAT. The SAR image is synthesised from that same optical patch using calibrated speckle noise simulation (identical to Model 1's fallback). This guarantees co-registration for the prototype. For production, replace with real BigEarthNet-MM S1+S2 pairs.
+
+---
+
+## Open Questions
+
+> [!IMPORTANT]
+> 1. **Drive Folder Path:** Results will be saved to `My Drive/SatQuery_AI/Model2_CrossModal/`. Is that OK, or do you prefer a different path?
+> 2. **Number of paired scenes:** Planning ~100 paired scenes (×5 QA each = ~500 cross-modal QA pairs). Increase to 150 pairs?
+
+---
+
+## Proposed Changes
+
+### Notebook File
+
+#### [NEW] [`SatQ_CrossModal_Model2.py`](file:///d:/SatQ/SatQ_CrossModal_Model2.py)
+#### [NEW] [`SatQ_CrossModal_Model2.ipynb`](file:///d:/SatQ/SatQ_CrossModal_Model2.ipynb)
+
+---
+
+### Section 1 — Environment Setup
+- Same dependencies as Model 1 (`transformers`, `peft`, `bitsandbytes`, `accelerate`, `evaluate`, `nltk`, `rouge-score`).
+- Mount Google Drive.
+- Create output directory: `/content/drive/MyDrive/SatQuery_AI/Model2_CrossModal/`.
+- Set reproducibility seeds.
+
+---
+
+### Section 2 — Paired Dataset Collection
+
+**~100 paired scenes** where each pair = (Optical image, SAR image) of the **same geographic area and class**.
+
+**Optical (real):** Download EuroSAT images (10 images × 10 classes = 100 optical patches).
+
+**SAR (synthesised from optical counterpart):** For each optical image, generate a paired SAR image using:
+- Convert to grayscale (simulates single-polarisation VV/VH).
+- Apply **multiplicative speckle noise** (Gamma-distributed, K=4).
+- Apply **log-dB transform** (calibrated backscatter simulation).
+- Add class-specific radar scattering signatures:
+  - Urban/Industrial: enhanced double-bounce (brighter corners/edges).
+  - Water/River/SeaLake: specular reflection (smooth dark areas).
+  - Forest/Vegetation: volume scattering (moderate uniform texture).
+  - Crops/Pasture: diffuse scattering (variable medium texture).
+
+This ensures the SAR image contains **complementary structural information** not directly visible in the optical image, requiring the model to fuse both modalities.
+
+---
+
+### Section 3 — Cross-Modal QA Pair Generation (~500 pairs)
+
+Each paired scene gets **5 cross-modal QA pairs** that specifically require information from **both** sensors:
+
+| Question Type | Example Question | Example Answer |
+|---|---|---|
+| **Cross-modal comparison** | *"Compare what the optical and SAR images reveal about this area."* | *"The optical image shows green vegetation with visible crop rows indicating agricultural land. The SAR image reveals moderate diffuse scattering consistent with crop canopy structure, confirming actively growing annual crops."* |
+| **SAR-augmented insight** | *"What additional information does the SAR image provide that isn't visible in the optical?"* | *"While the optical image shows surface vegetation colour, the SAR reveals the underlying terrain structure through radar backscatter. The volume scattering pattern indicates dense canopy with multiple vertical layers."* |
+| **Fused land-cover ID** | *"Based on both optical and SAR data, what is the land cover type?"* | *"Combining optical spectral signatures showing high NIR reflectance with SAR backscatter showing strong double-bounce returns, this area is classified as a built-up residential zone with buildings and road networks."* |
+| **Cloud/gap compensation** | *"If the optical image were obscured by clouds, what could you still determine from the SAR alone?"* | *"The SAR image penetrates cloud cover and shows strong specular reflection from a smooth water surface, allowing confident identification of a water body even without optical confirmation."* |
+| **Confidence assessment** | *"How confident can you be about the land cover using both sensors together?"* | *"Using both sensors provides higher confidence. The optical confirms surface vegetation type through colour, while the SAR confirms physical structure through backscatter intensity, yielding a robust multi-modal classification."* |
+
+---
+
+### Section 4 — Data Preprocessing & DataLoaders
+
+Custom `CrossModalDataset` class that returns **two image tensors** per sample:
+- `optical_pixel_values`: Processed through BLIP-2's image processor.
+- `sar_pixel_values`: SAR converted to 3-channel (repeat grayscale → RGB), processed through same image processor.
+- `input_ids`, `attention_mask`, `labels`: Tokenised cross-modal prompt and answer.
+
+Prompt format: `"Question: {q} Answer: {a}"` (same as Model 1, but questions are cross-modal).
+
+---
+
+### Section 5 — Dual-Stream Model Architecture
+
+```
+  ┌──────────┐        ┌──────────┐
+  │ Optical  │        │   SAR    │
+  │  Image   │        │  Image   │
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  ┌────▼─────┐        ┌────▼─────┐
+  │  Shared  │        │  Shared  │
+  │   ViT    │ (frozen)│   ViT    │  (same weights)
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  ┌────▼─────┐        ┌────▼─────┐
+  │  Shared  │        │  Shared  │
+  │ Q-Former │ (frozen)│ Q-Former │  (same weights)
+  └────┬─────┘        └────┬─────┘
+       │                    │
+  [32 tokens]          [32 tokens]
+       │                    │
+       └────────┬───────────┘
+                │
+           ┌────▼────┐
+           │ CONCAT  │  →  [64 visual tokens]
+           └────┬────┘
+                │
+           ┌────▼────┐
+           │ Language │
+           │Projection│
+           └────┬────┘
+                │
+           ┌────▼────┐
+           │  OPT    │ ← LoRA adapters (trainable)
+           │  2.7B   │
+           └────┬────┘
+                │
+           [Answer]
+```
+
+Implementation: A `DualStreamBLIP2` wrapper class that:
+1. Takes `optical_pixel_values` and `sar_pixel_values` as separate inputs.
+2. Runs each through the **shared frozen** `model.vision_model` → `model.qformer`.
+3. **Concatenates** the two 32-token Q-Former outputs → 64 tokens.
+4. Projects through `model.language_projection`.
+5. Prepends to text embeddings and feeds to the **LoRA-adapted OPT language model**.
+
+Trainable parameters: LoRA adapters on OPT (`q_proj`, `v_proj`) — same ~8M params as Model 1. No new layers needed; the concatenation is a zero-parameter operation.
+
+---
+
+### Section 6 — Training Loop
+- **Epochs:** 8 (early stopping, patience 2).
+- **Batch size:** 2 (grad accumulation 4 → effective 8).
+- **Mixed precision:** FP16.
+- **Optimizer:** AdamW, lr=2e-4, cosine schedule with 10% warmup.
+- Estimated time: **~15–25 minutes** on T4 (similar to Model 1 — same LM, just 2× vision forward passes).
+
+---
+
+### Section 7 — Evaluation & Metrics
+- Generate answers on validation set using beam search.
+- Compute **BLEU-1, BLEU-4, ROUGE-L**.
+- Compare cross-modal fusion quality vs single-modality baseline.
+- Save `metrics.json` and `predictions.csv` to Drive.
+
+---
+
+### Section 8 — Visualizations (All Saved to Drive)
+
+| Plot | Description |
+|---|---|
+| `loss_lr_curves.png` | Training/val loss + LR schedule |
+| `metrics_summary.png` | BLEU/ROUGE bar charts |
+| `predictions_grid.png` | 2×3 grid showing Optical + SAR pair → Question → Ground Truth → Model Answer |
+| `score_distribution.png` | ROUGE-L histogram + best/worst examples |
+| `fusion_comparison.png` | **NEW:** Side-by-side showing how fusion answers differ from single-modality answers |
+
+---
+
+### Section 9 — Model Export & Report
+Save to `Google Drive/SatQuery_AI/Model2_CrossModal/`:
+```
+Model2_CrossModal/
+├── checkpoints/      (LoRA adapter weights & processor)
+├── results/          (All plots, predictions.csv, metrics.json)
+├── dataset/          (train/val JSON with paired image paths)
+└── report/           (training_report.md)
+```
+
+---
+
+### Section 10 — Interactive Cross-Modal Demo
+`satquery_crossmodal(optical_path, sar_path, question)` function for live testing.
+
+---
+
+## Verification Plan
+
+### Automated Tests (in-notebook)
+- Assert training loss decreases over epochs.
+- Assert BLEU-1 > 0.12 and ROUGE-L > 0.18 on validation set (thresholds for cross-modal prototype).
+- Verify model generates coherent answers referencing **both** modalities.
+
+### Manual Verification
+- Run inference on 3 held-out paired scenes with cross-modal questions.
+- Visually inspect that answers reference both optical and SAR information.
+
+---
+
+## Summary
+
+| Aspect | Choice |
+|---|---|
+| **Base Model** | BLIP-2 OPT-2.7B (4-bit quantised) |
+| **Architecture** | Dual-stream shared ViT + Q-Former → 64-token concat → LoRA OPT |
+| **Fine-tuning** | QLoRA (rank 16, ~8M trainable params) |
+| **Dataset** | ~100 paired scenes (100 optical + 100 SAR), ~500 cross-modal QA pairs |
+| **Optical Source** | EuroSAT (HuggingFace) |
+| **SAR Source** | Synthesised from optical (calibrated speckle + class-specific scattering) |
+| **QA Format** | Cross-modal generative natural language |
+| **Training Time** | ~15–25 min on Colab T4 |
+| **Outputs** | LoRA weights, metrics, 5+ plots, predictions, report — all to Drive |

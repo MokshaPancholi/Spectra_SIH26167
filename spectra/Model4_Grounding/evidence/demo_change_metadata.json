@@ -1,0 +1,23 @@
+{
+  "model_type": "change_detect",
+  "answer": "Comparing the two timestamps, this area has experienced transition from active growing season to post-harvest or fallow state. In T1, the scene shows green agricultural fields with visible crop growth and active vegetation, characteristic of pastoral grazing land and meadows. In T2, the scene now shows brown-yellow harvested or bare fields with crop stubble residue and reduced vegetation. The transition from green growing crops \u2192 brown harvested fields is clearly visible. The natural seasonal progression consistent with agricultural harvest cycle indicates post-harvest or fallow state.",
+  "description": "Detected 1 distinct change region in the southern-eastern sector, covering 24.9% of the scene. Attention shift between T1 and T2: 0.177 (significant). T1 attention focused on south-west quadrant; T2 attention focused on south-west quadrant.",
+  "confidence": 24.90832270408163,
+  "regions": [
+    {
+      "y1": 0.25,
+      "x1": 0.25,
+      "y2": 0.75,
+      "x2": 0.75,
+      "area_pct": 24.47
+    }
+  ],
+  "metadata": {
+    "question": "What changes occurred in this area between the two observation times?",
+    "t1_path": "/content/rs_bitemporal_data/t1_before/Pasture_21.png",
+    "t2_path": "/content/rs_bitemporal_data/t2_after/no_change_0202.png",
+    "change_percentage": 24.91,
+    "num_change_regions": 1,
+    "attention_shift": 0.1766
+  }
+}

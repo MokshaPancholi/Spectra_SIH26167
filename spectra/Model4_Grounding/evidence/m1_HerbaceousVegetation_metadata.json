@@ -1,0 +1,52 @@
+{
+  "model_type": "vqa",
+  "answer": "The dominant feature is orchard trees, characteristic of permanent crop plantations such as orchards, vineyards, or fruit trees. Key features include orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: orchard trees, permanent plantations, vineyard rows. Key features: or",
+  "description": "Model attention is broadly distributed (concentration ratio: 1.46). Primary focus: south-east quadrant (activation strength: 0.849). The top-5 attended regions are predominantly in the south-east sector, indicating a spatially coherent region of interest.",
+  "confidence": 1.4639720916748047,
+  "regions": [
+    {
+      "row": 12,
+      "col": 8,
+      "score": 0.8487450480461121,
+      "quadrant": "south-east",
+      "pct_x": 50.0,
+      "pct_y": 75.0
+    },
+    {
+      "row": 1,
+      "col": 9,
+      "score": 0.8441794514656067,
+      "quadrant": "north-east",
+      "pct_x": 56.2,
+      "pct_y": 6.2
+    },
+    {
+      "row": 1,
+      "col": 10,
+      "score": 0.8388461470603943,
+      "quadrant": "north-east",
+      "pct_x": 62.5,
+      "pct_y": 6.2
+    },
+    {
+      "row": 12,
+      "col": 9,
+      "score": 0.8373178839683533,
+      "quadrant": "south-east",
+      "pct_x": 56.2,
+      "pct_y": 75.0
+    },
+    {
+      "row": 11,
+      "col": 13,
+      "score": 0.8173410892486572,
+      "quadrant": "south-east",
+      "pct_x": 81.2,
+      "pct_y": 68.8
+    }
+  ],
+  "metadata": {
+    "question": "What is the dominant feature in this scene?",
+    "image_path": "/content/rs_vqa_data/sar/sar_0002.png"
+  }
+}

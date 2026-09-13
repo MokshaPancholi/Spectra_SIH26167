@@ -1,0 +1,98 @@
+{
+  "model_type": "crossmodal",
+  "answer": "Question: While the optical image shows surface appearance through light green reflectance with smooth spectral uniformity, the SAR image adds structural information through low diffuse scattering from short grass with minimal structural features. This radar-derived insight reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture. Even though optical sensors were designed for agricultural crops, the SAR image complements it with physical properties like surface roughness and vertical structure. This multi-modal collaboration reveals physical properties like surface roughness and vertical structure that optical sensors cannot capture. The multi-modal partnership reveals physical properties like surface roughness and vertical structure that optical sensors cannot",
+  "description": "The model relied primarily on sar data (optical: 49.5%, SAR: 50.5%). Optical attention is distributed (concentration: 1.27), SAR attention is distributed (concentration: 1.47). Primary optical focus: north-west quadrant. Primary SAR focus: south-west quadrant.",
+  "confidence": 1.3699655532836914,
+  "regions": [
+    {
+      "row": 2,
+      "col": 6,
+      "score": 0.8582913279533386,
+      "quadrant": "north-west",
+      "pct_x": 37.5,
+      "pct_y": 12.5
+    },
+    {
+      "row": 6,
+      "col": 9,
+      "score": 0.8573662638664246,
+      "quadrant": "north-east",
+      "pct_x": 56.2,
+      "pct_y": 37.5
+    },
+    {
+      "row": 7,
+      "col": 12,
+      "score": 0.8245224952697754,
+      "quadrant": "north-east",
+      "pct_x": 75.0,
+      "pct_y": 43.8
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "score": 0.8228344321250916,
+      "quadrant": "north-west",
+      "pct_x": 43.8,
+      "pct_y": 12.5
+    },
+    {
+      "row": 8,
+      "col": 7,
+      "score": 0.8087326288223267,
+      "quadrant": "south-west",
+      "pct_x": 43.8,
+      "pct_y": 50.0
+    },
+    {
+      "row": 8,
+      "col": 2,
+      "score": 0.8618494868278503,
+      "quadrant": "south-west",
+      "pct_x": 12.5,
+      "pct_y": 50.0
+    },
+    {
+      "row": 5,
+      "col": 14,
+      "score": 0.8546600341796875,
+      "quadrant": "north-east",
+      "pct_x": 87.5,
+      "pct_y": 31.2
+    },
+    {
+      "row": 6,
+      "col": 13,
+      "score": 0.8425907492637634,
+      "quadrant": "north-east",
+      "pct_x": 81.2,
+      "pct_y": 37.5
+    },
+    {
+      "row": 6,
+      "col": 14,
+      "score": 0.8347119092941284,
+      "quadrant": "north-east",
+      "pct_x": 87.5,
+      "pct_y": 37.5
+    },
+    {
+      "row": 5,
+      "col": 13,
+      "score": 0.8303881287574768,
+      "quadrant": "north-east",
+      "pct_x": 81.2,
+      "pct_y": 31.2
+    }
+  ],
+  "metadata": {
+    "question": "What additional information does the SAR image provide beyond the optical?",
+    "optical_path": "/content/rs_crossmodal_data/optical/HerbaceousVegetation_13.png",
+    "sar_path": "/content/rs_crossmodal_data/sar/sar_pair_0120.png",
+    "modality_contribution": {
+      "optical": 0.4947,
+      "sar": 0.5053
+    },
+    "dominant_sensor": "sar"
+  }
+}
