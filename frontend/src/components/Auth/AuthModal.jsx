@@ -46,8 +46,6 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
         throw new Error(data.detail || 'Authentication failed');
       }
 
-      localStorage.setItem('satquery_token', data.token);
-      localStorage.setItem('satquery_user', JSON.stringify(data.user));
       onAuthSuccess(data.user, data.token);
       onClose();
     } catch (err) {
@@ -55,18 +53,6 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleGuestAccess = () => {
-    const guestUser = {
-      id: 'guest',
-      username: 'Guest Analyst',
-      email: 'guest@satquery.local',
-      isGuest: true,
-    };
-    localStorage.setItem('satquery_user', JSON.stringify(guestUser));
-    onAuthSuccess(guestUser, null);
-    onClose();
   };
 
   return (
@@ -195,21 +181,8 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
           </button>
         </form>
 
-        <div className="auth-divider">
-          <span>OR</span>
-        </div>
-
-        {/* Quick Guest Pass Option */}
-        <button
-          type="button"
-          className="auth-guest-btn"
-          onClick={handleGuestAccess}
-        >
-          <Compass size={16} /> Instant Guest Exploration (Demo Mode)
-        </button>
-
         <div className="auth-footer-note">
-          <CheckCircle2 size={13} /> Chat history, investigation sessions, and captured satellite imagery are saved to PostgreSQL.
+          <CheckCircle2 size={13} /> Sign in is required to use the command center and save your analysis history.
         </div>
       </div>
     </div>

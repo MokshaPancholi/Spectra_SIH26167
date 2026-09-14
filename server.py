@@ -132,8 +132,8 @@ def init_presets():
         CACHED_PRESETS["urban_vqa"] = {
             "id": "urban_vqa",
             "title": "Urban Infrastructure & Port",
-            "category": "Visual Question Answering (VQA)",
-            "description": "High-resolution optical scene over urban grid, commercial blocks, and road network.",
+            "category": "Ask about the scene",
+            "description": "A city view showing roads, buildings, and nearby land use.",
             "recommended_query": "What type of infrastructure and building density is visible in this area?",
             "image1": pil_to_base64_data_url(urban_opt),
             "image2": None,
@@ -143,9 +143,9 @@ def init_presets():
 
         CACHED_PRESETS["crossmodal_coastal"] = {
             "id": "crossmodal_coastal",
-            "title": "Coastal Estuary (Optical + SAR)",
-            "category": "Optical-SAR Cross-Modal Fusion",
-            "description": "Dual-sensor acquisition with cloud-penetrating Sentinel-1 SAR backscatter and Sentinel-2 RGB.",
+            "title": "Coastal Estuary (Image + Radar)",
+            "category": "Compare image + radar",
+            "description": "The same coastline shown in two ways: normal image and radar view.",
             "recommended_query": "Compare optical and SAR radar information to verify water-land boundaries.",
             "image1": pil_to_base64_data_url(coastal_opt),
             "image2": pil_to_base64_data_url(coastal_sar),
@@ -155,9 +155,9 @@ def init_presets():
 
         CACHED_PRESETS["bitemporal_change"] = {
             "id": "bitemporal_change",
-            "title": "Industrial Expansion (T1 vs T2)",
-            "category": "Bi-Temporal Change Detection",
-            "description": "Two temporal acquisitions monitoring vegetation clearing and ground construction.",
+            "title": "Industrial Expansion (Two time points)",
+            "category": "Compare two time points",
+            "description": "The same area at two times to spot changes like new buildings or cleared land.",
             "recommended_query": "What significant changes occurred between these two temporal acquisitions?",
             "image1": pil_to_base64_data_url(t1_forest),
             "image2": pil_to_base64_data_url(t2_forest),

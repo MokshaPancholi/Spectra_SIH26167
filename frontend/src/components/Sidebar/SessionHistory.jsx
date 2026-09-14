@@ -34,7 +34,7 @@ export default function SessionHistory({
 
       <div className="history-db-badge">
         <Database size={12} />
-        <span>Synchronized with PostgreSQL DB</span>
+        <span>Saved to your account</span>
       </div>
 
       <div className="new-session-action">

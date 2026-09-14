@@ -34,21 +34,21 @@ export default function ModalityBar({
             onClick={() => onSelectLayer('split')}
           >
             <GitCompare size={13} />
-            <span>Swipe Compare</span>
+            <span>Compare side by side</span>
           </button>
           <button
             className={`modality-tab ${activeLayer === 'optical' ? 'active' : ''}`}
             onClick={() => onSelectLayer('optical')}
           >
             <Eye size={13} />
-            <span>Optical RGB</span>
+            <span>Main image</span>
           </button>
           <button
             className={`modality-tab ${activeLayer === 'sar' ? 'active' : ''}`}
             onClick={() => onSelectLayer('sar')}
           >
             <Radio size={13} />
-            <span>SAR Sentinel-1</span>
+            <span>Radar view</span>
           </button>
           {evidenceArtifacts?.['Optical Heatmap'] && (
             <button
@@ -56,7 +56,7 @@ export default function ModalityBar({
               onClick={() => onSelectLayer('fusion')}
             >
               <Layers size={13} />
-              <span>Fusion Attribution</span>
+              <span>Compare both views</span>
             </button>
           )}
         </div>
@@ -71,26 +71,26 @@ export default function ModalityBar({
             onClick={() => onSelectLayer('split')}
           >
             <GitCompare size={13} />
-            <span>Swipe Compare</span>
+            <span>Compare side by side</span>
           </button>
           <button
             className={`modality-tab ${activeLayer === 'before' ? 'active' : ''}`}
             onClick={() => onSelectLayer('before')}
           >
-            <span>Before (T1)</span>
+            <span>First image</span>
           </button>
           <button
             className={`modality-tab ${activeLayer === 'after' ? 'active' : ''}`}
             onClick={() => onSelectLayer('after')}
           >
-            <span>After (T2)</span>
+            <span>Second image</span>
           </button>
           <button
             className={`modality-tab ${activeLayer === 'mask' ? 'active' : ''}`}
             onClick={() => onSelectLayer('mask')}
           >
             <Layers size={13} />
-            <span>Change Mask</span>
+            <span>Change highlights</span>
           </button>
         </div>
       );
@@ -104,7 +104,7 @@ export default function ModalityBar({
           onClick={() => onSelectLayer('original')}
         >
           <Eye size={13} />
-          <span>Original Imagery</span>
+          <span>Main image</span>
         </button>
         {evidenceArtifacts?.['Attention Heatmap'] && (
           <button
@@ -112,7 +112,7 @@ export default function ModalityBar({
             onClick={() => onSelectLayer('heatmap')}
           >
             <Layers size={13} />
-            <span>Attention Overlay</span>
+            <span>Highlight key areas</span>
           </button>
         )}
       </div>

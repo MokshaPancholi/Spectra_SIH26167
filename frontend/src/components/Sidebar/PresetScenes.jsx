@@ -11,8 +11,8 @@ export default function PresetScenes({ presets, activePresetId, onSelectPreset }
   return (
     <div className="presets-section">
       <div className="section-label">
-        <span>Benchmark Scenes</span>
-        <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>1-Click</span>
+        <span>Sample scenes</span>
+        <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Quick start</span>
       </div>
       <div className="presets-grid">
         {presets.map((preset) => (

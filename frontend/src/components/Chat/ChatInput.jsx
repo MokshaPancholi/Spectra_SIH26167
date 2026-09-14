@@ -86,7 +86,7 @@ export default function ChatInput({
         <textarea
           ref={textareaRef}
           className="chat-textarea"
-          placeholder="Ask anything about your satellite imagery..."
+          placeholder="Ask a question in plain language..."
           rows={1}
           value={inputPrompt}
           onChange={(e) => onChangePrompt(e.target.value)}
@@ -125,8 +125,8 @@ export default function ChatInput({
       </div>
 
       <div className="input-helper-text">
-        <span>Enter to send · Shift+Enter for new line</span>
-        {isLoading && <span style={{ color: 'var(--accent-cyan)' }}>Processing...</span>}
+        <span>Upload 1 or 2 images · Enter to send · Shift+Enter for a new line</span>
+        {isLoading && <span style={{ color: 'var(--accent-cyan)' }}>Working...</span>}
       </div>
     </div>
   );

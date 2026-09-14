@@ -167,6 +167,15 @@ function InfoPage({ type, onNavigate }) {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    try {
+      localStorage.setItem('satquery-theme', 'dark');
+    } catch {
+      // ignore storage issues
+    }
+  }, []);
+
   const [activePage, setActivePage] = useState('home');
   const [viewMode, setViewMode] = useState('cockpit'); // 'cockpit' | 'map' | 'dual'
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -174,21 +183,23 @@ export default function App() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
 
   // User & Auth State
-  const [currentUser, setCurrentUser] = useState(() => {
-    try {
-      const saved = localStorage.getItem('satquery_user');
-      return saved ? JSON.parse(saved) : null;
-    } catch {
-      return null;
-    }
-  });
-  const [authToken, setAuthToken] = useState(() => localStorage.getItem('satquery_token') || null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [authToken, setAuthToken] = useState(null);
 
   // Presets & Health
   const [presets, setPresets] = useState([]);
   const [activePresetId, setActivePresetId] = useState(null);
   const [healthInfo, setHealthInfo] = useState(null);
   const [sessions, setSessions] = useState([]);
+
+  const handleNavigate = (page) => {
+    if (page === 'analyze' && !currentUser) {
+      setAuthModalOpen(true);
+      return;
+    }
+
+    setActivePage(page);
+  };
 
   // Workspace & Imagery state
   const [image1, setImage1] = useState(null);
@@ -244,8 +255,6 @@ export default function App() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('satquery_token');
-    localStorage.removeItem('satquery_user');
     setCurrentUser(null);
     setAuthToken(null);
     setSessions([]);
@@ -597,18 +606,18 @@ export default function App() {
       <div className="site-shell">
         <SiteHeader
           activePage={activePage}
-          onNavigate={setActivePage}
+          onNavigate={handleNavigate}
           currentUser={currentUser}
           onOpenAuth={() => setAuthModalOpen(true)}
           onLogout={handleLogout}
         />
         {activePage === 'home' ? (
           <HomePage
-            onNavigate={setActivePage}
+            onNavigate={handleNavigate}
             onOpenAuth={() => setAuthModalOpen(true)}
           />
         ) : (
-          <InfoPage type={activePage} onNavigate={setActivePage} />
+          <InfoPage type={activePage} onNavigate={handleNavigate} />
         )}
         <AuthModal
           isOpen={authModalOpen}
@@ -625,7 +634,7 @@ export default function App() {
       <div className="workspace-topbar">
         <div className="topbar-left">
           <button className="workspace-back" onClick={() => setActivePage('home')} type="button">
-            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Mission Control</span>
+            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Command Center</span>
           </button>
 
           {/* View Mode Selector Tabs */}
@@ -636,7 +645,7 @@ export default function App() {
               onClick={() => setViewMode('map')}
               title="Full-Screen Satellite Map & Region Snapshotting"
             >
-              <Globe2 size={14} /> Map Explorer
+              <Globe2 size={14} /> Map
             </button>
             <button
               type="button"
@@ -644,7 +653,7 @@ export default function App() {
               onClick={() => setViewMode('cockpit')}
               title="Multi-Spectral Evidence Analysis & Conversation"
             >
-              <Layers size={14} /> Analysis Cockpit
+              <Layers size={14} /> Workspace
             </button>
             <button
               type="button"
@@ -652,7 +661,7 @@ export default function App() {
               onClick={() => setViewMode('dual')}
               title="Split View: Map Explorer + Analysis Cockpit"
             >
-              <Split size={14} /> Dual Command
+              <Split size={14} /> Split view
             </button>
           </div>
         </div>
@@ -675,10 +684,10 @@ export default function App() {
             type="button"
             className="history-drawer-btn"
             onClick={() => setHistoryDrawerOpen((prev) => !prev)}
-            title="Open Investigation Archives"
+            title="Open Recent Sessions"
           >
             <History size={14} />
-            <span>History</span>
+            <span>Recent sessions</span>
             {sessions.length > 0 && <span className="history-badge">{sessions.length}</span>}
           </button>
 

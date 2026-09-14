@@ -74,10 +74,9 @@ export default function VisualWorkspace({
               <Compass size={18} />
             </div>
           </div>
-          <h3>Geospatial AI Workspace</h3>
+          <h3>Image Analysis Workspace</h3>
           <p>
-            Upload satellite imagery or select a benchmark scene from the sidebar
-            to inspect land cover, cross-modal radar fusion, and temporal changes.
+            Upload one or two images, or choose a sample scene from the sidebar to start exploring.
           </p>
         </div>
       );

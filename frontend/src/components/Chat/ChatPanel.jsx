@@ -49,11 +49,21 @@ export default function ChatPanel({
         <div className="chat-heading">
           <div className="chat-title">
             <MessageSquare size={16} />
-            <span>Ask SatQuery</span>
+            <span>Ask about this image</span>
           </div>
-          <span className="chat-subtitle">Natural-language earth observation analysis</span>
+          <span className="chat-subtitle">Type what you want to learn in simple language</span>
         </div>
-        <div className="chat-status"><span /> {activeRoutingDecision ? activeRoutingDecision.toUpperCase() : 'AUTO ROUTING'}</div>
+        <div className="chat-status"><span /> {
+          activeRoutingDecision === 'vqa'
+            ? 'Image Q&A'
+            : activeRoutingDecision === 'crossmodal'
+              ? 'Image + Radar'
+              : activeRoutingDecision === 'change_detect'
+                ? 'Change detection'
+                : activeRoutingDecision === 'geospatial_qa'
+                  ? 'Map Q&A'
+                  : 'Smart mode'
+        }</div>
       </div>
 
       <div className="messages-scrollable" ref={scrollRef}>

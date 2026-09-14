@@ -32,7 +32,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship, Session
 # Default to PostgreSQL, with graceful fallback to SQLite
 DEFAULT_PG_URL = os.environ.get(
     "DATABASE_URL",
-    "postgresql://postgres:postgres@localhost:5432/satquery_db",
+    "postgresql://postgres:postgres_pass@localhost:5432/satquery_db",
 )
 SQLITE_FALLBACK_URL = "sqlite:///./satquery.db"
 

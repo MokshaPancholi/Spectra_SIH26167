@@ -14,29 +14,29 @@ export default function AnalysisDetails({
       <details>
         <summary className="tech-details-summary">
           <Info size={12} />
-          <span>Analysis Details & Diagnostics</span>
+          <span>What the system used</span>
           <ChevronDown size={12} />
         </summary>
         <div className="tech-grid">
           <div className="tech-item">
-            <span>Specialized Pipeline</span>
-            <strong>{routingDecision?.toUpperCase() || 'N/A'}</strong>
+            <span>AI route used</span>
+            <strong>{routingDecision ? routingDecision.replace(/_/g, ' ') : 'N/A'}</strong>
           </div>
           <div className="tech-item">
-            <span>Inference Latency</span>
+            <span>Processing time</span>
             <strong>{latency ? `${latency}s` : 'N/A'}</strong>
           </div>
           <div className="tech-item">
-            <span>Router Confidence</span>
+            <span>Confidence</span>
             <strong>{routingConfidence ? `${(routingConfidence * 100).toFixed(0)}%` : 'N/A'}</strong>
           </div>
           <div className="tech-item">
-            <span>Compute Engine</span>
-            <strong>{mock ? 'CPU Mock' : 'CUDA Active'}</strong>
+            <span>System</span>
+            <strong>{mock ? 'Demo mode' : 'Live engine'}</strong>
           </div>
           {explanation && (
             <div className="tech-item" style={{ gridColumn: 'span 2' }}>
-              <span>Evidence Grounding Note</span>
+              <span>Why this answer makes sense</span>
               <div style={{ color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>
                 {explanation}
               </div>
@@ -44,7 +44,7 @@ export default function AnalysisDetails({
           )}
           {routingReason && (
             <div className="tech-item" style={{ gridColumn: 'span 2' }}>
-              <span>Routing Rationale</span>
+              <span>How the system chose this route</span>
               <div style={{ color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>
                 {routingReason}
               </div>

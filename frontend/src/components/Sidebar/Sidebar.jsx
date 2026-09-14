@@ -31,8 +31,26 @@ export default function Sidebar({
       <div className="sidebar-action-wrap">
         <button className="new-analysis-btn" onClick={onNewAnalysis}>
           <Plus size={16} />
-          <span>New Analysis</span>
+          <span>Start fresh</span>
         </button>
+      </div>
+
+      <div className="sidebar-help-panel">
+        <div className="sidebar-help-title">Quick start</div>
+        <div className="sidebar-help-list">
+          <div className="sidebar-help-item">
+            <span>1</span>
+            <p>Choose a sample scene or upload your own images.</p>
+          </div>
+          <div className="sidebar-help-item">
+            <span>2</span>
+            <p>Ask a question in simple language.</p>
+          </div>
+          <div className="sidebar-help-item">
+            <span>3</span>
+            <p>Review the result and switch views if needed.</p>
+          </div>
+        </div>
       </div>
 
       <div className="sidebar-scrollable">
