@@ -30,21 +30,14 @@ export default function ModalityBar({
       return (
         <div className="modality-tabs">
           <button
-            className={`modality-tab ${activeLayer === 'split' ? 'active' : ''}`}
-            onClick={() => onSelectLayer('split')}
-          >
-            <GitCompare size={13} />
-            <span>Compare side by side</span>
-          </button>
-          <button
             className={`modality-tab ${activeLayer === 'optical' ? 'active' : ''}`}
             onClick={() => onSelectLayer('optical')}
+            aria-label="Main image"
           >
             <Eye size={13} />
-            <span>Main image</span>
           </button>
           <button
-            className={`modality-tab ${activeLayer === 'sar' ? 'active' : ''}`}
+            className={`modality-tab radar-tab ${activeLayer === 'sar' ? 'active' : ''}`}
             onClick={() => onSelectLayer('sar')}
           >
             <Radio size={13} />
@@ -54,9 +47,9 @@ export default function ModalityBar({
             <button
               className={`modality-tab ${activeLayer === 'fusion' ? 'active' : ''}`}
               onClick={() => onSelectLayer('fusion')}
+              aria-label="Compare both views"
             >
               <Layers size={13} />
-              <span>Compare both views</span>
             </button>
           )}
         </div>
@@ -66,13 +59,6 @@ export default function ModalityBar({
     if (routingDecision === 'change_detect' || evidenceArtifacts?.['Change Mask']) {
       return (
         <div className="modality-tabs">
-          <button
-            className={`modality-tab ${activeLayer === 'split' ? 'active' : ''}`}
-            onClick={() => onSelectLayer('split')}
-          >
-            <GitCompare size={13} />
-            <span>Compare side by side</span>
-          </button>
           <button
             className={`modality-tab ${activeLayer === 'before' ? 'active' : ''}`}
             onClick={() => onSelectLayer('before')}
@@ -88,9 +74,9 @@ export default function ModalityBar({
           <button
             className={`modality-tab ${activeLayer === 'mask' ? 'active' : ''}`}
             onClick={() => onSelectLayer('mask')}
+            aria-label="Change highlights"
           >
             <Layers size={13} />
-            <span>Change highlights</span>
           </button>
         </div>
       );
@@ -110,9 +96,9 @@ export default function ModalityBar({
           <button
             className={`modality-tab ${activeLayer === 'heatmap' ? 'active' : ''}`}
             onClick={() => onSelectLayer('heatmap')}
+            aria-label="Highlight key areas"
           >
             <Layers size={13} />
-            <span>Highlight key areas</span>
           </button>
         )}
       </div>
@@ -137,23 +123,7 @@ export default function ModalityBar({
         {renderLayerTabs()}
       </div>
 
-      <div className="modality-right">
-        {showOpacityControl && (
-          <div className="opacity-control">
-            <label>Overlay Opacity</label>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.05"
-              value={opacity}
-              onChange={(e) => onChangeOpacity(parseFloat(e.target.value))}
-              className="opacity-slider"
-            />
-            <span className="opacity-val">{Math.round(opacity * 100)}%</span>
-          </div>
-        )}
-      </div>
+      <div className="modality-right" />
     </div>
   );
 }

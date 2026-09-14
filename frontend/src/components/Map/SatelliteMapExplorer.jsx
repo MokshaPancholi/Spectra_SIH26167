@@ -271,6 +271,9 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
   const captureViewportRegion = async () => {
     const map = mapInstanceRef.current;
     const mapContainer = mapContainerRef.current;
+    const mapWrapper = mapContainer?.parentElement;
+    const reticle = document.querySelector('.viewfinder-reticle');
+
     if (!map || !mapContainer) return;
 
     setIsCapturing(true);
@@ -287,7 +290,40 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
         logging: false,
       });
 
-      const dataUrl = canvas.toDataURL('image/png');
+      let dataUrl = canvas.toDataURL('image/png');
+
+      if (mapWrapper && reticle) {
+        const wrapperRect = mapWrapper.getBoundingClientRect();
+        const reticleRect = reticle.getBoundingClientRect();
+
+        const scaleX = canvas.width / mapWrapper.clientWidth;
+        const scaleY = canvas.height / mapWrapper.clientHeight;
+
+        const cropX = Math.max(0, (reticleRect.left - wrapperRect.left) * scaleX);
+        const cropY = Math.max(0, (reticleRect.top - wrapperRect.top) * scaleY);
+        const cropWidth = Math.max(1, reticleRect.width * scaleX);
+        const cropHeight = Math.max(1, reticleRect.height * scaleY);
+
+        const cropCanvas = document.createElement('canvas');
+        cropCanvas.width = Math.round(cropWidth);
+        cropCanvas.height = Math.round(cropHeight);
+
+        const cropCtx = cropCanvas.getContext('2d');
+        if (cropCtx) {
+          cropCtx.drawImage(
+            canvas,
+            cropX,
+            cropY,
+            cropWidth,
+            cropHeight,
+            0,
+            0,
+            cropCanvas.width,
+            cropCanvas.height
+          );
+          dataUrl = cropCanvas.toDataURL('image/png');
+        }
+      }
 
       setSnapshotPreview({
         dataUrl,
@@ -372,14 +408,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
             title="Satellite Imagery with Vector Borders & Labels"
           >
             <Layers size={14} /> Hybrid
-          </button>
-          <button
-            type="button"
-            className={`layer-btn ${activeBasemap === 'osm' ? 'active' : ''}`}
-            onClick={() => handleBasemapChange('osm')}
-            title="Cartographic OpenStreetMap Reference"
-          >
-            <MapPin size={14} /> Street
           </button>
         </div>
 

@@ -7,7 +7,6 @@ import {
   Compass,
 } from 'lucide-react';
 import ModalityBar from './ModalityBar';
-import CompareSlider from './CompareSlider';
 
 export default function VisualWorkspace({
   onToggleSidebar,
@@ -35,13 +34,12 @@ export default function VisualWorkspace({
   };
 
   const handleWheel = (e) => {
-    if (activeLayer === 'split') return;
     e.preventDefault();
     handleZoom(e.deltaY < 0 ? 0.15 : -0.15);
   };
 
   const handleMouseDown = (e) => {
-    if (activeLayer === 'split' || e.button !== 0) return;
+    if (e.button !== 0) return;
     setIsPanning(true);
     setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
   };
@@ -76,17 +74,8 @@ export default function VisualWorkspace({
           </div>
           <h3>Image Analysis Workspace</h3>
           <p>
-            Upload one or two images, or choose a sample scene from the sidebar to start exploring.
+            Upload one or two images to start exploring remotely sensed data and grounded evidence.
           </p>
-        </div>
-      );
-    }
-
-    // Bi-temporal swipe comparison
-    if (activeLayer === 'split' && image1 && image2) {
-      return (
-        <div className="canvas-stage">
-          <CompareSlider beforeImg={image1} afterImg={image2} width={520} height={520} />
         </div>
       );
     }

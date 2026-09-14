@@ -14,7 +14,6 @@ import {
   LogOut,
   Sparkles,
   Database,
-  Split,
 } from 'lucide-react';
 import Sidebar from './components/Sidebar/Sidebar';
 import VisualWorkspace from './components/Workspace/VisualWorkspace';
@@ -87,9 +86,17 @@ function HomePage({ onNavigate }) {
         <div className="space-background" aria-hidden="true">
           <StarField count={140} shootingFreq={5000} />
           <div className="space-grid" />
+          <div className="space-center-vignette" />
+          <div className="space-satellite" />
+          <div className="space-geo-visual">
+            <div className="space-geo-surface" />
+            <div className="space-visual-tile tile-one" />
+            <div className="space-visual-tile tile-two" />
+            <div className="space-visual-tile tile-three" />
+          </div>
           <div className="space-ring ring-one" />
           <div className="space-ring ring-two" />
-          <SatelliteOrbit size={440} />
+          <SatelliteOrbit size={760} />
         </div>
 
         <div className="space-content">
@@ -177,7 +184,7 @@ export default function App() {
   }, []);
 
   const [activePage, setActivePage] = useState('home');
-  const [viewMode, setViewMode] = useState('cockpit'); // 'cockpit' | 'map' | 'dual'
+  const [viewMode, setViewMode] = useState('cockpit'); // 'cockpit' | 'map'
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [historyDrawerOpen, setHistoryDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -335,9 +342,7 @@ export default function App() {
     setEvidenceArtifacts(null);
     setRoutingDecision(null);
 
-    if (preset.id === 'bitemporal_change') {
-      setActiveLayer('split');
-    } else if (preset.id === 'crossmodal_coastal') {
+    if (preset.id === 'crossmodal_coastal') {
       setActiveLayer('fusion');
     } else {
       setActiveLayer('original');
@@ -395,7 +400,7 @@ export default function App() {
 
       setActivePresetId(null);
       setEvidenceArtifacts(null);
-      setActiveLayer(loadedFiles.length >= 2 ? 'split' : 'original');
+      setActiveLayer('original');
       return;
     }
 
@@ -655,42 +660,12 @@ export default function App() {
             >
               <Layers size={14} /> Workspace
             </button>
-            <button
-              type="button"
-              className={`view-tab ${viewMode === 'dual' ? 'active' : ''}`}
-              onClick={() => setViewMode('dual')}
-              title="Split View: Map Explorer + Analysis Cockpit"
-            >
-              <Split size={14} /> Split view
-            </button>
           </div>
         </div>
 
-        <div className="topbar-center-telemetry">
-          <span className="telemetry-dot live" />
-          <span className="telemetry-label">SYSTEM ONLINE</span>
-          <span className="telemetry-divider">|</span>
-          <span className="telemetry-label">
-            <Database size={12} /> DB: {healthInfo?.database?.toUpperCase() || 'SQLITE'}
-          </span>
-          <span className="telemetry-divider">|</span>
-          <span className="telemetry-label">
-            {healthInfo?.cuda_available ? 'CUDA GPU' : 'CPU MOCK DEMO'}
-          </span>
-        </div>
+        <div className="topbar-center-telemetry" />
 
         <div className="topbar-right">
-          <button
-            type="button"
-            className="history-drawer-btn"
-            onClick={() => setHistoryDrawerOpen((prev) => !prev)}
-            title="Open Recent Sessions"
-          >
-            <History size={14} />
-            <span>Recent sessions</span>
-            {sessions.length > 0 && <span className="history-badge">{sessions.length}</span>}
-          </button>
-
           {currentUser ? (
             <div className="cockpit-user-chip">
               <User size={13} />
@@ -746,8 +721,11 @@ export default function App() {
             onSelectPreset={handleSelectPreset}
             forcedModel={forcedModel}
             onChangeModel={setForcedModel}
-            onNewAnalysis={handleNewAnalysis}
             healthInfo={healthInfo}
+            sessions={sessions}
+            activeSessionId={sessionId}
+            onSelectSession={handleSelectSession}
+            onDeleteSession={handleDeleteSession}
           />
         )}
 
@@ -777,33 +755,7 @@ export default function App() {
           />
         )}
 
-        {viewMode === 'dual' && (
-          <div className="dual-center-container">
-            <div className="dual-map-half">
-              <SatelliteMapExplorer
-                onCaptureRegion={handleCaptureRegion}
-                onSwitchToAnalysis={() => {}}
-              />
-            </div>
-            <div className="dual-workspace-half">
-              <VisualWorkspace
-                onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
-                image1={image1}
-                image2={image2}
-                image1Name={image1Name}
-                image2Name={image2Name}
-                routingDecision={routingDecision}
-                evidenceArtifacts={evidenceArtifacts}
-                activeLayer={activeLayer}
-                onSelectLayer={setActiveLayer}
-                opacity={opacity}
-                onChangeOpacity={setOpacity}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* 3. Right Analysis & Conversation Panel (Shown in Cockpit and Dual modes) */}
+        {/* 3. Right Analysis & Conversation Panel (Shown in Cockpit mode) */}
         {viewMode !== 'map' && (
           <ChatPanel
             messages={messages}

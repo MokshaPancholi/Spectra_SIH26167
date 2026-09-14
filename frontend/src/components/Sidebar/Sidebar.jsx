@@ -1,17 +1,23 @@
 import React from 'react';
-import { Satellite, Plus, History, Cpu } from 'lucide-react';
-import PresetScenes from './PresetScenes';
+import {
+  Satellite,
+  History,
+  MessageSquare,
+  Clock,
+  Trash2,
+  ChevronRight,
+} from 'lucide-react';
 import AdvancedSettings from './AdvancedSettings';
 
 export default function Sidebar({
   isOpen,
-  presets,
-  activePresetId,
-  onSelectPreset,
   forcedModel,
   onChangeModel,
-  onNewAnalysis,
   healthInfo,
+  sessions = [],
+  activeSessionId,
+  onSelectSession,
+  onDeleteSession,
 }) {
   return (
     <aside className={`sidebar ${!isOpen ? 'collapsed' : ''}`}>
@@ -28,37 +34,70 @@ export default function Sidebar({
         </div>
       </div>
 
-      <div className="sidebar-action-wrap">
-        <button className="new-analysis-btn" onClick={onNewAnalysis}>
-          <Plus size={16} />
-          <span>Start fresh</span>
-        </button>
-      </div>
-
-      <div className="sidebar-help-panel">
-        <div className="sidebar-help-title">Quick start</div>
-        <div className="sidebar-help-list">
-          <div className="sidebar-help-item">
-            <span>1</span>
-            <p>Choose a sample scene or upload your own images.</p>
-          </div>
-          <div className="sidebar-help-item">
-            <span>2</span>
-            <p>Ask a question in simple language.</p>
-          </div>
-          <div className="sidebar-help-item">
-            <span>3</span>
-            <p>Review the result and switch views if needed.</p>
-          </div>
-        </div>
-      </div>
-
       <div className="sidebar-scrollable">
-        <PresetScenes
-          presets={presets}
-          activePresetId={activePresetId}
-          onSelectPreset={onSelectPreset}
-        />
+        <div className="recent-sessions-panel">
+          <div className="section-label">
+            <span>Recent sessions</span>
+            <History size={12} color="var(--accent-cyan)" />
+          </div>
+
+          {sessions.length === 0 ? (
+            <div className="sidebar-empty-sessions">
+              <Clock size={18} />
+              <span>No sessions yet</span>
+            </div>
+          ) : (
+            <div className="sidebar-session-list">
+              {sessions.map((sess) => {
+                const isActive = sess.id === activeSessionId;
+                const dateStr = sess.created_at
+                  ? new Date(sess.created_at).toLocaleDateString(undefined, {
+                      month: 'short',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })
+                  : 'Recent';
+
+                return (
+                  <div
+                    key={sess.id}
+                    className={`session-history-card ${isActive ? 'active' : ''}`}
+                    onClick={() => onSelectSession?.(sess.id)}
+                  >
+                    <div className="session-card-content">
+                      <div className="session-title-row">
+                        <MessageSquare size={14} className="msg-icon" />
+                        <span className="session-title">{sess.title}</span>
+                      </div>
+                      <div className="session-meta-row">
+                        <span className="session-date">{dateStr}</span>
+                        <span className="session-count">
+                          {sess.message_count} {sess.message_count === 1 ? 'entry' : 'entries'}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="session-card-actions">
+                      <button
+                        type="button"
+                        className="delete-session-btn"
+                        title="Delete session"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onDeleteSession?.(sess.id);
+                        }}
+                      >
+                        <Trash2 size={13} />
+                      </button>
+                      <ChevronRight size={14} className="arrow-icon" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
 
         <AdvancedSettings
           forcedModel={forcedModel}
@@ -70,11 +109,8 @@ export default function Sidebar({
       <div className="sidebar-footer">
         <div className="hardware-indicator">
           <div className="dot-status" />
-          <span>{healthInfo?.hardware || 'Engine Ready'}</span>
+          <span>Engine Ready</span>
         </div>
-        <span style={{ fontSize: '10px' }}>
-          {healthInfo?.mock_mode ? 'CPU Demo' : 'CUDA Active'}
-        </span>
       </div>
     </aside>
   );
