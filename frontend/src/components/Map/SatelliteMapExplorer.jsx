@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import L from 'leaflet';
+import html2canvas from 'html2canvas';
 import 'leaflet/dist/leaflet.css';
 import {
   Search,
@@ -197,9 +198,80 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
   };
 
   // ── Snapshot Region Capture ───────────────────────────────────────────────
-  const captureViewportRegion = () => {
+  const buildFallbackSnapshotDataUrl = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 768;
+    canvas.height = 768;
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) {
+      return '';
+    }
+
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#07111d');
+    gradient.addColorStop(0.35, '#0d1f34');
+    gradient.addColorStop(1, '#111827');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Grid and AOI frame
+    ctx.strokeStyle = 'rgba(110, 231, 255, 0.22)';
+    ctx.lineWidth = 1;
+    for (let x = 48; x < canvas.width - 48; x += 64) {
+      ctx.beginPath();
+      ctx.moveTo(x, 48);
+      ctx.lineTo(x, canvas.height - 48);
+      ctx.stroke();
+    }
+    for (let y = 48; y < canvas.height - 48; y += 64) {
+      ctx.beginPath();
+      ctx.moveTo(48, y);
+      ctx.lineTo(canvas.width - 48, y);
+      ctx.stroke();
+    }
+
+    ctx.strokeStyle = 'rgba(94, 234, 212, 0.9)';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(96, 96, canvas.width - 192, canvas.height - 192);
+
+    ctx.fillStyle = 'rgba(94, 234, 212, 0.18)';
+    ctx.fillRect(96, 96, canvas.width - 192, canvas.height - 192);
+
+    ctx.fillStyle = '#7dd3fc';
+    ctx.font = '700 36px Inter, sans-serif';
+    ctx.fillText('SATQUERY AI SNAPSHOT', 128, 210);
+
+    ctx.fillStyle = '#cbeafe';
+    ctx.font = '500 24px Inter, sans-serif';
+    ctx.fillText(`LOCATION: ${searchQuery || 'Target Region'}`, 128, 278);
+    ctx.fillText(`COORDS: ${telemetry.lat.toFixed(4)}°, ${telemetry.lng.toFixed(4)}°`, 128, 322);
+    ctx.fillText(`ZOOM: ${telemetry.zoom}× | AOI: 512 × 512`, 128, 366);
+
+    // Stylized map markers
+    ctx.beginPath();
+    ctx.fillStyle = '#67e8f9';
+    ctx.arc(canvas.width * 0.62, canvas.height * 0.56, 18, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(103, 232, 249, 0.85)';
+    ctx.lineWidth = 2;
+    ctx.moveTo(canvas.width * 0.62, canvas.height * 0.56);
+    ctx.lineTo(canvas.width * 0.67, canvas.height * 0.48);
+    ctx.stroke();
+
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = '600 20px Inter, sans-serif';
+    ctx.fillText('AI REGION READY', 128, 640);
+
+    return canvas.toDataURL('image/png');
+  };
+
+  const captureViewportRegion = async () => {
     const map = mapInstanceRef.current;
-    if (!map) return;
+    const mapContainer = mapContainerRef.current;
+    if (!map || !mapContainer) return;
 
     setIsCapturing(true);
 
@@ -207,81 +279,29 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
       const center = map.getCenter();
       const zoom = map.getZoom();
 
-      // Create high-res canvas representing the viewfinder region
-      const canvas = document.createElement('canvas');
-      const size = 512;
-      canvas.width = size;
-      canvas.height = size;
-      const ctx = canvas.getContext('2d');
+      const canvas = await html2canvas(mapContainer, {
+        backgroundColor: '#0a0f1d',
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: false,
+        logging: false,
+      });
 
-      // Grab visible tiles inside map container
-      const mapContainer = mapContainerRef.current;
-      const tiles = mapContainer.querySelectorAll('.leaflet-tile-loaded');
+      const dataUrl = canvas.toDataURL('image/png');
 
-      if (tiles.length > 0) {
-        // Compose tiles into snapshot canvas
-        const containerRect = mapContainer.getBoundingClientRect();
-        const centerX = containerRect.width / 2;
-        const centerY = containerRect.height / 2;
-        const cropSize = Math.min(containerRect.width, containerRect.height) * 0.7;
-
-        ctx.fillStyle = '#0a0e1a';
-        ctx.fillRect(0, 0, size, size);
-
-        tiles.forEach((tile) => {
-          if (tile instanceof HTMLImageElement && tile.complete && tile.naturalWidth > 0) {
-            const tileRect = tile.getBoundingClientRect();
-            // Transform coordinates relative to viewfinder crop
-            const relX = ((tileRect.left - (centerX - cropSize / 2)) / cropSize) * size;
-            const relY = ((tileRect.top - (centerY - cropSize / 2)) / cropSize) * size;
-            const relW = (tileRect.width / cropSize) * size;
-            const relH = (tileRect.height / cropSize) * size;
-
-            try {
-              ctx.drawImage(tile, relX, relY, relW, relH);
-            } catch {
-              // Ignore cross-origin tainted canvas fallback
-            }
-          }
-        });
-
-        // Add telemetry stamp at the bottom of snapshot
-        ctx.fillStyle = 'rgba(8, 12, 22, 0.75)';
-        ctx.fillRect(0, size - 38, size, 38);
-        ctx.fillStyle = '#00f0ff';
-        ctx.font = 'bold 12px monospace';
-        ctx.fillText(
-          `SATQUERY HUD | LAT: ${center.lat.toFixed(4)}° LNG: ${center.lng.toFixed(4)}° | ZOOM: ${zoom}`,
-          14,
-          size - 16
-        );
-
-        const dataUrl = canvas.toDataURL('image/png');
-        setSnapshotPreview({
-          dataUrl,
-          lat: center.lat.toFixed(4),
-          lng: center.lng.toFixed(4),
-          zoom,
-          locationName: searchQuery || `Coord [${center.lat.toFixed(2)}, ${center.lng.toFixed(2)}]`,
-        });
-      } else {
-        throw new Error('Tiles not loaded yet');
-      }
-    } catch (err) {
-      console.warn('Canvas snapshot fallback triggered:', err);
-      // Generate guaranteed snapshot fallback
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#10162a';
-      ctx.fillRect(0, 0, 512, 512);
-      ctx.fillStyle = '#00f0ff';
-      ctx.font = '16px monospace';
-      ctx.fillText('SATQUERY EARTH OBSERVATION CAPTURE', 40, 240);
-      ctx.fillText(`COORDS: ${telemetry.lat.toFixed(4)}, ${telemetry.lng.toFixed(4)}`, 40, 270);
       setSnapshotPreview({
-        dataUrl: canvas.toDataURL('image/png'),
+        dataUrl,
+        lat: center.lat.toFixed(4),
+        lng: center.lng.toFixed(4),
+        zoom,
+        locationName: searchQuery || `Coord [${center.lat.toFixed(2)}, ${center.lng.toFixed(2)}]`,
+      });
+    } catch (err) {
+      console.warn('Real map capture failed; using generated snapshot fallback:', err);
+
+      const fallbackDataUrl = buildFallbackSnapshotDataUrl();
+      setSnapshotPreview({
+        dataUrl: fallbackDataUrl || '',
         lat: telemetry.lat.toFixed(4),
         lng: telemetry.lng.toFixed(4),
         zoom: telemetry.zoom,
@@ -512,11 +532,30 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
               </div>
 
               <div className="snapshot-action-column">
+                <div className="snapshot-status-row">
+                  <span className="snapshot-status-pill">Ready for AI ingestion</span>
+                </div>
+
                 <h4>Select Destination in SatQuery Workspace:</h4>
                 <p className="instruction-text">
                   Transfer this high-resolution region directly into the agent pipeline for VQA,
                   change detection, or SAR-fusion analysis.
                 </p>
+
+                <div className="snapshot-meta-grid">
+                  <div className="snapshot-meta-item">
+                    <span className="meta-label">Location</span>
+                    <strong>{snapshotPreview.locationName}</strong>
+                  </div>
+                  <div className="snapshot-meta-item">
+                    <span className="meta-label">Coordinates</span>
+                    <strong>{snapshotPreview.lat}°, {snapshotPreview.lng}°</strong>
+                  </div>
+                  <div className="snapshot-meta-item">
+                    <span className="meta-label">Zoom</span>
+                    <strong>{snapshotPreview.zoom}×</strong>
+                  </div>
+                </div>
 
                 {capturedFeedback ? (
                   <div className="capture-success-alert">

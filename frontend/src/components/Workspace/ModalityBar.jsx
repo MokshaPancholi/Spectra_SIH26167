@@ -30,6 +30,13 @@ export default function ModalityBar({
       return (
         <div className="modality-tabs">
           <button
+            className={`modality-tab ${activeLayer === 'split' ? 'active' : ''}`}
+            onClick={() => onSelectLayer('split')}
+          >
+            <GitCompare size={13} />
+            <span>Swipe Compare</span>
+          </button>
+          <button
             className={`modality-tab ${activeLayer === 'optical' ? 'active' : ''}`}
             onClick={() => onSelectLayer('optical')}
           >

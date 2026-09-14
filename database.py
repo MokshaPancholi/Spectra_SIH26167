@@ -13,6 +13,7 @@ import hashlib
 import datetime
 from typing import Optional, Dict, Any, Generator
 
+from dotenv import load_dotenv
 import jwt
 from sqlalchemy import (
     create_engine,
@@ -34,6 +35,8 @@ DEFAULT_PG_URL = os.environ.get(
     "postgresql://postgres:postgres@localhost:5432/satquery_db",
 )
 SQLITE_FALLBACK_URL = "sqlite:///./satquery.db"
+
+load_dotenv()
 
 Base = declarative_base()
 
@@ -142,7 +145,8 @@ def init_db(database_url: Optional[str] = None):
             print(f"[Database] [OK] Using SQLite database: {target_url}")
 
     except Exception as pg_err:
-        print(f"[Database] [WARN] PostgreSQL unreachable ({pg_err}). Falling back to SQLite: {SQLITE_FALLBACK_URL}")
+        print(f"[Database] [ERROR] PostgreSQL connection failed: {type(pg_err).__name__}: {pg_err}")
+        print(f"[Database] [WARN] Falling back to SQLite: {SQLITE_FALLBACK_URL}")
         engine = create_engine(SQLITE_FALLBACK_URL, connect_args={"check_same_thread": False})
         ACTIVE_DIALECT = "sqlite"
 

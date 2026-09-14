@@ -74,58 +74,45 @@ function SiteHeader({ activePage, onNavigate, currentUser, onOpenAuth, onLogout 
   );
 }
 
-function HomePage({ onNavigate, onOpenAuth }) {
+function HomePage({ onNavigate }) {
+  const floatingItems = [
+    { label: 'Maps', detail: 'Live region search', icon: Globe2 },
+    { label: 'Models', detail: 'AI routing', icon: Layers },
+    { label: 'Evidence', detail: 'Grounded traceability', icon: Database },
+  ];
+
   return (
     <main className="marketing-page home-page">
-      <section className="home-hero">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-pulse" /> MULTIMODAL EARTH INTELLIGENCE</div>
-          <h1>Read the planet<br /><em>between the pixels.</em></h1>
-          <p className="hero-lede">
-            SatQuery turns optical, SAR, and time-series imagery into grounded answers you can inspect, compare, and trust. Now featuring live interactive satellite maps, region snapshotting, and persistent PostgreSQL investigation archives.
+      <section className="space-hero">
+        <div className="space-background" aria-hidden="true">
+          <StarField count={140} shootingFreq={5000} />
+          <div className="space-grid" />
+          <div className="space-ring ring-one" />
+          <div className="space-ring ring-two" />
+          <SatelliteOrbit size={440} />
+        </div>
+
+        <div className="space-content">
+          <div className="space-badge">MULTIMODAL EARTH INTELLIGENCE</div>
+          <h1>SatQuery AI</h1>
+          <p>
+            Explore Earth with grounded visual reasoning, geospatial search, and evidence-led answers.
           </p>
-          <div className="hero-actions">
-            <button className="primary-action" onClick={() => onNavigate('analyze')} type="button">
-              Open Command Center <ArrowRight size={17} />
-            </button>
-            <button className="text-action" onClick={onOpenAuth} type="button">
-              Sign In / Register
-            </button>
-          </div>
-          <div className="hero-note"><CircleCheck size={15} /> Built for transparent, evidence-led geospatial exploration</div>
+          <button className="primary-action try-it-btn" onClick={() => onNavigate('analyze')} type="button">
+            Try it!
+          </button>
         </div>
 
-        {/* Enhanced orbit visual with animated overlay */}
-        <div className="orbit-visual" aria-label="Orbital data visualization">
-          <StarField count={120} shootingFreq={5000} />
-          <div className="orbit-grid" />
-          <div className="orbit-ring orbit-ring-one" />
-          <div className="orbit-ring orbit-ring-two" />
-          <SatelliteOrbit size={420} />
-          <div className="orbit-label label-top"><span>01</span> OPTICAL + SAR + MAPS</div>
-          <div className="orbit-label label-bottom"><span>LIVE</span> POSTGRES PERSISTENCE</div>
-        </div>
-      </section>
-
-      <section className="signal-strip">
-        <span>INTERACTIVE SATELLITE MAPS</span><b>01</b><span>FOUR SPECIALIST AGENT NODES</span><b>04</b><span>POSTGRESQL AUDIT TRAIL</span><b>∞</b>
-      </section>
-
-      <section className="home-modules">
-        <div>
-          <span className="module-index">01 / EXPLORE & SNAPSHOT</span>
-          <h2>Search any coordinates on Earth.</h2>
-          <p>Pan and zoom across global satellite imagery. Capture high-resolution AOI bounding boxes with one click to instantly seed AI analysis.</p>
-        </div>
-        <div>
-          <span className="module-index">02 / ASK IN PLAIN LANGUAGE</span>
-          <h2>Intelligent multi-model routing.</h2>
-          <p>The LangGraph agent routes your query to VQA, cross-modal optical-SAR fusion, bi-temporal change detection, or geospatial reasoning.</p>
-        </div>
-        <div>
-          <span className="module-index">03 / AUDITABLE PERSISTENCE</span>
-          <h2>Every session saved in PostgreSQL.</h2>
-          <p>Maintain complete historical archives of prompt exchanges, sensor telemetry, and derived evidence heatmaps for every analysis.</p>
+        <div className="space-floating-panels">
+          {floatingItems.map(({ label, detail, icon: Icon }) => (
+            <div key={label} className="space-panel">
+              <div className="space-panel-icon"><Icon size={16} /></div>
+              <div>
+                <span>{label}</span>
+                <small>{detail}</small>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </main>
@@ -364,11 +351,49 @@ export default function App() {
   };
 
   // Image Upload / Swap / Remove Handlers
-  const handleUploadImages = (slot, fileDataUri, fileName) => {
-    if (slot === 1) {
+  const handleUploadImages = async (slotOrFiles, fileDataUri, fileName) => {
+    if (Array.isArray(slotOrFiles)) {
+      const files = slotOrFiles.slice(0, 2);
+
+      if (files.length === 0) return;
+
+      const loadedFiles = await Promise.all(
+        files.map(
+          (file) =>
+            new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => {
+                resolve({
+                  dataUri: reader.result,
+                  fileName: file.name || 'Uploaded Satellite Image',
+                });
+              };
+              reader.onerror = () => reject(new Error(`Failed to load ${file.name}`));
+              reader.readAsDataURL(file);
+            })
+        )
+      );
+
+      loadedFiles.forEach(({ dataUri, fileName }, index) => {
+        if (index === 0) {
+          setImage1(dataUri);
+          setImage1Name(fileName || 'Observation Scene (1)');
+        } else if (index === 1) {
+          setImage2(dataUri);
+          setImage2Name(fileName || 'Comparison Scene (2)');
+        }
+      });
+
+      setActivePresetId(null);
+      setEvidenceArtifacts(null);
+      setActiveLayer(loadedFiles.length >= 2 ? 'split' : 'original');
+      return;
+    }
+
+    if (slotOrFiles === 1) {
       setImage1(fileDataUri);
       setImage1Name(fileName || 'Observation Scene (1)');
-    } else if (slot === 2) {
+    } else if (slotOrFiles === 2) {
       setImage2(fileDataUri);
       setImage2Name(fileName || 'Comparison Scene (2)');
     }
@@ -600,7 +625,7 @@ export default function App() {
       <div className="workspace-topbar">
         <div className="topbar-left">
           <button className="workspace-back" onClick={() => setActivePage('home')} type="button">
-            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Command Cockpit</span>
+            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Mission Control</span>
           </button>
 
           {/* View Mode Selector Tabs */}
