@@ -124,12 +124,12 @@ function HomePage({ onNavigate }) {
               <div className="observation-crosshair"><span /><span /></div>
               <div className="observation-label observation-label-one">35.6762° N</div>
               <div className="observation-label observation-label-two">139.6503° E</div>
-              <div className="observation-chip">IMAGE READY</div>
             </div>
             <div className="observation-bottom">
               <div>
                 <small>OBSERVATION</small>
                 <strong>Earth · Multispectral</strong>
+                <span className="observation-description">High-resolution surface scan</span>
               </div>
               <span className="observation-arrow"><ArrowRight size={15} /></span>
             </div>
