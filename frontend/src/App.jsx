@@ -12,14 +12,11 @@ import {
   User,
   LogIn,
   LogOut,
-  Sparkles,
   Database,
 } from 'lucide-react';
 import Sidebar from './components/Sidebar/Sidebar';
 import VisualWorkspace from './components/Workspace/VisualWorkspace';
 import ChatPanel from './components/Chat/ChatPanel';
-import StarField from './components/StarField';
-import SatelliteOrbit from './components/SatelliteOrbit';
 import SatelliteMapExplorer from './components/Map/SatelliteMapExplorer';
 import AuthModal from './components/Auth/AuthModal';
 import SessionHistory from './components/Sidebar/SessionHistory';
@@ -53,15 +50,15 @@ function SiteHeader({ activePage, onNavigate, currentUser, onOpenAuth, onLogout 
       <div className="header-right-actions">
         {currentUser ? (
           <div className="header-user-badge">
-            <span className="user-icon"><User size={14} /></span>
+            <span className="user-icon"><User size={15} /></span>
             <span className="user-name">{currentUser.username}</span>
             <button className="logout-btn" onClick={onLogout} title="Sign Out" type="button">
-              <LogOut size={13} />
+              <LogOut size={15} />
             </button>
           </div>
         ) : (
           <button className="header-login-btn" onClick={onOpenAuth} type="button">
-            <LogIn size={14} /> Sign In
+            <LogIn size={15} /> Sign In
           </button>
         )}
 
@@ -74,52 +71,69 @@ function SiteHeader({ activePage, onNavigate, currentUser, onOpenAuth, onLogout 
 }
 
 function HomePage({ onNavigate }) {
-  const floatingItems = [
-    { label: 'Maps', detail: 'Live region search', icon: Globe2 },
-    { label: 'Models', detail: 'AI routing', icon: Layers },
-    { label: 'Evidence', detail: 'Grounded traceability', icon: Database },
+  const capabilities = [
+    { label: 'Satellite Search', detail: 'Explore any region on Earth', icon: Globe2 },
+    { label: 'AI Vision', detail: 'Ask questions about imagery', icon: Layers },
+    { label: 'Grounded Evidence', detail: 'See why the answer is trusted', icon: Database },
   ];
 
   return (
     <main className="marketing-page home-page">
-      <section className="space-hero">
-        <div className="space-background" aria-hidden="true">
-          <StarField count={140} shootingFreq={5000} />
-          <div className="space-grid" />
-          <div className="space-center-vignette" />
-          <div className="space-satellite" />
-          <div className="space-geo-visual">
-            <div className="space-geo-surface" />
-            <div className="space-visual-tile tile-one" />
-            <div className="space-visual-tile tile-two" />
-            <div className="space-visual-tile tile-three" />
-          </div>
-          <div className="space-ring ring-one" />
-          <div className="space-ring ring-two" />
-          <SatelliteOrbit size={760} />
+      <section className="earth-hero">
+        <div className="earth-hero-media" aria-hidden="true">
+          <div className="earth-photo" />
+          <div className="earth-photo-shade" />
+          <div className="earth-atmosphere" />
+          <div className="earth-stars" />
+          <div className="earth-dateline" />
         </div>
 
-        <div className="space-content">
-          <div className="space-badge">MULTIMODAL EARTH INTELLIGENCE</div>
-          <h1>SatQuery AI</h1>
-          <p>
-            Explore Earth with grounded visual reasoning, geospatial search, and evidence-led answers.
-          </p>
-          <button className="primary-action try-it-btn" onClick={() => onNavigate('analyze')} type="button">
-            Try it!
-          </button>
-        </div>
-
-        <div className="space-floating-panels">
-          {floatingItems.map(({ label, detail, icon: Icon }) => (
-            <div key={label} className="space-panel">
-              <div className="space-panel-icon"><Icon size={16} /></div>
-              <div>
-                <span>{label}</span>
-                <small>{detail}</small>
-              </div>
+        <div className="earth-hero-inner">
+          <div className="earth-copy">
+            <div className="earth-eyebrow">
+              <span className="earth-live-dot" />
+              EARTH OBSERVATION · AI RESEARCH WORKSPACE
             </div>
-          ))}
+            <h1>SatQuery AI</h1>
+            <p>
+              Turns satellite imagery into clear, evidence-grounded answers —
+              so you can move from a place on the map to an explanation in seconds.
+            </p>
+            <div className="earth-actions">
+              <button className="earth-primary" onClick={() => onNavigate('analyze')} type="button">
+                Open Command Center <ArrowRight size={16} />
+              </button>
+              <button className="earth-secondary" onClick={() => onNavigate('how-to-use')} type="button">
+                See how it works
+              </button>
+            </div>
+            <div className="earth-trust-row">
+              <span><CircleCheck size={13} /> Multimodal reasoning</span>
+              <span><CircleCheck size={13} /> Visual evidence</span>
+              <span><CircleCheck size={13} /> Auditable sessions</span>
+            </div>
+          </div>
+
+          <div className="earth-observation-card" aria-label="SatQuery Earth observation preview">
+            <div className="observation-topline">
+              <span>LIVE ORBITAL VIEW</span>
+              <span className="observation-status"><i /> ONLINE</span>
+            </div>
+            <div className="observation-image">
+              <div className="observation-map-lines" />
+              <div className="observation-crosshair"><span /><span /></div>
+              <div className="observation-label observation-label-one">35.6762° N</div>
+              <div className="observation-label observation-label-two">139.6503° E</div>
+              <div className="observation-chip">IMAGE READY</div>
+            </div>
+            <div className="observation-bottom">
+              <div>
+                <small>OBSERVATION</small>
+                <strong>Earth · Multispectral</strong>
+              </div>
+              <span className="observation-arrow"><ArrowRight size={15} /></span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
