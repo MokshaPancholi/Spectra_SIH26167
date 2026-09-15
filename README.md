@@ -215,13 +215,6 @@ npm run dev
 
 `run_all.bat` launches the backend and frontend together; `run_backend.bat` starts the API alone.
 
-### Retraining the models
-
-The Colab-ready notebooks that produced the shipped checkpoints live in `spectra/`:
-`SatQ_VQA_Model1.ipynb` · `SatQ_CrossModal_Model2.ipynb` · `SatQ_ChangeDetect_Model3.ipynb` · `SatQ_Grounding_Model4.ipynb`
-
----
-
 ## 🔌 API Reference
 
 <details>
@@ -253,8 +246,7 @@ We'd rather be upfront about where this stands today than oversell a hackathon b
 **Data & Training**
 - **Prototype-scale datasets.** ~200–204 base scenes per model (600+ compositions, 3,020 QA pairs total) prove the architecture but aren't production scale.
 - **Synthetic SAR.** SAR imagery for Models 1 & 2 uses a speckle-noise model over optical EuroSAT scenes rather than real Sentinel-1 backscatter, since streaming true co-registered SAR/optical pairs inside a single Colab session wasn't reliable.
-- **Synthetic bi-temporal pairs.** Model 3's "after" (T2) scenes are programmatically edited from T1 using six templated change patterns, rather than two genuine acquisition dates of the same location.
-- **Model 2 lacks a formal BLEU/ROUGE pass.** Training/validation loss converges cleanly, but the same quantitative evaluation run for Models 1 and 3 wasn't finalized here.
+- **Synthetic bi-temporal pairs.** Model 3's "after" (T2) scenes are programmatically edited from T1 using six templated change patterns, rather than two genuine acquisition dates of the same location 
 
 **Model & Reasoning**
 - **Rule-based router.** `router_node` uses keyword matching (e.g. *"change"*, *"flood"* vs *"SAR"*, *"radar"*) rather than a learned intent classifier, so unusually-phrased queries can be mis-routed.
@@ -266,8 +258,7 @@ We'd rather be upfront about where this stands today than oversell a hackathon b
 - **In-memory active session state.** The working `image1`/`image2` pair lives in a per-process dictionary, so it won't survive a restart or scale across multiple workers — even though chat history and evidence are already durably persisted to the database.
 - **CPU inference is a demonstration mode, not a fast production path.** Without CUDA, the app swaps in the Mock/CPU Demonstration Engine (real image analysis, templated language) rather than running the full 2.7B-parameter model.
 - **Imagery reaches the backend as rendered PNG/JPEG.** The Rasterio GeoTIFF/CRS path exists in the agent layer, but the frontend doesn't yet expose a native multi-band raster upload.
-- **No license file yet** — see [License](#-license).
-- **Development-only secrets.** The default `JWT_SECRET` and DB password in `.env.example` are placeholders, not production credentials.
+
 
 ---
 
@@ -276,12 +267,12 @@ We'd rather be upfront about where this stands today than oversell a hackathon b
 - [ ] Scale training to full EuroSAT + BigEarthNet (real Sentinel-1 SAR & Sentinel-2) and public benchmarks (RSVQA-HR, CDVQA, VRSBench)
 - [ ] Replace the keyword router with a learned/LLM-based intent classifier
 - [ ] Wire session history into the model prompt for genuine multi-turn follow-ups
-- [ ] Physical-unit change quantification (km² / hectares) using GSD + CRS metadata
+
 - [ ] Gradient-based saliency (Grad-CAM / attention rollout) for more rigorous evidence grounding
 - [ ] Native multi-band GeoTIFF upload and band-combination controls in the UI
 - [ ] Redis-backed session state for horizontal scaling
 - [ ] Model distillation / smaller backbone for real-time CPU inference
-- [ ] Automated alerting (e.g. flood or deforestation threshold triggers) for monitoring dashboards
+
 - [ ] Formal benchmarking against public RS-VQA / CDVQA leaderboards
 - [ ] Dockerized deployment + CI/CD pipeline
 
