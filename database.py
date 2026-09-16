@@ -27,9 +27,6 @@ from sqlalchemy import (
     event,
 )
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship, Session
-
-# ── Database URL Resolution ──────────────────────────────────────────────────
-# Default to PostgreSQL, with graceful fallback to SQLite
 DEFAULT_PG_URL = os.environ.get(
     "DATABASE_URL",
     "postgresql://postgres:postgres_pass@localhost:5432/satquery_db",
@@ -87,7 +84,7 @@ class ChatMessage(Base):
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     session_id = Column(String(36), ForeignKey("sessions.id"), nullable=False, index=True)
-    role = Column(String(32), nullable=False)  # "user" or "assistant"
+    role = Column(String(32), nullable=False)
     content = Column(Text, nullable=False)
     routing_decision = Column(String(64), nullable=True)
     routing_confidence = Column(Float, nullable=True)
@@ -107,17 +104,14 @@ class StoredImage(Base):
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     session_id = Column(String(36), ForeignKey("sessions.id"), nullable=False, index=True)
     message_id = Column(String(36), ForeignKey("chat_messages.id"), nullable=True, index=True)
-    image_type = Column(String(64), nullable=False)  # 'input1', 'input2', 'evidence_artifact', 'map_snapshot'
+    image_type = Column(String(64), nullable=False)
     name = Column(String(128), nullable=True)
     data_uri = Column(Text, nullable=False)
-    metadata_json = Column(Text, nullable=True)  # Store coordinates, bounding boxes, sensor data
+    metadata_json = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
     session = relationship("AnalysisSession", back_populates="images")
     message = relationship("ChatMessage", back_populates="images")
-
-
-# ── Engine Initialization & Fallback ─────────────────────────────────────────
 engine = None
 SessionLocal = None
 ACTIVE_DIALECT = "unknown"
@@ -132,7 +126,6 @@ def init_db(database_url: Optional[str] = None):
 
     try:
         if is_postgres:
-            # Test PostgreSQL connection with a short timeout
             test_engine = create_engine(target_url, pool_pre_ping=True, connect_args={"connect_timeout": 3})
             with test_engine.connect() as conn:
                 pass
@@ -164,9 +157,6 @@ def get_db() -> Generator[Session, None, None]:
         yield db
     finally:
         db.close()
-
-
-# ── Password & Token Security ────────────────────────────────────────────────
 JWT_SECRET = os.environ.get("JWT_SECRET", "satquery-geoai-secret-key-2026-secure")
 JWT_ALGORITHM = "HS256"
 

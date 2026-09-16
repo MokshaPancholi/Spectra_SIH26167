@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-/**
- * SatelliteOrbit — Animated SVG orbital ring with rotating satellite and scan beam.
- * Designed to replace or enhance the hero orbit-visual block.
- */
+
 export default function SatelliteOrbit({ size = 420 }) {
   const svgRef = useRef(null);
 
@@ -84,7 +81,7 @@ export default function SatelliteOrbit({ size = 420 }) {
         </radialGradient>
       </defs>
 
-      {/* Outer orbit ring 1 */}
+      {}
       <ellipse
         cx={cx} cy={cy} rx="155" ry="65"
         fill="none"
@@ -92,7 +89,7 @@ export default function SatelliteOrbit({ size = 420 }) {
         strokeWidth="1"
         filter="url(#orbitGlow)"
       />
-      {/* Outer orbit ring 2 */}
+      {}
       <ellipse
         cx={cx} cy={cy} rx="185" ry="82"
         fill="none"
@@ -101,7 +98,7 @@ export default function SatelliteOrbit({ size = 420 }) {
         strokeDasharray="6 10"
       />
 
-      {/* Scan beam */}
+      {}
       <line
         id="scan-beam"
         x1={cx} y1={cy}
@@ -110,26 +107,26 @@ export default function SatelliteOrbit({ size = 420 }) {
         strokeWidth="1.5"
       />
 
-      {/* Planet */}
+      {}
       <circle cx={cx} cy={cy} r="88" fill="url(#planetGrad)" />
-      {/* Cloud/land mass blobs */}
+      {}
       <ellipse cx={cx - 22} cy={cy - 18} rx="32" ry="14" fill="rgba(155,220,135,0.5)" style={{ filter: 'blur(4px)' }} />
       <ellipse cx={cx + 25} cy={cy + 22} rx="24" ry="11" fill="rgba(155,220,135,0.4)" style={{ filter: 'blur(3px)' }} />
-      {/* Glint */}
+      {}
       <circle cx={cx} cy={cy} r="88" fill="url(#glintGrad)" />
-      {/* Planet glow halo */}
+      {}
       <circle cx={cx} cy={cy} r="92" fill="none" stroke="rgba(96,200,168,0.12)" strokeWidth="8" />
 
-      {/* Orbital grid lines */}
+      {}
       <line x1={cx - 185} y1={cy} x2={cx + 185} y2={cy} stroke="rgba(56,189,248,0.06)" strokeWidth="1" />
       <line x1={cx} y1={cy - 90} x2={cx} y2={cy + 90} stroke="rgba(56,189,248,0.06)" strokeWidth="1" />
 
-      {/* Satellite glow */}
+      {}
       <circle id="sat-glow" cx={cx + 155} cy={cy} r="8" fill="rgba(56,189,248,0.25)" filter="url(#satGlow)" />
-      {/* Satellite body */}
+      {}
       <circle id="sat-dot" cx={cx + 155} cy={cy} r="4.5" fill="#38bdf8" />
 
-      {/* Ping circles at fixed orbit points */}
+      {}
       {[0, 90, 180, 270].map((deg, i) => (
         <circle
           key={i}
@@ -140,7 +137,7 @@ export default function SatelliteOrbit({ size = 420 }) {
         />
       ))}
 
-      {/* Labels */}
+      {}
       <text x={cx - 175} y={cy - 72} fill="rgba(215,255,85,0.7)" fontSize="8" fontFamily="monospace" letterSpacing="2">01 OPTICAL+SAR</text>
       <text x={cx + 80} y={cy + 85} fill="rgba(56,189,248,0.6)" fontSize="8" fontFamily="monospace" letterSpacing="2">LIVE EVIDENCE</text>
     </svg>

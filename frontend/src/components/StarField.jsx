@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-/**
- * StarField — Animated canvas starfield with twinkling + shooting stars.
- * Renders behind hero/workspace content as an absolute positioned layer.
- */
+
 export default function StarField({ count = 180, shootingFreq = 4000, style = {} }) {
   const canvasRef = useRef(null);
 
@@ -35,7 +32,7 @@ export default function StarField({ count = 180, shootingFreq = 4000, style = {}
         speed: rand(0.003, 0.012),
         phase: rand(0, Math.PI * 2),
         color: Math.random() > 0.85
-          ? `hsl(${rand(180, 220)}, 70%, 85%)`  // blue-tinted
+          ? `hsl(${rand(180, 220)}, 70%, 85%)`
           : '#ffffff',
       }));
     };
@@ -57,8 +54,6 @@ export default function StarField({ count = 180, shootingFreq = 4000, style = {}
 
     const draw = (t) => {
       ctx.clearRect(0, 0, width, height);
-
-      // Draw stars
       for (const s of stars) {
         s.alpha = s.baseAlpha * (0.5 + 0.5 * Math.sin(t * s.speed + s.phase));
         ctx.beginPath();
@@ -67,8 +62,6 @@ export default function StarField({ count = 180, shootingFreq = 4000, style = {}
         ctx.globalAlpha = s.alpha;
         ctx.fill();
       }
-
-      // Draw shooting star
       if (shootingStar) {
         const ss = shootingStar;
         ss.progress += ss.speed;

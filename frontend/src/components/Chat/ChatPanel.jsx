@@ -124,7 +124,7 @@ export default function ChatPanel({
           </div>
         ))}
 
-        {/* Live Stepper while loading */}
+        {}
         {isLoading && (
           <ProgressStepper
             currentStage={currentStage}

@@ -31,12 +31,10 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const layersRef = useRef({});
-
-  // State
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [activeBasemap, setActiveBasemap] = useState('satellite'); // 'satellite' | 'hybrid' | 'osm'
+  const [activeBasemap, setActiveBasemap] = useState('satellite');
   const [telemetry, setTelemetry] = useState({
     lat: 25.1124,
     lng: 55.139,
@@ -44,17 +42,11 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     bounds: { north: 0, south: 0, east: 0, west: 0 },
     resolution: '~2.4m/px (Satellite)',
   });
-
-  // Snapshot dialog state
   const [snapshotPreview, setSnapshotPreview] = useState(null);
   const [isCapturing, setIsCapturing] = useState(false);
   const [capturedFeedback, setCapturedFeedback] = useState(null);
-
-  // Initialize Leaflet Map
   useEffect(() => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
-
-    // Fix default marker icon issues in Vite/Webpack
     delete L.Icon.Default.prototype._getIconUrl;
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -68,8 +60,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
       zoomControl: false,
       attributionControl: false,
     });
-
-    // Basemaps
     const satelliteLayer = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       { maxZoom: 19, crossOrigin: true }
@@ -95,14 +85,10 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     };
 
     mapInstanceRef.current = map;
-
-    // Telemetry updates
     const updateTelemetry = () => {
       const center = map.getCenter();
       const zoom = map.getZoom();
       const bounds = map.getBounds();
-
-      // Estimate ground resolution at center latitude
       const resMeters = (156543.03392 * Math.cos((center.lat * Math.PI) / 180)) / Math.pow(2, zoom);
       const resText =
         resMeters < 1
@@ -132,8 +118,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
       mapInstanceRef.current = null;
     };
   }, []);
-
-  // Switch basemaps
   const handleBasemapChange = (type) => {
     const map = mapInstanceRef.current;
     if (!map || !layersRef.current) return;
@@ -152,8 +136,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     }
     setActiveBasemap(type);
   };
-
-  // Location Search (Nominatim)
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
@@ -196,8 +178,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     });
     setSearchQuery(preset.name);
   };
-
-  // ── Snapshot Region Capture ───────────────────────────────────────────────
   const buildFallbackSnapshotDataUrl = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 768;
@@ -214,8 +194,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     gradient.addColorStop(1, '#111827');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Grid and AOI frame
     ctx.strokeStyle = 'rgba(110, 231, 255, 0.22)';
     ctx.lineWidth = 1;
     for (let x = 48; x < canvas.width - 48; x += 64) {
@@ -247,8 +225,6 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     ctx.fillText(`LOCATION: ${searchQuery || 'Target Region'}`, 128, 278);
     ctx.fillText(`COORDS: ${telemetry.lat.toFixed(4)}°, ${telemetry.lng.toFixed(4)}°`, 128, 322);
     ctx.fillText(`ZOOM: ${telemetry.zoom}× | AOI: 512 × 512`, 128, 366);
-
-    // Stylized map markers
     ctx.beginPath();
     ctx.fillStyle = '#67e8f9';
     ctx.arc(canvas.width * 0.62, canvas.height * 0.56, 18, 0, Math.PI * 2);
@@ -354,7 +330,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
     onCaptureRegion({
       image: snapshotPreview.dataUrl,
       label: `${snapshotPreview.locationName} (${snapshotPreview.lat}°, ${snapshotPreview.lng}°)`,
-      target: targetSlot, // 'image1' | 'image2'
+      target: targetSlot,
       metadata: {
         lat: snapshotPreview.lat,
         lng: snapshotPreview.lng,
@@ -373,7 +349,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
 
   return (
     <div className="satellite-map-explorer">
-      {/* ── Top Map Control & Search Bar ───────────────────────────────── */}
+      {}
       <div className="map-top-bar">
         <form onSubmit={handleSearch} className="map-search-form">
           <div className="map-search-input-wrapper">
@@ -391,7 +367,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
           </button>
         </form>
 
-        {/* Basemap Switcher */}
+        {}
         <div className="map-layer-toggles">
           <button
             type="button"
@@ -411,7 +387,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
           </button>
         </div>
 
-        {/* Snapshot Trigger */}
+        {}
         <button
           type="button"
           className="map-snapshot-trigger-btn"
@@ -423,7 +399,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
         </button>
       </div>
 
-      {/* Search Autocomplete Results */}
+      {}
       {searchResults.length > 0 && (
         <div className="map-search-dropdown">
           {searchResults.map((res, i) => (
@@ -440,7 +416,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
         </div>
       )}
 
-      {/* ── Quick Target Hotspot Chips ─────────────────────────────────── */}
+      {}
       <div className="map-presets-bar">
         <span className="preset-label">
           <Compass size={13} /> QUICK TELEPORT:
@@ -460,11 +436,11 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
         </div>
       </div>
 
-      {/* ── Main Map Container ─────────────────────────────────────────── */}
+      {}
       <div className="map-canvas-wrapper">
         <div ref={mapContainerRef} className="leaflet-map-canvas" />
 
-        {/* High-Tech Tactical Viewfinder Overlay */}
+        {}
         <div className="viewfinder-overlay" pointerEvents="none">
           <div className="viewfinder-reticle">
             <span className="corner top-left" />
@@ -478,7 +454,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
           </div>
         </div>
 
-        {/* HUD Telemetry Overlay */}
+        {}
         <div className="map-telemetry-hud">
           <div className="telemetry-item">
             <span className="hud-label">CENTER LAT/LNG</span>
@@ -503,7 +479,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
           </div>
         </div>
 
-        {/* In-Map Zoom Controls */}
+        {}
         <div className="map-floating-controls">
           <button
             type="button"
@@ -532,7 +508,7 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
         </div>
       </div>
 
-      {/* ── Snapshot Region Target Modal ────────────────────────────────── */}
+      {}
       {snapshotPreview && (
         <div className="snapshot-modal-overlay">
           <div className="snapshot-modal-card">

@@ -193,21 +193,16 @@ export default function App() {
     try {
       localStorage.setItem('satquery-theme', 'dark');
     } catch {
-      // ignore storage issues
     }
   }, []);
 
   const [activePage, setActivePage] = useState('home');
-  const [viewMode, setViewMode] = useState('cockpit'); // 'cockpit' | 'map'
+  const [viewMode, setViewMode] = useState('cockpit');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [historyDrawerOpen, setHistoryDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-
-  // User & Auth State
   const [currentUser, setCurrentUser] = useState(null);
   const [authToken, setAuthToken] = useState(null);
-
-  // Presets & Health
   const [presets, setPresets] = useState([]);
   const [activePresetId, setActivePresetId] = useState(null);
   const [healthInfo, setHealthInfo] = useState(null);
@@ -221,31 +216,21 @@ export default function App() {
 
     setActivePage(page);
   };
-
-  // Workspace & Imagery state
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
   const [image1Name, setImage1Name] = useState(null);
   const [image2Name, setImage2Name] = useState(null);
-
-  // Active layer in visual viewer
   const [activeLayer, setActiveLayer] = useState('original');
   const [opacity, setOpacity] = useState(0.85);
-
-  // Routing & Evidence state
   const [evidenceArtifacts, setEvidenceArtifacts] = useState(null);
   const [routingDecision, setRoutingDecision] = useState(null);
   const [forcedModel, setForcedModel] = useState('auto');
-
-  // Chat & Stream state
   const [sessionId, setSessionId] = useState(() => 'sess_' + Math.random().toString(36).substring(2, 9));
   const [messages, setMessages] = useState([]);
   const [inputPrompt, setInputPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [currentStage, setCurrentStage] = useState(null);
   const [stageMessage, setStageMessage] = useState(null);
-
-  // Load Presets, Health, and User Sessions on mount
   const loadSessions = useCallback(() => {
     const headers = authToken ? { Authorization: `Bearer ${authToken}` } : {};
     fetch('/api/sessions', { headers })
@@ -267,8 +252,6 @@ export default function App() {
 
     loadSessions();
   }, [loadSessions]);
-
-  // Auth Handlers
   const handleAuthSuccess = (user, token) => {
     setCurrentUser(user);
     setAuthToken(token);
@@ -280,8 +263,6 @@ export default function App() {
     setAuthToken(null);
     setSessions([]);
   };
-
-  // Session Management
   const handleSelectSession = async (sessId) => {
     try {
       const res = await fetch(`/api/sessions/${sessId}/messages`);
@@ -290,8 +271,6 @@ export default function App() {
         setSessionId(sessId);
         setMessages(histMessages);
         setHistoryDrawerOpen(false);
-
-        // Find last artifacts if available
         for (let i = histMessages.length - 1; i >= 0; i--) {
           if (histMessages[i].evidenceArtifacts && Object.keys(histMessages[i].evidenceArtifacts).length > 0) {
             setEvidenceArtifacts(histMessages[i].evidenceArtifacts);
@@ -345,8 +324,6 @@ export default function App() {
       console.warn('Could not delete session:', err);
     }
   };
-
-  // Preset Selection
   const handleSelectPreset = (preset) => {
     setActivePresetId(preset.id);
     setImage1(preset.image1 || null);
@@ -377,8 +354,6 @@ export default function App() {
     setActivePresetId(null);
     setActiveLayer('original');
   };
-
-  // Image Upload / Swap / Remove Handlers
   const handleUploadImages = async (slotOrFiles, fileDataUri, fileName) => {
     if (Array.isArray(slotOrFiles)) {
       const files = slotOrFiles.slice(0, 2);
@@ -448,8 +423,6 @@ export default function App() {
     setImage2(tempImg);
     setImage2Name(tempName);
   };
-
-  // Map Region Snapshotting
   const handleCaptureRegion = ({ image, label, target, metadata }) => {
     if (target === 'image1') {
       setImage1(image);
@@ -463,13 +436,10 @@ export default function App() {
     }
     setActivePresetId(null);
     setEvidenceArtifacts(null);
-    // Switch to Cockpit view if currently in pure map mode
     if (viewMode === 'map') {
       setViewMode('cockpit');
     }
   };
-
-  // Send Message with SSE Streaming & DB Persistence
   const handleSend = async () => {
     if (!inputPrompt.trim() || isLoading) return;
 
@@ -586,8 +556,6 @@ export default function App() {
                     explanation: parsed.explanation,
                   },
                 ]);
-
-                // Refresh sessions from database
                 loadSessions();
               } else {
                 setCurrentStage(parsed.stage);
@@ -649,14 +617,24 @@ export default function App() {
 
   return (
     <div className="workspace-route">
-      {/* ── Futuristic Command Cockpit Topbar ───────────────────────────── */}
+      {}
       <div className="workspace-topbar">
         <div className="topbar-left">
-          <button className="workspace-back" onClick={() => setActivePage('home')} type="button">
-            <Satellite size={16} /> SatQuery <span className="cockpit-tag">/ Command Center</span>
+          <button className="site-brand workspace-brand" onClick={() => setActivePage('home')} type="button">
+            <span className="site-brand-mark"><Satellite size={19} /></span>
+            <span><strong>SatQuery</strong><small>EARTH OBSERVATION LAB</small></span>
           </button>
 
-          {/* View Mode Selector Tabs */}
+          <nav className="site-nav workspace-nav" aria-label="Primary navigation">
+            <button type="button" onClick={() => setActivePage('home')}>Home</button>
+            <button type="button" onClick={() => setActivePage('how-to-use')}>How to use</button>
+            <button type="button" onClick={() => setActivePage('about')}>About</button>
+          </nav>
+        </div>
+
+        <div className="topbar-center-telemetry" />
+
+        <div className="topbar-right">
           <div className="view-mode-tabs">
             <button
               type="button"
@@ -675,11 +653,7 @@ export default function App() {
               <Layers size={14} /> Workspace
             </button>
           </div>
-        </div>
 
-        <div className="topbar-center-telemetry" />
-
-        <div className="topbar-right">
           {currentUser ? (
             <div className="cockpit-user-chip">
               <User size={13} />
@@ -703,19 +677,15 @@ export default function App() {
             </button>
           )}
 
-          <button
-            className="guide-link-btn"
-            onClick={() => setActivePage('how-to-use')}
-            type="button"
-          >
-            Guide
+          <button className="header-launch workspace-launch" type="button" disabled>
+            <MessageSquare size={15} /> Command Center
           </button>
         </div>
       </div>
 
-      {/* ── Main Cockpit Area ───────────────────────────────────────────── */}
+      {}
       <div className={`app-container view-${viewMode}`}>
-        {/* Session History Drawer */}
+        {}
         <SessionHistory
           isOpen={historyDrawerOpen}
           onClose={() => setHistoryDrawerOpen(false)}
@@ -726,7 +696,7 @@ export default function App() {
           onDeleteSession={handleDeleteSession}
         />
 
-        {/* 1. Left Sidebar (Shown in Cockpit and Dual modes) */}
+        {}
         {viewMode !== 'map' && (
           <Sidebar
             isOpen={sidebarOpen}
@@ -743,7 +713,7 @@ export default function App() {
           />
         )}
 
-        {/* 2. Central Component: Dynamic depending on viewMode */}
+        {}
         {viewMode === 'map' && (
           <div className="center-map-fullscreen">
             <SatelliteMapExplorer
@@ -769,7 +739,7 @@ export default function App() {
           />
         )}
 
-        {/* 3. Right Analysis & Conversation Panel (Shown in Cockpit mode) */}
+        {}
         {viewMode !== 'map' && (
           <ChatPanel
             messages={messages}
@@ -792,7 +762,7 @@ export default function App() {
         )}
       </div>
 
-      {/* Auth Modal */}
+      {}
       <AuthModal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}

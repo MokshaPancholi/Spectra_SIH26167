@@ -31,16 +31,12 @@ import torch.nn.functional as F
 from PIL import Image, ImageDraw, ImageFilter
 import cv2
 import matplotlib.pyplot as plt
-
-# Geospatial Raster Processing
 try:
     import rasterio
     from rasterio.enums import Resampling
     HAS_RASTERIO = True
 except ImportError:
     HAS_RASTERIO = False
-
-# LangGraph Framework
 try:
     from langgraph.graph import StateGraph, END
     HAS_LANGGRAPH = True
@@ -53,8 +49,6 @@ from transformers import (
 from peft import PeftModel
 
 warnings.filterwarnings("ignore")
-
-# ── Dynamic Checkpoint Resolution ───────────────────────────────────────────
 def resolve_checkpoints() -> Dict[str, str]:
     """
     Dynamically resolves paths to model adapter checkpoints.
@@ -100,8 +94,6 @@ def resolve_checkpoints() -> Dict[str, str]:
     return resolved
 
 RESOLVED_CKPTS = resolve_checkpoints()
-
-# ── Global Configuration ─────────────────────────────────────────────────────
 DEFAULT_CONFIG = {
     "model_name": "Salesforce/blip2-opt-2.7b",
     "image_size": 224,
@@ -142,9 +134,6 @@ def get_autocast_context():
             yield
     else:
         yield
-
-
-# ── 1. Geospatial Utilities (Rasterio) ────────────────────────────────────────
 def extract_raster_metadata(image_input: Any) -> Optional[Dict[str, Any]]:
     """
     Extracts Coordinate Reference System (CRS), spatial bounds, resolution,
@@ -186,8 +175,6 @@ def _normalize_raster_array(arr: np.ndarray) -> np.ndarray:
 
     if np.issubdtype(arr.dtype, np.floating) and arr.max() <= 1.0 and arr.min() >= 0.0:
         return np.clip(arr * 255.0, 0, 255).astype(np.uint8)
-
-    # 2% - 98% percentile stretch standard in Remote Sensing for 16-bit GeoTIFF / high dynamic range
     p2, p98 = np.percentile(arr, (2, 98))
     if p98 > p2:
         stretched = np.clip((arr - p2) / (p98 - p2) * 255.0, 0, 255)
@@ -208,7 +195,6 @@ def read_geospatial_image(image_input: Any) -> Image.Image:
 
     path_str = str(image_input) if image_input is not None else ""
     if path_str and os.path.exists(path_str):
-        # 1. Try Rasterio for GeoTIFF and multi-band satellite rasters
         if HAS_RASTERIO:
             try:
                 with rasterio.open(path_str) as src:
@@ -223,8 +209,6 @@ def read_geospatial_image(image_input: Any) -> Image.Image:
                         return Image.fromarray(arr, mode="L")
             except Exception:
                 pass
-
-        # 2. Try PIL for standard formats (PNG, JPG, TIFF, etc.)
         try:
             with Image.open(path_str) as img:
                 if img.mode in ("I;16", "I", "F"):
@@ -236,9 +220,6 @@ def read_geospatial_image(image_input: Any) -> Image.Image:
             pass
 
     return safe_load_image(image_input)
-
-
-# ── 2. Self-Healing Image Synthesis & Safe Loader ─────────────────────────────
 def create_synthetic_satellite_image(modality="optical", cls_name="Forest",
                                      is_t2=False, base_img=None) -> Image.Image:
     """Generates realistic 224x224 satellite imagery for testing."""
@@ -322,9 +303,6 @@ def safe_load_image(path_or_image: Any, modality="optical", cls_name="Forest",
             pass
 
     return img
-
-
-# ── 3. Model Architecture & Dynamic Weight Swapping ──────────────────────────
 class DualStreamBLIP2(nn.Module):
     """Dual-stream BLIP-2 wrapper for Model 2 and Model 3."""
     def __init__(self, blip2_model):
@@ -446,9 +424,6 @@ def load_model(model_type: str):
     _runtime["model"] = model
     _runtime["model_type"] = model_type
     return model
-
-
-# ── 4. Spatial Attention & Grounding Extraction ──────────────────────────────
 def extract_vit_attention(vit_hidden_states, target_size=224):
     """Extracts spatial activation map from ViT encoder tokens."""
     token_norms = torch.norm(vit_hidden_states[:, 1:, :].float(), dim=-1)
@@ -606,9 +581,6 @@ def mock_change_detect_inference(t1_img: Image.Image, t2_img: Image.Image, query
 
     explanation = f"Radiometric change detected: {change_pct:.1f}% across {len(boxes)} bounding region(s)."
     return ans, explanation, mask_img, overlay_img, change_pct, boxes
-
-
-# ── 5. LangGraph State Definition ────────────────────────────────────────────
 class SatQueryState(TypedDict):
     """LangGraph State Dictionary tracking execution across graph nodes."""
     query: str
@@ -616,7 +588,7 @@ class SatQueryState(TypedDict):
     image2: Optional[Any]
     image_count: int
     raster_metadata: Optional[Dict[str, Any]]
-    routing_decision: str       # "vqa" | "crossmodal" | "change_detect" | "geospatial_qa"
+    routing_decision: str
     routing_confidence: float
     routing_reason: str
     raw_answer: str
@@ -625,9 +597,6 @@ class SatQueryState(TypedDict):
     final_response: str
     latency: float
     mock: Optional[bool]
-
-
-# ── 6. LangGraph Nodes ───────────────────────────────────────────────────────
 def router_node(state: SatQueryState) -> Dict[str, Any]:
     """
     Node 1: Intent & Modality Classifier.
@@ -646,8 +615,6 @@ def router_node(state: SatQueryState) -> Dict[str, Any]:
         "sar", "radar", "optical", "modality", "sensor", "penetrate", "penetration",
         "cloud", "all-weather", "day/night", "scatter", "complementary", "fusion"
     ]
-
-    # Extract geospatial metadata if rasterio is available
     meta = None
     if has_img1:
         meta = extract_raster_metadata(state["image1"])
@@ -942,9 +909,6 @@ def synthesizer_node(state: SatQueryState) -> Dict[str, Any]:
 * **Grounding Evidence:** {state['explanation']}
 """
     return {"final_response": formatted}
-
-
-# ── 7. LangGraph Routing Condition & Graph Assembly ──────────────────────────
 def route_condition(state: SatQueryState) -> str:
     """Conditional routing edge function."""
     return state["routing_decision"]
@@ -956,8 +920,6 @@ def build_satquery_graph():
         return None
 
     workflow = StateGraph(SatQueryState)
-
-    # Add nodes
     workflow.add_node("router", router_node)
     workflow.add_node("vqa", vqa_node)
     workflow.add_node("crossmodal", crossmodal_node)
@@ -965,11 +927,7 @@ def build_satquery_graph():
     workflow.add_node("geospatial_qa", geospatial_knowledge_node)
     workflow.add_node("evidence_grounding", evidence_grounding_node)
     workflow.add_node("synthesizer", synthesizer_node)
-
-    # Set entry point
     workflow.set_entry_point("router")
-
-    # Conditional routing edges
     workflow.add_conditional_edges(
         "router",
         route_condition,
@@ -980,8 +938,6 @@ def build_satquery_graph():
             "geospatial_qa": "geospatial_qa",
         }
     )
-
-    # Edges to evidence grounding & synthesis
     workflow.add_edge("vqa", "evidence_grounding")
     workflow.add_edge("crossmodal", "evidence_grounding")
     workflow.add_edge("change_detect", "evidence_grounding")
@@ -990,13 +946,7 @@ def build_satquery_graph():
     workflow.add_edge("synthesizer", END)
 
     return workflow.compile()
-
-
-# Compile default app if LangGraph is available
 satquery_app = build_satquery_graph() if HAS_LANGGRAPH else None
-
-
-# ── 8. High-Level Invocation Interface ───────────────────────────────────────
 def run_satquery(query: str, image1=None, image2=None, mock: Optional[bool] = None) -> SatQueryState:
     """
     Standard entrypoint for invoking the SatQuery AI Agent.
@@ -1024,7 +974,6 @@ def run_satquery(query: str, image1=None, image2=None, mock: Optional[bool] = No
     if satquery_app is not None:
         final_state = satquery_app.invoke(initial_state)
     else:
-        # Direct sequential execution if langgraph package is not loaded
         st = {**initial_state, **router_node(initial_state)}
         dec = st["routing_decision"]
         if dec == "vqa":

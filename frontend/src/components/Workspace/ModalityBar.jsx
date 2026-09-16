@@ -13,7 +13,6 @@ export default function ModalityBar({
   opacity,
   onChangeOpacity,
 }) {
-  // Determine relevant layer tabs based on active routing / imagery
   const renderLayerTabs = () => {
     if (!hasImage1 && !hasImage2) {
       return (
@@ -81,8 +80,6 @@ export default function ModalityBar({
         </div>
       );
     }
-
-    // Default VQA / Single-image
     return (
       <div className="modality-tabs">
         <button

@@ -63,7 +63,7 @@ export default function VisualWorkspace({
     if (!image1 && !image2) {
       return (
         <div className="empty-viewport">
-          {/* Animated radar ring */}
+          {}
           <div className="radar-ring-container">
             <div className="radar-ring-outer" />
             <div className="radar-ring-inner" />
@@ -79,14 +79,10 @@ export default function VisualWorkspace({
         </div>
       );
     }
-
-    // Determine base image
     let baseImg = image1;
     if (activeLayer === 'sar' && image2) baseImg = image2;
     if (activeLayer === 'after' && image2) baseImg = image2;
     if (activeLayer === 'before') baseImg = image1;
-
-    // Determine overlay image from evidenceArtifacts
     let overlayImg = null;
     if (activeLayer === 'heatmap') {
       overlayImg = evidenceArtifacts?.['Attention Heatmap'];
@@ -121,7 +117,7 @@ export default function VisualWorkspace({
           />
         )}
 
-        {/* Vector SVG Bounding Boxes */}
+        {}
         {activeLayer === 'mask' && Array.isArray(boxes) && boxes.length > 0 && (
           <svg
             className="vector-overlay-layer"
@@ -196,7 +192,7 @@ export default function VisualWorkspace({
       >
         {getDisplayContent()}
 
-        {/* Viewport Floating Controls Pill */}
+        {}
         {(image1 || image2) && (
           <div className="viewport-controls-pill">
             <button className="ctrl-btn" title="Zoom In" onClick={() => handleZoom(0.2)}>

@@ -13,8 +13,6 @@ import base64
 import asyncio
 from typing import Optional, Dict, Any, List
 from pathlib import Path
-
-# Ensure UTF-8 output on Windows consoles to prevent cp1252 charmap crashes
 if sys.platform == "win32":
     try:
         if sys.stdout and hasattr(sys.stdout, "reconfigure"):
@@ -32,8 +30,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-
-# ── Database & Persistence Integration ──────────────────────────────────────
 import database
 from database import (
     init_db,
@@ -57,8 +53,6 @@ def get_current_user_id(request: Request) -> Optional[str]:
     token = auth_header.split(" ", 1)[1].strip()
     payload = decode_access_token(token)
     return payload.get("sub") if payload else None
-
-# ── Import SatQuery Agent (spectra package) ────────────────────────────────
 import spectra.satquery_agent as satquery_agent
 from spectra.satquery_agent import (
     run_satquery,
@@ -72,8 +66,6 @@ from spectra.satquery_agent import (
     evidence_grounding_node,
     synthesizer_node,
 )
-
-# ── FastAPI App Initialization ───────────────────────────────────────────────
 app = FastAPI(
     title="SatQuery AI Workspace API",
     description="Conversational Multi-Modal Remote Sensing AI Backend",
@@ -87,12 +79,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# In-memory session store
 SESSIONS: Dict[str, Dict[str, Any]] = {}
-
-
-# ── Helper Functions ────────────────────────────────────────────────────────
 def pil_to_base64_data_url(img: Image.Image, format: str = "PNG") -> str:
     """Converts a PIL Image to a base64 Data URL string."""
     buffered = io.BytesIO()
@@ -109,21 +96,15 @@ def decode_base64_image(data_uri: str) -> Image.Image:
         data_uri = data_uri.split(",", 1)[1]
     image_data = base64.b64decode(data_uri)
     return Image.open(io.BytesIO(image_data)).convert("RGB")
-
-
-# Pre-generate sample preset scenes for quick 1-click exploration
 CACHED_PRESETS: Dict[str, Dict[str, Any]] = {}
 
 
 def init_presets():
     """Generates synthetic benchmark scenes for instant UI demonstration."""
     try:
-        # Preset 1: Urban VQA
         urban_opt = create_synthetic_satellite_image(modality="optical", cls_name="Urban")
-        # Preset 2: Optical-SAR CrossModal
         coastal_opt = create_synthetic_satellite_image(modality="optical", cls_name="River")
         coastal_sar = create_synthetic_satellite_image(modality="sar", cls_name="River")
-        # Preset 3: Bi-temporal Change Detection
         t1_forest = create_synthetic_satellite_image(modality="optical", cls_name="Forest")
         t2_forest = create_synthetic_satellite_image(
             modality="optical", cls_name="Forest", is_t2=True, base_img=t1_forest
@@ -167,17 +148,14 @@ def init_presets():
         print("[SatQuery] [OK] Preset scenes generated successfully.")
     except Exception as e:
         print(f"[SatQuery] [WARN] Preset generation warning: {e}. Presets may be unavailable.")
-
-
-# ── Request / Response Models ───────────────────────────────────────────────
 class ChatRequest(BaseModel):
     session_id: Optional[str] = None
     query: str
-    image1: Optional[str] = None  # Base64 data URL
-    image2: Optional[str] = None  # Base64 data URL
+    image1: Optional[str] = None
+    image2: Optional[str] = None
     image1_name: Optional[str] = None
     image2_name: Optional[str] = None
-    forced_model: Optional[str] = None  # None = AUTO, or 'vqa', 'crossmodal', 'change_detect', 'geospatial_qa'
+    forced_model: Optional[str] = None
     mock: Optional[bool] = None
 
 
@@ -198,9 +176,6 @@ class LoginRequest(BaseModel):
 
 class SessionCreateRequest(BaseModel):
     title: Optional[str] = None
-
-
-# ── API Endpoints ───────────────────────────────────────────────────────────
 @app.on_event("startup")
 async def startup_event():
     print("[SatQuery] Starting SatQuery AI Backend...")
@@ -224,9 +199,6 @@ def health_check():
         "checkpoints": {k: os.path.exists(v) if v else False for k, v in ckpts.items()},
         "timestamp": time.time(),
     }
-
-
-# ── Auth Endpoints ──────────────────────────────────────────────────────────
 @app.post("/api/auth/register")
 def register(req: RegisterRequest):
     """Registers a new user and returns a JWT token."""
@@ -308,9 +280,6 @@ def get_me(request: Request):
         }
     finally:
         db.close()
-
-
-# ── Session Management Endpoints ────────────────────────────────────────────
 @app.get("/api/sessions")
 def list_sessions(request: Request):
     """Lists saved analysis sessions from database."""
@@ -442,8 +411,6 @@ def execute_agent_with_stages(
     """
     start_time = time.time()
     effective_mock = mock if mock is not None else is_mock_mode()
-
-    # Stage 1: Understanding query
     yield {
         "stage": "understanding_query",
         "message": "Parsing geospatial prompt, intent keywords, and image modalities...",
@@ -466,8 +433,6 @@ def execute_agent_with_stages(
         "latency": 0.0,
         "mock": effective_mock,
     }
-
-    # If user selected a forced model in Advanced options
     if forced_model and forced_model != "auto":
         router_out = {
             "routing_decision": forced_model,
@@ -480,8 +445,6 @@ def execute_agent_with_stages(
 
     state = {**initial_state, **router_out}
     decision = state["routing_decision"]
-
-    # Stage 2: Selecting model
     model_labels = {
         "vqa": "Visual Question Answering (Model 1 — BLIP-2 LoRA)",
         "crossmodal": "Optical-SAR Cross-Modal Fusion (Model 2 — Dual-Stream Attention)",
@@ -496,8 +459,6 @@ def execute_agent_with_stages(
         "reason": state["routing_reason"],
         "progress": 40,
     }
-
-    # Stage 3: Analysing imagery
     yield {
         "stage": "analysing_imagery",
         "message": f"Extracting spatial feature representations via {decision.upper()} pipeline...",
@@ -514,8 +475,6 @@ def execute_agent_with_stages(
         model_out = geospatial_knowledge_node(state)
 
     state.update(model_out)
-
-    # Stage 4: Generating evidence
     yield {
         "stage": "generating_evidence",
         "message": "Generating visual attention heatmaps, spatial attributions, and change masks...",
@@ -525,8 +484,6 @@ def execute_agent_with_stages(
     if decision != "geospatial_qa":
         evidence_out = evidence_grounding_node(state)
         state.update(evidence_out)
-
-    # Stage 5: Preparing response
     yield {
         "stage": "preparing_response",
         "message": "Synthesizing multimodal response and grounding evidence...",
@@ -536,8 +493,6 @@ def execute_agent_with_stages(
     synth_out = synthesizer_node(state)
     state.update(synth_out)
     state["latency"] = round(time.time() - start_time, 3)
-
-    # Package clean serializable output
     serialized_artifacts = {}
     for key, val in state["evidence_artifacts"].items():
         if isinstance(val, Image.Image):
@@ -545,7 +500,6 @@ def execute_agent_with_stages(
         elif isinstance(val, np.ndarray):
             if val.size <= 200:
                 serialized_artifacts[key] = val.tolist()
-            # Do not send massive raw float arrays over JSON
         elif isinstance(val, (int, float, str, list, dict, bool)):
             serialized_artifacts[key] = val
 
@@ -635,8 +589,6 @@ async def chat_stream_endpoint(req: ChatRequest, request: Request):
                 session_id,
                 {"history": [], "image1": None, "image2": None, "image1_name": None, "image2_name": None},
             )
-
-            # Persist incoming user message & input imagery to DB
             user_msg_id = str(uuid.uuid4())
             db = next(database.get_db())
             try:
@@ -710,8 +662,6 @@ async def chat_stream_endpoint(req: ChatRequest, request: Request):
                 if step.get("stage") == "complete":
                     step["session_id"] = session_id
                     session["history"].append({"user": req.query, "assistant": step["raw_answer"]})
-
-                    # Persist assistant response & evidence artifacts to DB
                     db = next(database.get_db())
                     try:
                         asst_msg_id = str(uuid.uuid4())
@@ -728,8 +678,6 @@ async def chat_stream_endpoint(req: ChatRequest, request: Request):
                             explanation=step.get("explanation"),
                         )
                         db.add(asst_msg)
-
-                        # Save artifacts
                         artifacts = step.get("evidence_artifacts") or {}
                         for a_name, a_val in artifacts.items():
                             if isinstance(a_val, str) and a_val.startswith("data:image"):
@@ -769,9 +717,6 @@ async def chat_stream_endpoint(req: ChatRequest, request: Request):
             "X-Accel-Buffering": "no",
         },
     )
-
-
-# Mount static build if present
 static_dist = Path(__file__).parent / "frontend" / "dist"
 if static_dist.exists():
     app.mount("/", StaticFiles(directory=str(static_dist), html=True), name="static")

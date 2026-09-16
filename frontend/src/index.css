@@ -1,10 +1,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-  /* ═══════════════════════════════════════════════════════════════
-    DESIGN TOKENS — GEO / SPACE THEME
-  ══════════════════════════════════════════════════════════════ */
+  
   :root {
-    /* Brand palette */
+    
     --bg-void: #07111D;
     --bg-workspace: #0B1726;
     --bg-sidebar: #0B1726;
@@ -13,19 +11,19 @@
     --bg-card-hover: #172B40;
     --bg-input: #0F1D2D;
 
-    /* Borders */
+    
     --border-subtle: #203A52;
     --border-strong: #2C5270;
     --border-focus: #27C7E8;
     --border-hover: #2C5270;
 
-    /* Text */
+    
     --text-primary: #F4F7FA;
     --text-secondary: #AEBECD;
     --text-muted: #718397;
     --text-code: #F4F7FA;
 
-    /* Accent palette */
+    
     --accent-cyan: #27C7E8;
     --accent-cyan-dark: #168EAB;
     --accent-cyan-glow: rgba(39, 199, 232, 0.08);
@@ -40,27 +38,25 @@
     --signal: #F2B84B;
     --signal-soft: rgba(242, 184, 75, 0.10);
 
-    /* Radii */
+    
     --radius-sm: 8px;
     --radius-md: 10px;
     --radius-lg: 14px;
     --radius-xl: 18px;
 
-    /* Typography */
+    
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     --font-display: 'Plus Jakarta Sans', sans-serif;
 
-    /* Space tokens */
+    
     --space-line: #203A52;
     --space-soft: #AEBECD;
     --space-white: #F4F7FA;
     --space-ink: #07111D;
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    KEYFRAME ANIMATIONS
-  ══════════════════════════════════════════════════════════════ */
+  
   @keyframes pulse-glow {
     0%, 100% { opacity: 1; box-shadow: 0 0 6px currentColor; }
     50%       { opacity: 0.6; box-shadow: 0 0 18px currentColor; }
@@ -117,9 +113,7 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    RESET & BASE
-  ══════════════════════════════════════════════════════════════ */
+  
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body, html {
@@ -144,9 +138,7 @@
   ::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.18); border-radius: 999px; }
   ::-webkit-scrollbar-thumb:hover { background: rgba(56, 189, 248, 0.35); }
 
-  /* ═══════════════════════════════════════════════════════════════
-    MARKETING SHELL (Home / Info pages)
-  ══════════════════════════════════════════════════════════════ */
+  
   body, html { overflow: auto; }
 
   .site-shell {
@@ -157,7 +149,7 @@
     overflow: hidden;
   }
 
-  /* Ambient aurora background on site shell */
+  
   .site-shell::before {
     content: '';
     position: fixed;
@@ -170,7 +162,7 @@
     z-index: 0;
   }
 
-  /* ── SITE HEADER ─────────────────────────────────────────────── */
+  
   .site-header {
     height: 76px;
     padding: 0 clamp(22px, 5vw, 80px);
@@ -192,8 +184,8 @@
   .site-brand-mark {
     display: grid; place-items: center;
     width: 34px; height: 34px;
-    color: var(--space-ink);
-    background: var(--signal);
+    color: #05070b;
+    background: #ffffff;
     border-radius: 50%;
     animation: float-up 4s ease-in-out infinite;
   }
@@ -228,10 +220,10 @@
     color: #fff;
   }
 
-  /* ── MARKETING LAYOUT ─────────────────────────────────────── */
+  
   .marketing-page { width: min(1320px, calc(100% - 48px)); margin: 0 auto; position: relative; z-index: 1; }
 
-  /* ── HOME HERO ──────────────────────────────────────────────── */
+  
   .home-hero {
     min-height: 620px;
     display: grid;
@@ -274,7 +266,7 @@
   .hero-note { display: flex; align-items: center; gap: 8px; margin-top: 38px; color: var(--space-soft); font: 10px var(--font-mono); }
   .hero-note svg { color: var(--signal); }
 
-  /* Enhanced orbit-visual */
+  
   .orbit-visual {
     min-height: 460px; position: relative; overflow: hidden;
     background: linear-gradient(145deg, rgba(18, 36, 56, 0.7), rgba(6, 12, 22, 0.4));
@@ -282,7 +274,7 @@
     border-radius: 2px;
   }
 
-  /* Animated perspective grid */
+  
   .orbit-grid {
     position: absolute; inset: 0; opacity: .3;
     background-image:
@@ -304,7 +296,7 @@
     border-color: rgba(255,255,255,0.12);
   }
 
-  /* Old static planet hidden — replaced by SatelliteOrbit SVG */
+  
   .planet { display: none; }
 
   .orbit-label {
@@ -316,7 +308,7 @@
   .label-top    { top: 18%; left: 9%; }
   .label-bottom { bottom: 15%; right: 9%; }
 
-  /* ── SIGNAL STRIP ────────────────────────────────────────────── */
+  
   .signal-strip {
     display: flex; align-items: center; justify-content: space-between;
     gap: 20px; padding: 20px 0;
@@ -1024,13 +1016,13 @@
     }
   }
 
-  /* ── INFO PAGE ───────────────────────────────────────────────── */
+  
   .info-page {
     padding: 82px 0 110px;
     position: relative;
   }
 
-  /* Atmospheric background effect matching home hero */
+  
   .info-page::before {
     content: '';
     position: fixed;
@@ -1045,7 +1037,7 @@
 
   .info-heading { max-width: 700px; position: relative; z-index: 1; }
 
-  /* Eyebrow label matching earth-eyebrow style */
+  
   .info-heading .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -1148,9 +1140,7 @@
     background: rgba(255,255,255,0.10);
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    WORKSPACE SHELL
-  ══════════════════════════════════════════════════════════════ */
+  
   .workspace-route {
     min-height: 100vh;
     background: #05070b;
@@ -1252,9 +1242,7 @@
     box-shadow: 0 18px 44px rgba(2, 8, 16, 0.28), inset 0 1px 0 rgba(255,255,255,0.02);
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    LEFT SIDEBAR
-  ══════════════════════════════════════════════════════════════ */
+  
   .sidebar {
     width: 296px; min-width: 296px; height: 100%;
     background: rgba(8, 14, 22, 0.60);
@@ -1361,7 +1349,7 @@
     display: flex; align-items: center; justify-content: space-between;
   }
 
-  /* Preset cards */
+  
   .presets-grid { display: flex; flex-direction: column; gap: 9px; }
 
   .preset-card {
@@ -1391,7 +1379,7 @@
   .preset-badge { font-size: 10px; color: var(--accent-cyan); font-weight: 500; margin-top: 2px; }
   .preset-desc { font-size: 10px; color: var(--text-muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-  /* Mode selector */
+  
   .mode-selector-wrap { display: flex; flex-direction: column; gap: 8px; }
   .mode-pills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; }
   .mode-pill {
@@ -1423,9 +1411,7 @@
     animation: pulse-glow 2.5s ease-in-out infinite;
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    CENTER VISUAL WORKSPACE
-  ══════════════════════════════════════════════════════════════ */
+  
   .visual-workspace {
     flex: 1; height: 100%;
     background: rgba(8, 14, 22, 0.45);
@@ -1435,7 +1421,7 @@
     overflow: hidden;
   }
 
-  /* Animated holographic background grid */
+  
   .visual-workspace::before {
     content: '';
     position: absolute; inset: 0;
@@ -1447,7 +1433,7 @@
     animation: grid-pulse 5s ease-in-out infinite;
   }
 
-  /* Modality Bar */
+  
   .modality-bar {
     height: 50px; min-height: 50px;
     background: linear-gradient(180deg, rgba(39, 199, 232, 0.05), transparent);
@@ -1504,7 +1490,7 @@
   .opacity-slider { width: 80px; accent-color: var(--accent-cyan); cursor: pointer; }
   .opacity-val { font-size: 10px; font-family: var(--font-mono); color: var(--accent-cyan); min-width: 30px; }
 
-  /* Canvas Viewport */
+  
   .canvas-container {
     flex: 1; position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
@@ -1513,7 +1499,7 @@
   }
   .canvas-container.panning { cursor: grabbing; }
 
-  /* Animated scan line sweep */
+  
   .canvas-container::after {
     content: '';
     position: absolute; left: 0; right: 0;
@@ -1538,7 +1524,7 @@
   }
   .vector-overlay-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 
-  /* Compare slider */
+  
   .compare-container { position: relative; overflow: hidden; user-select: none; }
   .compare-layer-before {
     position: absolute; top: 0; left: 0; height: 100%; overflow: hidden;
@@ -1563,7 +1549,7 @@
     box-shadow: 0 0 18px rgba(56,189,248,0.5); z-index: 11;
   }
 
-  /* Viewport controls pill */
+  
   .viewport-controls-pill {
     position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
     background: rgba(8, 18, 32, 0.88); backdrop-filter: blur(14px);
@@ -1581,7 +1567,7 @@
   .zoom-level-badge { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); min-width: 42px; text-align: center; }
   .ctrl-divider { width: 1px; height: 14px; background: rgba(56,189,248,0.15); }
 
-  /* Empty Viewport — Radar state */
+  
   .empty-viewport {
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; gap: 16px; color: var(--text-muted);
@@ -1613,9 +1599,7 @@
   .empty-viewport h3 { font-size: 15px; font-weight: 600; color: var(--text-primary); }
   .empty-viewport p  { font-size: 12px; line-height: 1.6; }
 
-  /* ═══════════════════════════════════════════════════════════════
-    RIGHT CHAT PANEL
-  ══════════════════════════════════════════════════════════════ */
+  
   .chat-panel {
     width: 430px; min-width: 430px; height: 100%;
     background: rgba(8, 14, 22, 0.60);
@@ -1644,7 +1628,7 @@
     background: transparent;
   }
 
-  /* Empty state */
+  
   .chat-empty-state { display: flex; flex-direction: column; gap: 16px; padding-top: 12px; }
   .welcome-box { padding: 0 0 18px; background: transparent; border: 0; border-bottom: 1px solid rgba(56,189,248,0.12); border-radius: 0; }
   .welcome-icon {
@@ -1664,7 +1648,7 @@
   }
   .prompt-chip:hover { color: var(--text-primary); background: var(--bg-card-hover); border-color: var(--border-strong); }
 
-  /* Messages */
+  
   .message-item { display: flex; flex-direction: column; animation: fade-in-up 0.3s ease; }
   .user-msg {
     align-self: flex-end; max-width: 90%;
@@ -1675,7 +1659,7 @@
   }
   .assistant-msg { display: flex; flex-direction: column; gap: 9px; width: 100%; }
 
-  /* Answer card */
+  
   .answer-card {
     background: var(--bg-card); border: 1px solid var(--border-subtle);
     border-radius: 12px; padding: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);
@@ -1685,14 +1669,14 @@
   .answer-title { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .1em; display: flex; align-items: center; gap: 6px; }
   .answer-content { font-size: 13px; line-height: 1.65; color: var(--text-primary); }
 
-  /* CrossModal attribution */
+  
   .attribution-bar-container { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
   .attribution-bar { height: 7px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; display: flex; }
   .attribution-opt { background: var(--accent-cyan); height: 100%; transition: width 0.4s ease; }
   .attribution-sar { background: var(--accent-indigo); height: 100%; transition: width 0.4s ease; }
   .attribution-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-secondary); }
 
-  /* Evidence card */
+  
   .evidence-card {
     background: var(--bg-card); border: 1px solid var(--border-subtle);
     border-radius: 10px; padding: 10px; display: flex; align-items: center; gap: 10px;
@@ -1711,7 +1695,7 @@
   }
   .inspect-evidence-btn:hover { background: var(--accent-cyan); color: #050810; box-shadow: 0 0 14px rgba(56,189,248,0.3); }
 
-  /* Tech details */
+  
   .tech-details { border-top: 1px solid rgba(56,189,248,0.1); padding-top: 8px; }
   .tech-details-summary { font-size: 10px; font-weight: 600; color: var(--text-muted); cursor: pointer; user-select: none; display: flex; align-items: center; gap: 4px; }
   .tech-details-summary:hover { color: var(--text-secondary); }
@@ -1719,7 +1703,7 @@
   .tech-item span { color: var(--text-muted); }
   .tech-item strong { color: var(--accent-cyan); font-family: var(--font-mono); display: block; font-size: 11px; }
 
-  /* ── PROGRESS STEPPER (glowing stages) ─────────────────────── */
+  
   .progress-stepper {
     background: var(--bg-card); border: 1px solid rgba(56,189,248,0.18);
     border-radius: var(--radius-md); padding: 12px 14px;
@@ -1743,7 +1727,7 @@
     width: 16px; height: 16px; display: flex; align-items: center; justify-content: center;
     position: relative; flex-shrink: 0;
   }
-  /* Ping ring on active step */
+  
   .step-item.active .step-icon::after {
     content: '';
     position: absolute; inset: -3px;
@@ -1761,7 +1745,7 @@
     transition: width 0.5s ease;
   }
 
-  /* Typing indicator */
+  
   .typing-indicator {
     display: flex; align-items: center; gap: 4px; padding: 4px 0;
   }
@@ -1772,7 +1756,7 @@
   .typing-dot:nth-child(2) { animation-delay: 0.18s; }
   .typing-dot:nth-child(3) { animation-delay: 0.36s; }
 
-  /* ── CHAT INPUT ───────────────────────────────────────────────── */
+  
   .chat-input-area {
     padding: 12px 15px 14px;
     background: rgba(11,23,38,0.96);
@@ -1848,15 +1832,13 @@
     display: flex; align-items: center; justify-content: space-between;
   }
 
-  /* Advanced settings area */
+  
   .advanced-settings { border-top: 1px solid rgba(56,189,248,0.1); padding-top: 14px; }
   .routing-section   { border-top: 1px solid rgba(56,189,248,0.1); padding-top: 14px; }
 
-  /* ═══════════════════════════════════════════════════════════════
-    FUTURISTIC COMMAND CENTER & MAP EXPLORER STYLING
-  ══════════════════════════════════════════════════════════════ */
+  
 
-  /* Site Header User & Auth Elements */
+  
   .header-right-actions {
     display: flex;
     align-items: center;
@@ -1919,7 +1901,7 @@
     color: #fff;
   }
 
-  /* Cockpit Topbar Overhaul */
+  
   .workspace-topbar {
     display: flex;
     align-items: center;
@@ -1945,7 +1927,7 @@
     letter-spacing: 0.06em;
   }
 
-  /* View Mode Selector Tabs */
+  
   .view-mode-tabs {
     display: flex;
     align-items: center;
@@ -1982,7 +1964,7 @@
   }
   .view-tab.active svg { color: var(--accent-cyan); }
 
-  /* Topbar Telemetry Strip */
+  
   .topbar-center-telemetry {
     display: flex;
     align-items: center;
@@ -2082,9 +2064,7 @@
   }
   .guide-link-btn:hover { color: var(--text-primary); }
 
-  /* ═══════════════════════════════════════════════════════════════
-    SATELLITE MAP EXPLORER
-  ══════════════════════════════════════════════════════════════ */
+  
   .satellite-map-explorer {
     display: flex;
     flex-direction: column;
@@ -2116,7 +2096,7 @@
     height: 100%;
   }
 
-  /* Map Top Bar */
+  
   .map-top-bar {
     display: flex;
     align-items: center;
@@ -2186,7 +2166,7 @@
     color: #050810;
   }
 
-  /* Basemap Layer Buttons */
+  
   .map-layer-toggles {
     display: flex;
     align-items: center;
@@ -2216,7 +2196,7 @@
     font-weight: 600;
   }
 
-  /* Snapshot Trigger Button */
+  
   .map-snapshot-trigger-btn {
     margin-left: auto;
     display: flex;
@@ -2240,7 +2220,7 @@
   }
   .map-snapshot-trigger-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-  /* Search Dropdown */
+  
   .map-search-dropdown {
     position: absolute;
     top: 48px;
@@ -2272,7 +2252,7 @@
   .search-result-item:hover { background: rgba(56, 189, 248, 0.15); }
   .search-result-item .pin-icon { color: var(--accent-cyan); flex-shrink: 0; }
 
-  /* Preset Locations Bar */
+  
   .map-presets-bar {
     display: flex;
     align-items: center;
@@ -2324,7 +2304,7 @@
     border-radius: 2px;
   }
 
-  /* Map Canvas & Reticle Viewfinder */
+  
   .map-canvas-wrapper {
     flex: 1;
     position: relative;
@@ -2357,7 +2337,7 @@
     z-index: 1 !important;
   }
 
-  /* Tactical Viewfinder Overlay */
+  
   .viewfinder-overlay {
     position: absolute;
     inset: 0;
@@ -2406,7 +2386,7 @@
   .corner.bottom-left  { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
   .corner.bottom-right { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
-  /* Map Telemetry HUD */
+  
   .map-telemetry-hud {
     position: absolute;
     bottom: 14px;
@@ -2441,7 +2421,7 @@
   }
   .hud-val.highlight { color: var(--accent-cyan); }
 
-  /* Floating Map Zoom Controls */
+  
   .map-floating-controls {
     position: absolute;
     top: 14px;
@@ -2472,9 +2452,7 @@
     color: var(--accent-cyan);
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    SNAPSHOT MODAL TARGET SELECTION
-  ══════════════════════════════════════════════════════════════ */
+  
   .snapshot-modal-overlay {
     position: fixed;
     inset: 0;
@@ -2677,9 +2655,7 @@
     font-weight: 600;
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    AUTHENTICATION MODAL
-  ══════════════════════════════════════════════════════════════ */
+  
   .auth-overlay {
     position: fixed;
     inset: 0;
@@ -2934,9 +2910,7 @@
     line-height: 1.4;
   }
 
-  /* ═══════════════════════════════════════════════════════════════
-    SESSION HISTORY DRAWER
-  ══════════════════════════════════════════════════════════════ */
+  
   .session-history-drawer {
     position: absolute;
     top: 0;
@@ -3098,9 +3072,7 @@
   .delete-session-btn:hover { color: var(--accent-rose); }
   .session-card-actions .arrow-icon { color: var(--text-muted); }
 
-  /* ═══════════════════════════════════════════════════════════════
-    RESPONSIVE OVERRIDES FOR COMMAND CENTER
-  ══════════════════════════════════════════════════════════════ */
+  
   @media (max-width: 1200px) {
     .topbar-center-telemetry { display: none; }
     .dual-center-container { flex-direction: column; }
@@ -3142,10 +3114,7 @@
 
 
 
-/* ═══════════════════════════════════════════════════════════════
-   SATQUERY HOME — EARTH OBSERVATION REDESIGN
-   Scoped to .home-page only. Command Center + Info pages remain intact.
-═══════════════════════════════════════════════════════════════ */
+
 
 .home-page {
   width: 100%;
@@ -3157,7 +3126,7 @@
   background: #05070b;
 }
 
-/* Make the public landing header feel like part of the photographic hero. */
+
 .site-shell:has(.home-page) .site-header {
   position: absolute;
   top: 0;
@@ -3172,9 +3141,9 @@
 }
 
 .site-shell:has(.home-page) .site-brand-mark {
-  color: #ffffff;
-  background: #0314cf;
-  box-shadow: 0 8px 26px rgba(242,184,75,0.20);
+    color: #05070b;
+    background: #ffffff;
+    box-shadow: 0 8px 26px rgba(255,255,255,0.16);
 }
 
 .site-shell:has(.home-page) .site-nav button {

@@ -28,7 +28,7 @@ export default function AnswerCard({
 
       <div className="answer-content">{rawAnswer}</div>
 
-      {/* Cross-Modal Dual-Sensor Attribution Bar */}
+      {}
       {optPct !== undefined && sarPct !== undefined && (
         <div className="attribution-bar-container">
           <div className="attribution-labels">
@@ -42,7 +42,7 @@ export default function AnswerCard({
         </div>
       )}
 
-      {/* Bi-temporal change metrics */}
+      {}
       {changePct !== undefined && (
         <div style={{
           display: 'flex',

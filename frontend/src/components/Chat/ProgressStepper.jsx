@@ -26,7 +26,7 @@ export default function ProgressStepper({ currentStage, stageMessage }) {
     <div className="progress-stepper">
       <div className="stepper-header">
         <span>Analysis Pipeline</span>
-        {/* Typing indicator dots */}
+        {}
         <span className="typing-indicator">
           <span className="typing-dot" />
           <span className="typing-dot" />
@@ -34,7 +34,7 @@ export default function ProgressStepper({ currentStage, stageMessage }) {
         </span>
       </div>
 
-      {/* Glowing progress bar */}
+      {}
       <div className="stepper-progress-bar">
         <div className="stepper-progress-fill" style={{ width: `${progress}%` }} />
       </div>
@@ -69,7 +69,7 @@ export default function ProgressStepper({ currentStage, stageMessage }) {
         })}
       </div>
 
-      {/* Active stage message */}
+      {}
       {stageMessage && (
         <div style={{
           fontSize: '10px', color: 'var(--accent-cyan)',

@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
-  const [mode, setMode] = useState('login'); // 'login' | 'register'
+  const [mode, setMode] = useState('login');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -84,7 +84,7 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
           </div>
         </div>
 
-        {/* Mode Switcher Tabs */}
+        {}
         <div className="auth-tabs">
           <button
             type="button"

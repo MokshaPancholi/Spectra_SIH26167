@@ -61,7 +61,7 @@ export default function CompareSlider({ beforeImg, afterImg, width = 600, height
       onTouchEnd={handleMouseUp}
       onTouchMove={handleTouchMove}
     >
-      {/* Before Layer (clipped to sliderPos) */}
+      {}
       <div
         className="compare-layer-before"
         style={{ width: `${sliderPos}%` }}
@@ -86,7 +86,7 @@ export default function CompareSlider({ beforeImg, afterImg, width = 600, height
         </div>
       </div>
 
-      {/* After Layer (full width background) */}
+      {}
       <div className="compare-layer-after" style={{ width: `${width}px`, height: `${height}px` }}>
         <img
           src={afterImg}
@@ -108,7 +108,7 @@ export default function CompareSlider({ beforeImg, afterImg, width = 600, height
         </div>
       </div>
 
-      {/* Handle */}
+      {}
       <div
         className="compare-handle"
         style={{ left: `${sliderPos}%` }}

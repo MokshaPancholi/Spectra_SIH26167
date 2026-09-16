@@ -44,7 +44,7 @@ export default function ChatInput({
 
   return (
     <div className="chat-input-area">
-      {/* Attached Images Pill Tray */}
+      {}
       {(image1 || image2) && (
         <div className="input-image-tray">
           {image1 && (
@@ -81,7 +81,7 @@ export default function ChatInput({
         </div>
       )}
 
-      {/* Input box */}
+      {}
       <div className="input-box-wrapper">
         <textarea
           ref={textareaRef}
