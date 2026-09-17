@@ -1,8 +1,10 @@
 import React from 'react';
-import { PanelLeft, Layers, Sliders, Radio, GitCompare, Eye } from 'lucide-react';
+import { PanelLeft, Layers, Radio, Eye, Globe2, Upload } from 'lucide-react';
 
 export default function ModalityBar({
   onToggleSidebar,
+  viewMode,
+  onChangeViewMode,
   currentMode,
   routingDecision,
   hasImage1,
@@ -17,9 +19,9 @@ export default function ModalityBar({
     if (!hasImage1 && !hasImage2) {
       return (
         <div className="modality-tabs">
-          <button className="modality-tab active">
-            <Layers size={13} />
-            <span>Overview</span>
+          <button className="modality-tab active" type="button" aria-label="No image uploaded">
+            <Upload size={13} />
+            <span>No image uploaded</span>
           </button>
         </div>
       );
@@ -34,13 +36,14 @@ export default function ModalityBar({
             aria-label="Main image"
           >
             <Eye size={13} />
+            <span>Image 1</span>
           </button>
           <button
             className={`modality-tab radar-tab ${activeLayer === 'sar' ? 'active' : ''}`}
             onClick={() => onSelectLayer('sar')}
           >
             <Radio size={13} />
-            <span>Radar view</span>
+            <span>Image 2</span>
           </button>
           {evidenceArtifacts?.['Optical Heatmap'] && (
             <button
@@ -120,7 +123,26 @@ export default function ModalityBar({
         {renderLayerTabs()}
       </div>
 
-      <div className="modality-right" />
+      <div className="modality-right">
+        <div className="view-mode-tabs">
+          <button
+            type="button"
+            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+            onClick={() => onChangeViewMode('map')}
+            title="Full-Screen Satellite Map & Region Snapshotting"
+          >
+            <Globe2 size={14} /> Map
+          </button>
+          <button
+            type="button"
+            className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
+            onClick={() => onChangeViewMode('cockpit')}
+            title="Multi-Spectral Evidence Analysis & Conversation"
+          >
+            <Layers size={14} /> Workspace
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

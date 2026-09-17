@@ -16,9 +16,6 @@ export default function AdvancedSettings({ forcedModel, onChangeModel, healthInf
         <span>Choose how to analyze</span>
         <Sparkles size={12} color="var(--accent-cyan)" />
       </div>
-      <p style={{ margin: '0 0 12px', fontSize: '11px', lineHeight: 1.5, color: 'var(--text-muted)' }}>
-        Most first-time users should start in Smart mode.
-      </p>
       <div className="mode-selector-wrap">
         <div className="mode-pills">
           {modes.map((m) => (

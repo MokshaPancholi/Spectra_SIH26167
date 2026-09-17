@@ -90,10 +90,6 @@ function HomePage({ onNavigate }) {
 
         <div className="earth-hero-inner">
           <div className="earth-copy">
-            <div className="earth-eyebrow">
-              <span className="earth-live-dot" />
-              EARTH OBSERVATION · AI RESEARCH WORKSPACE
-            </div>
             <h1>SatQuery AI</h1>
             <p>
               Turns satellite imagery into clear, evidence-grounded answers —
@@ -117,7 +113,6 @@ function HomePage({ onNavigate }) {
           <div className="earth-observation-card" aria-label="SatQuery Earth observation preview">
             <div className="observation-topline">
               <span>LIVE ORBITAL VIEW</span>
-              <span className="observation-status"><i /> ONLINE</span>
             </div>
             <div className="observation-image">
               <div className="observation-map-lines" />
@@ -127,7 +122,6 @@ function HomePage({ onNavigate }) {
             </div>
             <div className="observation-bottom">
               <div>
-                <small>OBSERVATION</small>
                 <strong>Earth · Multispectral</strong>
                 <span className="observation-description">High-resolution surface scan</span>
               </div>
@@ -156,7 +150,6 @@ function InfoPage({ type, onNavigate }) {
   return (
     <main className="marketing-page info-page">
       <div className="info-heading">
-        <div className="eyebrow">{isGuide ? 'FIELD GUIDE / 04 STEPS' : 'THE SATQUERY MISSION'}</div>
         <h1>{isGuide ? 'From orbit to insight.' : 'A clearer view of Earth.'}</h1>
         <p>{isGuide ? 'A deliberate workflow for capturing remote sensing imagery, routing through specialist vision models, and inspecting grounded findings.' : 'SatQuery combines multi-modal remote sensing models into one unified, auditable intelligence workspace.'}</p>
       </div>
@@ -284,7 +277,7 @@ export default function App() {
     }
   };
 
-  const handleNewSession = async () => {
+  const handleNewSession = () => {
     const newId = 'sess_' + Math.random().toString(36).substring(2, 9);
     setSessionId(newId);
     setMessages([]);
@@ -296,21 +289,6 @@ export default function App() {
     setRoutingDecision(null);
     setActivePresetId(null);
     setHistoryDrawerOpen(false);
-
-    try {
-      const headers = {
-        'Content-Type': 'application/json',
-        ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
-      };
-      await fetch('/api/sessions', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ title: 'New Analysis Session' }),
-      });
-      loadSessions();
-    } catch (err) {
-      console.warn('Could not create DB session:', err);
-    }
   };
 
   const handleDeleteSession = async (sessId) => {
@@ -616,74 +594,15 @@ export default function App() {
   }
 
   return (
-    <div className="workspace-route">
-      {}
-      <div className="workspace-topbar">
-        <div className="topbar-left">
-          <button className="site-brand workspace-brand" onClick={() => setActivePage('home')} type="button">
-            <span className="site-brand-mark"><Satellite size={19} /></span>
-            <span><strong>SatQuery</strong><small>EARTH OBSERVATION LAB</small></span>
-          </button>
+    <div className="site-shell workspace-route">
+      <SiteHeader
+        activePage="analyze"
+        onNavigate={handleNavigate}
+        currentUser={currentUser}
+        onOpenAuth={() => setAuthModalOpen(true)}
+        onLogout={handleLogout}
+      />
 
-          <nav className="site-nav workspace-nav" aria-label="Primary navigation">
-            <button type="button" onClick={() => setActivePage('home')}>Home</button>
-            <button type="button" onClick={() => setActivePage('how-to-use')}>How to use</button>
-            <button type="button" onClick={() => setActivePage('about')}>About</button>
-          </nav>
-        </div>
-
-        <div className="topbar-center-telemetry" />
-
-        <div className="topbar-right">
-          <div className="view-mode-tabs">
-            <button
-              type="button"
-              className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
-              onClick={() => setViewMode('map')}
-              title="Full-Screen Satellite Map & Region Snapshotting"
-            >
-              <Globe2 size={14} /> Map
-            </button>
-            <button
-              type="button"
-              className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
-              onClick={() => setViewMode('cockpit')}
-              title="Multi-Spectral Evidence Analysis & Conversation"
-            >
-              <Layers size={14} /> Workspace
-            </button>
-          </div>
-
-          {currentUser ? (
-            <div className="cockpit-user-chip">
-              <User size={13} />
-              <span className="chip-username">{currentUser.username}</span>
-              <button
-                type="button"
-                className="chip-logout"
-                onClick={handleLogout}
-                title="Sign Out"
-              >
-                <LogOut size={12} />
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              className="cockpit-signin-btn"
-              onClick={() => setAuthModalOpen(true)}
-            >
-              <LogIn size={13} /> Sign In
-            </button>
-          )}
-
-          <button className="header-launch workspace-launch" type="button" disabled>
-            <MessageSquare size={15} /> Command Center
-          </button>
-        </div>
-      </div>
-
-      {}
       <div className={`app-container view-${viewMode}`}>
         {}
         <SessionHistory
@@ -710,6 +629,7 @@ export default function App() {
             activeSessionId={sessionId}
             onSelectSession={handleSelectSession}
             onDeleteSession={handleDeleteSession}
+            onNewSession={handleNewSession}
           />
         )}
 
@@ -719,6 +639,8 @@ export default function App() {
             <SatelliteMapExplorer
               onCaptureRegion={handleCaptureRegion}
               onSwitchToAnalysis={() => setViewMode('cockpit')}
+              viewMode={viewMode}
+              onChangeViewMode={setViewMode}
             />
           </div>
         )}
@@ -726,6 +648,9 @@ export default function App() {
         {viewMode === 'cockpit' && (
           <VisualWorkspace
             onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
+            viewMode={viewMode}
+            onChangeViewMode={setViewMode}
+            onUploadImages={handleUploadImages}
             image1={image1}
             image2={image2}
             image1Name={image1Name}

@@ -6,6 +6,7 @@ import {
   Clock,
   Trash2,
   ChevronRight,
+  Plus,
 } from 'lucide-react';
 import AdvancedSettings from './AdvancedSettings';
 
@@ -18,23 +19,23 @@ export default function Sidebar({
   activeSessionId,
   onSelectSession,
   onDeleteSession,
+  onNewSession,
 }) {
   return (
     <aside className={`sidebar ${!isOpen ? 'collapsed' : ''}`}>
-      <div className="sidebar-header">
-        <div className="brand-badge">
-          <Satellite size={20} />
-        </div>
-        <div className="brand-info">
-          <h1>
-            SatQuery AI
-            <span>v1.0</span>
-          </h1>
-          <p>Remote Sensing Multimodal AI</p>
-        </div>
-      </div>
 
       <div className="sidebar-scrollable">
+        <div className="sidebar-action-wrap">
+          <button
+            type="button"
+            className="new-analysis-btn"
+            onClick={onNewSession}
+          >
+            <Plus size={15} />
+            <span>New chat</span>
+          </button>
+        </div>
+
         <div className="recent-sessions-panel">
           <div className="section-label">
             <span>Recent sessions</span>
@@ -104,14 +105,9 @@ export default function Sidebar({
           onChangeModel={onChangeModel}
           healthInfo={healthInfo}
         />
+
       </div>
 
-      <div className="sidebar-footer">
-        <div className="hardware-indicator">
-          <div className="dot-status" />
-          <span>Engine Ready</span>
-        </div>
-      </div>
     </aside>
   );
 }

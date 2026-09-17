@@ -4,12 +4,15 @@ import {
   ZoomOut,
   Maximize,
   RotateCcw,
-  Compass,
+  Upload,
 } from 'lucide-react';
 import ModalityBar from './ModalityBar';
 
 export default function VisualWorkspace({
   onToggleSidebar,
+  viewMode,
+  onChangeViewMode,
+  onUploadImages,
   image1,
   image2,
   image1Name,
@@ -26,6 +29,7 @@ export default function VisualWorkspace({
   const [isPanning, setIsPanning] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const workspaceRef = useRef(null);
+  const uploadInputRef = useRef(null);
 
   const resetView = () => { setZoom(1); setPan({ x: 0, y: 0 }); };
 
@@ -63,15 +67,28 @@ export default function VisualWorkspace({
     if (!image1 && !image2) {
       return (
         <div className="empty-viewport">
-          {}
-          <div className="radar-ring-container">
-            <div className="radar-ring-outer" />
-            <div className="radar-ring-inner" />
-            <div className="radar-sweep" />
-            <div className="radar-center-icon">
-              <Compass size={18} />
-            </div>
-          </div>
+          <button
+            className="empty-upload-btn"
+            type="button"
+            onClick={() => uploadInputRef.current?.click()}
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <Upload size={18} />
+            <span className="empty-upload-label">Upload image</span>
+            <small>Choose one or two satellite images</small>
+          </button>
+          <input
+            ref={uploadInputRef}
+            type="file"
+            accept="image/*"
+            multiple
+            hidden
+            onChange={(event) => {
+              const files = Array.from(event.target.files || []);
+              if (files.length > 0) onUploadImages(files);
+              event.target.value = '';
+            }}
+          />
           <h3>Image Analysis Workspace</h3>
           <p>
             Upload one or two images to start exploring remotely sensed data and grounded evidence.
@@ -172,6 +189,8 @@ export default function VisualWorkspace({
     <main className="visual-workspace" ref={workspaceRef}>
       <ModalityBar
         onToggleSidebar={onToggleSidebar}
+        viewMode={viewMode}
+        onChangeViewMode={onChangeViewMode}
         routingDecision={routingDecision}
         hasImage1={!!image1}
         hasImage2={!!image2}

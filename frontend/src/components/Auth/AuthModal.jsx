@@ -78,10 +78,6 @@ export default function AuthModal({ isOpen, onClose, onAuthSuccess }) {
               <span className="auth-subtitle">Geospatial Intelligence Gateway</span>
             </div>
           </div>
-          <div className="auth-telemetry-strip">
-            <span className="telemetry-pill">SECURE CONNECTION</span>
-            <span className="telemetry-pill">PG-SQL PERSISTENCE</span>
-          </div>
         </div>
 
         {}

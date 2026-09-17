@@ -128,6 +128,9 @@ export default function ChatInput({
         <span>Upload 1 or 2 images · Enter to send · Shift+Enter for a new line</span>
         {isLoading && <span style={{ color: 'var(--accent-cyan)' }}>Working...</span>}
       </div>
+      <div className="image-order-note">
+        Image order matters: Image 1 is optical / before, Image 2 is SAR / after.
+      </div>
     </div>
   );
 }

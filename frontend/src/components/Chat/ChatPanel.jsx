@@ -53,17 +53,6 @@ export default function ChatPanel({
           </div>
           <span className="chat-subtitle">Type what you want to learn in simple language</span>
         </div>
-        <div className="chat-status"><span /> {
-          activeRoutingDecision === 'vqa'
-            ? 'Image Q&A'
-            : activeRoutingDecision === 'crossmodal'
-              ? 'Image + Radar'
-              : activeRoutingDecision === 'change_detect'
-                ? 'Change detection'
-                : activeRoutingDecision === 'geospatial_qa'
-                  ? 'Map Q&A'
-                  : 'Smart mode'
-        }</div>
       </div>
 
       <div className="messages-scrollable" ref={scrollRef}>

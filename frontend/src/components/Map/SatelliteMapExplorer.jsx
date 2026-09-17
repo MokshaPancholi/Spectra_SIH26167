@@ -27,7 +27,12 @@ const PRESET_LOCATIONS = [
   { name: 'Tokyo Bay Port', lat: 35.6264, lng: 139.782, zoom: 13, category: 'Logistics' },
 ];
 
-export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalysis }) {
+export default function SatelliteMapExplorer({
+  onCaptureRegion,
+  onSwitchToAnalysis,
+  viewMode,
+  onChangeViewMode,
+}) {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const layersRef = useRef({});
@@ -397,6 +402,25 @@ export default function SatelliteMapExplorer({ onCaptureRegion, onSwitchToAnalys
           <Camera size={16} />
           <span>{isCapturing ? 'Capturing...' : 'Snapshot Region for AI'}</span>
         </button>
+
+        <div className="view-mode-tabs map-view-mode-tabs">
+          <button
+            type="button"
+            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
+            onClick={() => onChangeViewMode('map')}
+            title="Full-Screen Satellite Map & Region Snapshotting"
+          >
+            <Globe2 size={14} /> Map
+          </button>
+          <button
+            type="button"
+            className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
+            onClick={() => onChangeViewMode('cockpit')}
+            title="Multi-Spectral Evidence Analysis & Conversation"
+          >
+            <Layers size={14} /> Workspace
+          </button>
+        </div>
       </div>
 
       {}
