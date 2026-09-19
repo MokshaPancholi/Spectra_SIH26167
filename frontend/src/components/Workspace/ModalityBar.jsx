@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelLeft, Layers, Radio, Eye, Globe2, Upload } from 'lucide-react';
+import { PanelLeft, Layers, Radio, Eye, Upload } from 'lucide-react';
 
 export default function ModalityBar({
   onToggleSidebar,
@@ -123,26 +123,6 @@ export default function ModalityBar({
         {renderLayerTabs()}
       </div>
 
-      <div className="modality-right">
-        <div className="view-mode-tabs">
-          <button
-            type="button"
-            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('map')}
-            title="Full-Screen Satellite Map & Region Snapshotting"
-          >
-            <Globe2 size={14} /> Map
-          </button>
-          <button
-            type="button"
-            className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('cockpit')}
-            title="Multi-Spectral Evidence Analysis & Conversation"
-          >
-            <Layers size={14} /> Workspace
-          </button>
-        </div>
-      </div>
     </div>
   );
 }

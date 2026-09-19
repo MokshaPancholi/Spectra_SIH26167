@@ -137,40 +137,79 @@ function HomePage({ onNavigate }) {
 function InfoPage({ type, onNavigate }) {
   const isGuide = type === 'how-to-use';
   const rows = isGuide ? [
-    ['01', 'Explore the Satellite Map', 'Navigate to any region, port, or forest on Earth and capture a snapshot directly as Image 1 or Image 2.'],
-    ['02', 'Set the Order & Sensor Types', 'Use the reference slot for baseline imagery and the second slot for temporal comparison or SAR backscatter.'],
-    ['03', 'Query in Natural Language', 'Describe what you need to discover. SatQuery routes automatically with confidence calibration.'],
-    ['04', 'Inspect Grounded Evidence', 'Review ViT attention heatmaps, Siamese difference masks, and confidence telemetry saved to your database history.'],
+    {
+      number: '01',
+      title: 'Choose your imagery',
+      heading: 'Start with a satellite image',
+      description: 'Open a sample scene or upload your own satellite image. You can use optical, multispectral, or SAR imagery.',
+      note: 'Simple idea: Give SatQuery the image you want to explore.',
+    },
+    {
+      number: '02',
+      title: 'Choose one or two images',
+      heading: 'Analyze one image or compare two',
+      description: 'Use one image to understand what is visible, or use two images to compare the same area at different times or with different sensors.',
+      examples: ['One image - understand the area', 'Two dates - find what changed', 'Optical + SAR - compare different types of information'],
+    },
+    {
+      number: '03',
+      title: 'Ask your question',
+      heading: 'Ask in your own words',
+      description: "Type what you want to know. You don't need to know which AI model or analysis to use - SatQuery chooses the appropriate analysis for your question.",
+      label: 'Try asking:',
+      examples: ['What is visible in this image?', 'Where are the buildings?', 'What changed between these two images?'],
+    },
+    {
+      number: '04',
+      title: 'Let SatQuery analyze it',
+      heading: 'SatQuery finds the right analysis',
+      description: 'SatQuery processes your imagery and uses the appropriate AI tools to answer your question.',
+      note: 'Depending on your question, it can analyze the scene, locate objects or regions, compare images, or combine optical and SAR information.',
+    },
+    {
+      number: '05',
+      title: 'Understand and verify the answer',
+      heading: 'See the answer with evidence',
+      description: 'Review the result together with the visual evidence that supports it. See where the answer comes from and inspect the highlighted regions or detected changes.',
+    },
   ] : [
-    ['01', 'Specialist by Design', 'VQA, change detection, optical-SAR fusion, and grounding nodes each fulfill a mathematically specialized role.'],
-    ['02', 'Evidence Beside the Answer', 'Synthesized conclusions are strictly paired with spatial attention maps and reproducible visual layers.'],
-    ['03', 'Production Ready & Auditable', 'Supported by PostgreSQL persistence, session tracking, and seamless fallback demonstration modes.'],
+    { number: '01', title: 'Specialist by Design', description: 'VQA, change detection, optical-SAR fusion, and grounding nodes each fulfill a mathematically specialized role.' },
+    { number: '02', title: 'Evidence Beside the Answer', description: 'Synthesized conclusions are strictly paired with spatial attention maps and reproducible visual layers.' },
+    { number: '03', title: 'Production Ready & Auditable', description: 'Supported by PostgreSQL persistence, session tracking, and seamless fallback demonstration modes.' },
   ];
 
   return (
-    <main className="marketing-page info-page">
+    <main className={`marketing-page info-page ${isGuide ? 'guide-page' : ''}`}>
       <div className="info-heading">
-        <h1>{isGuide ? 'From orbit to insight.' : 'A clearer view of Earth.'}</h1>
-        <p>{isGuide ? 'A deliberate workflow for capturing remote sensing imagery, routing through specialist vision models, and inspecting grounded findings.' : 'SatQuery combines multi-modal remote sensing models into one unified, auditable intelligence workspace.'}</p>
+        <h1>{isGuide ? 'How to use SatQuery' : 'A clearer view of Earth.'}</h1>
+        <p>{isGuide ? 'Explore satellite imagery, ask questions in natural language, and get answers with visual evidence.' : 'SatQuery combines multi-modal remote sensing models into one unified, auditable intelligence workspace.'}</p>
       </div>
       <div className="info-layout">
         <div className="info-list">
-          {rows.map(([number, title, description]) => (
-            <div className="info-row" key={number}>
-              <span>{number}</span>
-              <div>
-                <h2>{title}</h2>
-                <p>{description}</p>
+          {rows.map((row) => (
+            <div className="info-row guide-step" key={row.number}>
+              <span>{row.number}</span>
+              <div className="guide-step-content">
+                <h2>{row.title}</h2>
+                {row.heading && <h3>{row.heading}</h3>}
+                <p>{row.description}</p>
+                {row.note && <p className="guide-note">{row.note}</p>}
+                {row.label && <strong className="guide-label">{row.label}</strong>}
+                {row.examples && (
+                  <ul>
+                    {row.examples.map((example) => <li key={example}>{example}</li>)}
+                  </ul>
+                )}
               </div>
-              <ArrowRight size={17} />
+              {!isGuide && <ArrowRight size={17} />}
             </div>
           ))}
         </div>
         <aside className="info-aside">
           <div className="aside-icon">{isGuide ? <BookOpen size={25} /> : <Orbit size={25} />}</div>
           <span className="module-index">{isGuide ? 'QUICK START' : 'SYSTEM NOTE'}</span>
-          <h2>{isGuide ? 'Snapshot, ask, verify.' : 'Transparent Intelligence'}</h2>
-          <p>{isGuide ? 'Use the embedded satellite map to snapshot any location, ask questions naturally, and view full spatial attributions.' : 'Every answer remains tightly coupled to its source raster imagery and verified historical audit logs.'}</p>
+          <h2>{isGuide ? 'Ready to explore Earth?' : 'Transparent Intelligence'}</h2>
+          <p>{isGuide ? 'Choose an image, ask a question, and let SatQuery turn satellite data into understandable answers.' : 'Every answer remains tightly coupled to its source raster imagery and verified historical audit logs.'}</p>
           <button className="secondary-action" onClick={() => onNavigate('analyze')} type="button">
             Open Command Center <ArrowRight size={15} />
           </button>
@@ -630,6 +669,7 @@ export default function App() {
             onSelectSession={handleSelectSession}
             onDeleteSession={handleDeleteSession}
             onNewSession={handleNewSession}
+            onOpenMap={() => setViewMode('map')}
           />
         )}
 

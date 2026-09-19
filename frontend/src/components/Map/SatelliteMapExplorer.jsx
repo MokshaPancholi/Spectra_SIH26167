@@ -19,12 +19,12 @@ import {
 } from 'lucide-react';
 
 const PRESET_LOCATIONS = [
-  { name: 'Dubai Palm', lat: 25.1124, lng: 55.139, zoom: 14, category: 'Urban Infra' },
-  { name: 'Suez Canal', lat: 30.5852, lng: 32.2654, zoom: 13, category: 'Maritime' },
-  { name: 'Amazon Rainforest', lat: -9.9749, lng: -63.0416, zoom: 12, category: 'Change Detect' },
+  { name: 'Nirma University', lat: 23.128384, lng: 72.544473, zoom: 15, category: 'Campus' },
   { name: 'Himalayan Glaciers', lat: 27.9881, lng: 86.925, zoom: 12, category: 'Cryosphere' },
-  { name: 'San Francisco Bay', lat: 37.7749, lng: -122.4194, zoom: 13, category: 'Coastal' },
-  { name: 'Tokyo Bay Port', lat: 35.6264, lng: 139.782, zoom: 13, category: 'Logistics' },
+  { name: 'Kalupur Railway Station', lat: 23.0235, lng: 72.6004, zoom: 15, category: 'Transport' },
+  { name: 'Kankaria Lake', lat: 22.9977, lng: 72.6015, zoom: 15, category: 'Recreation' },
+  { name: 'Dandi Beach', lat: 20.9026, lng: 72.8197, zoom: 14, category: 'Coastal' },
+  { name: 'Sabarmati Riverfront', lat: 23.0333, lng: 72.5807, zoom: 14, category: 'Urban' },
 ];
 
 export default function SatelliteMapExplorer({
@@ -41,8 +41,8 @@ export default function SatelliteMapExplorer({
   const [isSearching, setIsSearching] = useState(false);
   const [activeBasemap, setActiveBasemap] = useState('satellite');
   const [telemetry, setTelemetry] = useState({
-    lat: 25.1124,
-    lng: 55.139,
+    lat: 23.128384,
+    lng: 72.544473,
     zoom: 14,
     bounds: { north: 0, south: 0, east: 0, west: 0 },
     resolution: '~2.4m/px (Satellite)',
@@ -60,7 +60,7 @@ export default function SatelliteMapExplorer({
     });
 
     const map = L.map(mapContainerRef.current, {
-      center: [25.1124, 55.139],
+      center: [23.128384, 72.544473],
       zoom: 14,
       zoomControl: false,
       attributionControl: false,
@@ -356,6 +356,17 @@ export default function SatelliteMapExplorer({
     <div className="satellite-map-explorer">
       {}
       <div className="map-top-bar">
+        <div className="view-mode-tabs map-view-mode-tabs">
+          <button
+            type="button"
+            className="view-tab map-workspace-btn"
+            onClick={() => onChangeViewMode('cockpit')}
+            title="Multi-Spectral Evidence Analysis & Conversation"
+          >
+            <Layers size={14} /> Workspace
+          </button>
+        </div>
+
         <form onSubmit={handleSearch} className="map-search-form">
           <div className="map-search-input-wrapper">
             <Search size={16} className="search-icon" />
@@ -373,26 +384,6 @@ export default function SatelliteMapExplorer({
         </form>
 
         {}
-        <div className="map-layer-toggles">
-          <button
-            type="button"
-            className={`layer-btn ${activeBasemap === 'satellite' ? 'active' : ''}`}
-            onClick={() => handleBasemapChange('satellite')}
-            title="High-Resolution Optical Satellite Imagery"
-          >
-            <Globe2 size={14} /> Satellite
-          </button>
-          <button
-            type="button"
-            className={`layer-btn ${activeBasemap === 'hybrid' ? 'active' : ''}`}
-            onClick={() => handleBasemapChange('hybrid')}
-            title="Satellite Imagery with Vector Borders & Labels"
-          >
-            <Layers size={14} /> Hybrid
-          </button>
-        </div>
-
-        {}
         <button
           type="button"
           className="map-snapshot-trigger-btn"
@@ -403,24 +394,6 @@ export default function SatelliteMapExplorer({
           <span>{isCapturing ? 'Capturing...' : 'Snapshot Region for AI'}</span>
         </button>
 
-        <div className="view-mode-tabs map-view-mode-tabs">
-          <button
-            type="button"
-            className={`view-tab ${viewMode === 'map' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('map')}
-            title="Full-Screen Satellite Map & Region Snapshotting"
-          >
-            <Globe2 size={14} /> Map
-          </button>
-          <button
-            type="button"
-            className={`view-tab ${viewMode === 'cockpit' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('cockpit')}
-            title="Multi-Spectral Evidence Analysis & Conversation"
-          >
-            <Layers size={14} /> Workspace
-          </button>
-        </div>
       </div>
 
       {}
@@ -463,6 +436,25 @@ export default function SatelliteMapExplorer({
       {}
       <div className="map-canvas-wrapper">
         <div ref={mapContainerRef} className="leaflet-map-canvas" />
+
+        <div className="map-layer-toggles">
+          <button
+            type="button"
+            className={`layer-btn ${activeBasemap === 'satellite' ? 'active' : ''}`}
+            onClick={() => handleBasemapChange('satellite')}
+            title="High-Resolution Optical Satellite Imagery"
+          >
+            <Globe2 size={14} /> Satellite
+          </button>
+          <button
+            type="button"
+            className={`layer-btn ${activeBasemap === 'hybrid' ? 'active' : ''}`}
+            onClick={() => handleBasemapChange('hybrid')}
+            title="Satellite Imagery with Vector Borders & Labels"
+          >
+            <Layers size={14} /> Hybrid
+          </button>
+        </div>
 
         {}
         <div className="viewfinder-overlay" pointerEvents="none">
@@ -524,7 +516,7 @@ export default function SatelliteMapExplorer({
           <button
             type="button"
             className="hud-ctrl-btn"
-            onClick={() => mapInstanceRef.current?.setView([25.1124, 55.139], 14)}
+            onClick={() => mapInstanceRef.current?.setView([23.128384, 72.544473], 15)}
             title="Reset to Benchmark"
           >
             <RotateCcw size={14} />

@@ -7,6 +7,7 @@ import {
   Trash2,
   ChevronRight,
   Plus,
+  Map,
 } from 'lucide-react';
 import AdvancedSettings from './AdvancedSettings';
 
@@ -20,12 +21,21 @@ export default function Sidebar({
   onSelectSession,
   onDeleteSession,
   onNewSession,
+  onOpenMap,
 }) {
   return (
     <aside className={`sidebar ${!isOpen ? 'collapsed' : ''}`}>
 
       <div className="sidebar-scrollable">
         <div className="sidebar-action-wrap">
+          <button
+            type="button"
+            className="sidebar-map-btn"
+            onClick={onOpenMap}
+          >
+            <Map size={15} />
+            <span>Map</span>
+          </button>
           <button
             type="button"
             className="new-analysis-btn"
